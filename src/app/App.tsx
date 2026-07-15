@@ -758,7 +758,7 @@ const getCourses = (t: typeof translations.en) => [
 /* ── Scroll reveal hook ────────────────────────────────────────────── */
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const el = ref.current;

@@ -834,9 +834,13 @@ export default function App() {
 
   // Close language menu on outside click
   const langDropdownRef = useRef<HTMLDivElement>(null);
+  const mobileLangDropdownRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (langDropdownRef.current && !langDropdownRef.current.contains(e.target as Node)) {
+      const target = e.target as Node;
+      const clickedDesktop = langDropdownRef.current && langDropdownRef.current.contains(target);
+      const clickedMobile = mobileLangDropdownRef.current && mobileLangDropdownRef.current.contains(target);
+      if (!clickedDesktop && !clickedMobile) {
         setLangMenuOpen(false);
       }
     };
@@ -989,7 +993,7 @@ export default function App() {
             <img
               src={logoImg}
               alt="Official Logo"
-              className="w-11 h-11 object-contain rounded-full border border-[#D4AF37]/35 bg-white p-0.5"
+              className="w-14 h-14 object-contain rounded-full border-2 border-[#D4AF37] bg-white p-0.5 shadow-sm flex-shrink-0"
             />
             <div className={`${locale === "ar" ? "text-right" : "text-left"}`}>
               <p
@@ -1087,7 +1091,7 @@ export default function App() {
           {/* Mobile toggle */}
           <div className="flex items-center gap-3 lg:hidden">
             {/* Mobile Language Button (simple switcher) */}
-            <div className="relative" ref={langDropdownRef}>
+            <div className="relative" ref={mobileLangDropdownRef}>
               <button
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
                 className="flex items-center justify-center w-9 h-9 border border-[#D4AF37]/30 rounded text-[#005F40] transition-colors focus:outline-none"
@@ -1996,7 +2000,7 @@ export default function App() {
             <img
               src={logoImg}
               alt="Official Logo"
-              className="w-9 h-9 object-contain rounded-full border border-[#D4AF37]/35 bg-white p-0.5"
+              className="w-12 h-12 object-contain rounded-full border-2 border-[#D4AF37] bg-white p-0.5 shadow-sm flex-shrink-0"
             />
             <div className={`${locale === "ar" ? "text-right" : "text-left"}`}>
               <p className="text-[#D4AF37] text-xs tracking-widest font-medium">{t.brand.title}</p>

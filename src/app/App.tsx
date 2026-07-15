@@ -2009,7 +2009,8 @@ export default function App() {
             </a>
           </div>
         </div>
-      </footer>
+      </div>
+    </footer>
 
       {/* ────────────────────────────────────────────────────────────────
           GALLERY LIGHTBOX

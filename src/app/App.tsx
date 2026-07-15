@@ -27,6 +27,52 @@ import {
 import logoImg from "../assets/logo.JPG";
 import partnerImg from "../assets/partner.png";
 
+/* ── Islamic 8-pointed star pattern tile ──────────────────────────────── */
+const StarTile = () => (
+  <svg
+    viewBox="0 0 100 100"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-full h-full"
+  >
+    <polygon
+      points="50,5 61,35 93,35 68,57 79,91 50,70 21,91 32,57 7,35 39,35"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="0.8"
+      opacity="0.35"
+    />
+    <polygon
+      points="50,18 58,40 82,40 63,54 71,77 50,63 29,77 37,54 18,40 42,40"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="0.5"
+      opacity="0.2"
+    />
+    <circle cx="50" cy="50" r="3" fill="currentColor" opacity="0.2" />
+  </svg>
+);
+
+/* ── Decorative divider ───────────────────────────────────────────────── */
+const GoldDivider = () => (
+  <div className="flex items-center gap-4 my-6">
+    <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#D4AF37]/50" />
+    <div className="w-2 h-2 rotate-45 bg-[#D4AF37]" />
+    <div className="w-1 h-1 rotate-45 bg-[#D4AF37]/60" />
+    <div className="w-2 h-2 rotate-45 bg-[#D4AF37]" />
+    <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#D4AF37]/50" />
+  </div>
+);
+
+/* ── Section label ────────────────────────────────────────────────────── */
+const SectionLabel = ({ children }: { children: React.ReactNode }) => (
+  <p
+    className="text-[#D4AF37] text-xs font-semibold tracking-[0.25em] uppercase mb-3"
+    style={{ fontFamily: "'Montserrat', sans-serif" }}
+  >
+    {children}
+  </p>
+);
+
 /* ── Translations Dictionary ──────────────────────────────────────────── */
 type Locale = "uz" | "en" | "ru" | "ar";
 

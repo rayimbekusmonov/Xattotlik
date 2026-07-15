@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import GalleryPage from "./components/GalleryPage";
 import {
   Instagram,
   Youtube,
@@ -802,6 +803,7 @@ function useCounter(target: number, started: boolean, duration = 1800) {
 /* ══════════════════════════════════════════════════════════════════════ */
 export default function App() {
   const [locale, setLocale] = useState<Locale>("en");
+  const [currentPage, setCurrentPage] = useState<"home" | "gallery">("home");
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -965,6 +967,19 @@ export default function App() {
     { code: "ar", name: "العربية", flag: "🇦🇪" },
   ];
 
+  // If on gallery page, render the dedicated gallery (after all hooks)
+  if (currentPage === "gallery") {
+    return (
+      <GalleryPage
+        locale={locale}
+        onBack={() => {
+          setCurrentPage("home");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      />
+    );
+  }
+
   return (
     <div
       className="min-h-screen bg-background text-foreground overflow-x-hidden"
@@ -1017,10 +1032,17 @@ export default function App() {
               const id = link.toLowerCase();
               const isActive = activeSection === id;
               const translatedLabel = t.nav[id as keyof typeof t.nav];
+              const isGallery = id === "gallery";
               return (
                 <button
                   key={link}
-                  onClick={() => scrollTo(id)}
+                  onClick={() => {
+                    if (isGallery) {
+                      setCurrentPage("gallery");
+                    } else {
+                      scrollTo(id);
+                    }
+                  }}
                   role="menuitem"
                   className={`text-sm font-medium tracking-wide transition-colors duration-200 relative group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] rounded px-1 ${
                     isActive ? "text-[#D4AF37]" : "text-[#005F40] hover:text-[#D4AF37]"
@@ -1150,10 +1172,18 @@ export default function App() {
               const id = link.toLowerCase();
               const isActive = activeSection === id;
               const translatedLabel = t.nav[id as keyof typeof t.nav];
+              const isGallery = id === "gallery";
               return (
                 <button
                   key={link}
-                  onClick={() => scrollTo(id)}
+                  onClick={() => {
+                    if (isGallery) {
+                      setCurrentPage("gallery");
+                      setMenuOpen(false);
+                    } else {
+                      scrollTo(id);
+                    }
+                  }}
                   className={`text-base font-medium py-3 border-b border-[#D4AF37]/10 text-left transition-colors duration-200 focus:outline-none ${
                     isActive ? "text-[#D4AF37]" : "text-[#005F40] hover:text-[#D4AF37]"
                   }`}
@@ -1452,13 +1482,13 @@ export default function App() {
       </section>
 
       {/* ────────────────────────────────────────────────────────────────
-          5. VIRTUAL GALLERY
+          5. GALLERY PREVIEW
       ──────────────────────────────────────────────────────────────── */}
       <section id="gallery" className="py-28 bg-[#EDE8DC]/40">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div
             ref={galleryReveal.ref}
-            className={`text-center mb-20 transition-all duration-700 ${
+            className={`text-center mb-16 transition-all duration-700 ${
               galleryReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -1475,7 +1505,7 @@ export default function App() {
             </p>
           </div>
 
-          {/* 3-column masonry */}
+          {/* 3-column preview grid — first 6 items */}
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
             {galleryItems.map((item, i) => (
               <div
@@ -1484,11 +1514,11 @@ export default function App() {
                   galleryReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: `${i * 80}ms` }}
-                onClick={() => openLightbox(item)}
+                onClick={() => setCurrentPage("gallery")}
                 role="button"
                 tabIndex={0}
                 aria-label={`View ${item.title} — ${item.style}`}
-                onKeyDown={(e) => e.key === "Enter" && openLightbox(item)}
+                onKeyDown={(e) => e.key === "Enter" && setCurrentPage("gallery")}
               >
                 <div className={`${item.height} overflow-hidden bg-[#EDE8DC] relative`}>
                   <img
@@ -1497,26 +1527,18 @@ export default function App() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
-                  {/* Zoom hint icon */}
                   <div className={`absolute top-3 ${locale === "ar" ? "left-3" : "right-3"} w-8 h-8 bg-[#002A1C]/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
                     <ZoomIn className="w-4 h-4 text-[#D4AF37]" />
                   </div>
                 </div>
 
                 {/* Hover overlay */}
-                <div
-                  className="absolute inset-0 bg-[#002A1C]/85 flex flex-col items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                >
+                <div className="absolute inset-0 bg-[#002A1C]/85 flex flex-col items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="w-8 h-px bg-[#D4AF37]" />
-                  <p
-                    className="text-white text-lg text-center font-normal px-6"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
+                  <p className="text-white text-lg text-center font-normal px-6" style={{ fontFamily: "'Playfair Display', serif" }}>
                     {item.title}
                   </p>
-                  <p className="text-[#D4AF37] text-xs tracking-widest uppercase font-medium">
-                    {item.style}
-                  </p>
+                  <p className="text-[#D4AF37] text-xs tracking-widest uppercase font-medium">{item.style}</p>
                   <div className="w-8 h-px bg-[#D4AF37]" />
                   <div className="mt-2 px-6 py-2 border border-[#D4AF37]/60 text-[#D4AF37] text-xs tracking-widest uppercase font-semibold flex items-center gap-2">
                     <ZoomIn className="w-3.5 h-3.5" />
@@ -1524,12 +1546,8 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Default label */}
                 <div className="px-5 py-4 border-t border-[#D4AF37]/20">
-                  <p
-                    className="text-[#1C2B3A] font-medium text-sm"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
+                  <p className="text-[#1C2B3A] font-medium text-sm" style={{ fontFamily: "'Playfair Display', serif" }}>
                     {item.title}
                   </p>
                   <p className="text-[#D4AF37] text-xs tracking-wide font-medium mt-0.5">{item.style}</p>
@@ -1538,13 +1556,28 @@ export default function App() {
             ))}
           </div>
 
-          <div className="text-center mt-16">
+          {/* Gallery CTA */}
+          <div className="text-center mt-16 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button
+              onClick={() => setCurrentPage("gallery")}
+              className="group inline-flex items-center gap-3 px-10 py-4 bg-[#005F40] text-[#FAF9F6] text-sm font-bold tracking-widest uppercase hover:bg-[#004530] active:bg-[#003520] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] shadow-lg"
+            >
+              {locale === "ar" ? "عرض المعرض الكامل" : locale === "ru" ? "Открыть полную галерею" : locale === "uz" ? "To'liq galereyani ko'rish" : "View Full Gallery"}
+              <ChevronRight className={`w-4 h-4 transition-transform duration-200 ${locale === "ar" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`} />
+            </button>
             <button
               onClick={() => scrollTo("contact")}
               className="px-10 py-4 border border-[#005F40] text-[#005F40] text-sm font-semibold tracking-widest uppercase hover:bg-[#005F40] hover:text-white active:bg-[#004530] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#005F40]"
             >
               {t.gallery.requestViewing}
             </button>
+          </div>
+
+          {/* Photo count badge */}
+          <div className="text-center mt-6">
+            <p className="text-[#9CA3AF] text-xs tracking-[0.2em] uppercase">
+              {locale === "ar" ? "٣١ عمل فني في المعرض الكامل" : locale === "ru" ? "31 работа в полной галерее" : locale === "uz" ? "To'liq galereyada 31 ta asar" : "31 artworks in the full gallery"}
+            </p>
           </div>
         </div>
       </section>

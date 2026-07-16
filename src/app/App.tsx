@@ -27,6 +27,13 @@ import {
 
 import logoImg from "../assets/logo.JPG";
 import partnerImg from "../assets/partner.png";
+import teacher1Img from "../assets/teacher1.png";
+import teacher2Img from "../assets/teacher2.png";
+import teacher3Img from "../assets/teacher3.png";
+import teacher4Img from "../assets/teacher4.png";
+import teacher5Img from "../assets/teacher5.png";
+
+const teacherImages = [teacher1Img, teacher2Img, teacher3Img, teacher4Img, teacher5Img];
 
 /* ── Islamic 8-pointed star pattern tile ──────────────────────────────── */
 const StarTile = () => (
@@ -255,6 +262,12 @@ const translations = {
           specialty: "Nastaliq va Buxoro maktabi",
           bio: "Sharqiy miniatyura va xattotlik san'ati maktabi an'analarini davom ettiruvchi hamda qadimiy qo'lyozmalarni restavratsiya qiluvchi mohir usta.",
         },
+        {
+          name: "Ustoz Sabohat Olimova",
+          role: "Zarhal berish va miniatyura san'ati ustasi",
+          specialty: "Oltin suvi yuritish va Tabriz maktabi",
+          bio: "Tabiiy oltin pigmentlari bilan ishlash, qog'oz tayyorlash va an'anaviy miniatyura yozish bo'yicha ko'p yillik tajribaga ega mutaxassis.",
+        },
       ],
     },
   },
@@ -434,6 +447,12 @@ const translations = {
           role: "Senior Master of Central Asian Calligraphy & Manuscript Restoration",
           specialty: "Nastaliq & Bukhara School",
           bio: "Expert in the classical Nastaliq script, dedicated to restoring historical Central Asian codices and preserving Bukhara calligraphy traditions.",
+        },
+        {
+          name: "Ustad Sabohat Olimova",
+          role: "Master of Illumination & Miniature Painting",
+          specialty: "Gold Illumination & Tabriz School",
+          bio: "Expert in processing natural gold pigments, traditional paper preparation, and classic manuscript miniature painting illumination.",
         },
       ],
     },
@@ -615,6 +634,12 @@ const translations = {
           specialty: "Насталик и Бухарская школа",
           bio: "Эксперт по восточной каллиграфии, посвятивший себя восстановлению древних рукописей и сохранению традиций Бухарской школы.",
         },
+        {
+          name: "Устаз Сабохат Олимова",
+          role: "Мастер золочения и миниатюрной живописи",
+          specialty: "Сусальное золото и Тебризская школа",
+          bio: "Специалист с многолетним опытом работы с натуральными золотыми пигментами, подготовки бумаги и традиционной миниатюры.",
+        },
       ],
     },
   },
@@ -794,6 +819,12 @@ const translations = {
           role: "كبير أساتذة الخط في آسيا الوسطى وترميم المخطوطات",
           specialty: "خط التعليق ومدرسة بخارى للخطاطة",
           bio: "خبير رائد في خط التعليق (النسعليق) وترميم الدفاتر والمخطوطات التاريخية المرتبطة بتراث بخارى العريق.",
+        },
+        {
+          name: "الأستاذة صباحت أوليموفا",
+          role: "أستاذة التذهيب ورسم المنمنمات",
+          specialty: "تذهيب الكتب ومدرسة تبریز",
+          bio: "خبير متمرس في معالجة أصباغ الذهب الطبيعي وتحضير الورق التقليدي وتصميم المنمنمات الفنية الأصيلة.",
         },
       ],
     },
@@ -1883,7 +1914,7 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-md mx-auto md:max-w-none">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-md mx-auto md:max-w-none">
             {t.team.members.map((member, i) => (
               <div
                 key={member.name}
@@ -1895,15 +1926,7 @@ export default function App() {
                 {/* Photo container */}
                 <div className="relative h-72 overflow-hidden bg-[#EDE8DC]">
                   <img
-                    src={
-                      i === 0
-                        ? "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop&auto=format"
-                        : i === 1
-                        ? "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop&auto=format"
-                        : i === 2
-                        ? "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop&auto=format"
-                        : "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&auto=format"
-                    }
+                    src={teacherImages[i]}
                     alt={member.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"

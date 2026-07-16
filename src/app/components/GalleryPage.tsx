@@ -234,7 +234,7 @@ export default function GalleryPage({ locale, onBack }: GalleryPageProps) {
               {ui.backHome}
             </button>
             <button onClick={onBack} className="focus:outline-none" aria-label="Home">
-              <img src={logoImg} alt="Logo" className="w-12 h-12 object-contain rounded-full border-2 border-[#D4AF37] bg-white p-0.5 shadow"/>
+              <img src={logoImg} alt="Logo" className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-full border-2 border-[#D4AF37] bg-white p-0.5 shadow"/>
             </button>
           </div>
 

@@ -1008,17 +1008,17 @@ export default function App() {
             <img
               src={logoImg}
               alt="Official Logo"
-              className="w-14 h-14 object-contain rounded-full border-2 border-[#D4AF37] bg-white p-0.5 shadow-sm flex-shrink-0"
+              className="w-10 h-10 sm:w-14 sm:h-14 object-contain rounded-full border-2 border-[#D4AF37] bg-white p-0.5 shadow-sm flex-shrink-0"
             />
             <div className={`${locale === "ar" ? "text-right" : "text-left"}`}>
               <p
-                className="text-[#D4AF37] text-[10px] tracking-[0.2em] uppercase font-medium leading-none"
+                className="text-[#D4AF37] text-[10px] tracking-[0.2em] uppercase font-medium leading-none hidden sm:block"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 {t.brand.sub}
               </p>
               <p
-                className="text-[#005F40] text-base font-semibold leading-tight"
+                className="text-[#005F40] text-sm sm:text-base font-semibold leading-tight"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 {t.brand.title}

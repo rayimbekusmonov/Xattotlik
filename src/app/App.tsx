@@ -89,6 +89,7 @@ const translations = {
       about: "Biz haqimizda",
       gallery: "Galereya",
       courses: "Kurslar",
+      team: "Jamoamiz",
       contact: "Aloqa",
       enrol: "Hozir ro'yxatdan o'ting",
     },
@@ -225,6 +226,37 @@ const translations = {
       next: "Keyingi asar",
       navigateHint: "Navigatsiya uchun o'q tugmalaridan foydalaning",
     },
+    team: {
+      label: "Bizning ustozlar",
+      title: "Mohir xattotlar jamoasi",
+      desc: "Xattotlik san'atining eng nufuzli ustozlari va tadqiqotchilari bilan tanishing.",
+      members: [
+        {
+          name: "Shayx Hasan al-Forsiy",
+          role: "Bosh mudarrir va xattotlik direktori",
+          specialty: "Sulus va Nasx — Istanbul maktabi",
+          bio: "Klassik islom xattotligi sohasida 30 yildan ortiq tajribaga ega xalqaro miqyosdagi eng nufuzli ustozlardan biri.",
+        },
+        {
+          name: "Dr. Laylo al-Mansuriy",
+          role: "Katta o'qituvchi va islomiy geometrik san'atlar tadqiqotchisi",
+          specialty: "Kufiy geometrik — Andalusiya uslubi",
+          bio: "Tarixiy me'moriy obidalar va qo'lyozmalardagi kufiy yozuvlari hamda geometrik naqshlarni o'rganish bo'yicha yetuk olima.",
+        },
+        {
+          name: "Ustoz Karim Diab",
+          role: "Devoniy xati ustasi va Xattotlar gildiyasining bosh kotibi",
+          specialty: "Devoniy Jaliy — Qohira akademiyasi",
+          bio: "Qirollik yozuvlari va rasmiy devon hujjatlari uslublari bo'yicha ko'plab xalqaro tanlovlar g'olibi.",
+        },
+        {
+          name: "Ustoz Alisher Usmonov",
+          role: "Markaziy Osiyo xattotligi va qo'lyozmalarni restavratsiya qilish bo'yicha bosh usta",
+          specialty: "Nastaliq va Buxoro maktabi",
+          bio: "Sharqiy miniatyura va xattotlik san'ati maktabi an'analarini davom ettiruvchi hamda qadimiy qo'lyozmalarni restavratsiya qiluvchi mohir usta.",
+        },
+      ],
+    },
   },
   en: {
     brand: {
@@ -237,6 +269,7 @@ const translations = {
       about: "About",
       gallery: "Gallery",
       courses: "Courses",
+      team: "Our Team",
       contact: "Contact",
       enrol: "Enrol Now",
     },
@@ -373,6 +406,37 @@ const translations = {
       next: "Next artwork",
       navigateHint: "Use arrow keys to navigate",
     },
+    team: {
+      label: "Our Masters",
+      title: "Meet Our Faculty",
+      desc: "Connect with the distinguished calligraphers and scholars directing our preservation mission.",
+      members: [
+        {
+          name: "Sheikh Hassan Al-Farsi",
+          role: "Head Master & Calligraphy Director",
+          specialty: "Thuluth & Naskh — Istanbul School",
+          bio: "An internationally recognized master with over 30 years of teaching classical Islamic scripts worldwide.",
+        },
+        {
+          name: "Dr. Layla Al-Mansoori",
+          role: "Senior Instructor & Research Scholar of Islamic Geometric Arts",
+          specialty: "Kufic Geometric — Andalusian Style",
+          bio: "Distinguished researcher specializing in architectural epigraphy and geometric design systems in medieval manuscripts.",
+        },
+        {
+          name: "Ustad Karim Diab",
+          role: "Master of Diwani & Secretary General of the Calligraphy Guild",
+          specialty: "Diwani Jali — Cairo Academy",
+          bio: "Recipient of prestigious awards in chancellery script composition and structural calligraphy layouts.",
+        },
+        {
+          name: "Ustad Alisher Usmanov",
+          role: "Senior Master of Central Asian Calligraphy & Manuscript Restoration",
+          specialty: "Nastaliq & Bukhara School",
+          bio: "Expert in the classical Nastaliq script, dedicated to restoring historical Central Asian codices and preserving Bukhara calligraphy traditions.",
+        },
+      ],
+    },
   },
   ru: {
     brand: {
@@ -385,6 +449,7 @@ const translations = {
       about: "О нас",
       gallery: "Галерея",
       courses: "Курсы",
+      team: "Наша команда",
       contact: "Контакты",
       enrol: "Записаться",
     },
@@ -521,6 +586,37 @@ const translations = {
       next: "Следующая работа",
       navigateHint: "Используйте клавиши со стрелками для навигации",
     },
+    team: {
+      label: "Наши мастера",
+      title: "Преподавательский состав",
+      desc: "Познакомьтесь с выдающимися каллиграфами и исследователями, направляющими наше обучение.",
+      members: [
+        {
+          name: "Шейх Хасан Аль-Фарси",
+          role: "Главный мастер и директор по каллиграфии",
+          specialty: "Сулюс и Насх — Стамбульская школа",
+          bio: "Всемирно признанный мастер с более чем 30-летним опытом преподавания классических исламских шрифтов.",
+        },
+        {
+          name: "Д-р Лайла Аль-Мансури",
+          role: "Старший преподаватель и исследователь исламского геометрического искусства",
+          specialty: "Куфический геометрический — Андалузский стиль",
+          bio: "Известный исследователь в области архитектурной эпиграфики и геометрических систем в средневековых рукописях.",
+        },
+        {
+          name: "Устаз Карим Диаб",
+          role: "Мастер шрифта Дивани и генеральный секретарь Гильдии каллиграфов",
+          specialty: "Дивани Джали — Каирская академия",
+          bio: "Лауреат престижных премий в области канцелярии и структурного проектирования каллиграфических композиций.",
+        },
+        {
+          name: "Устаз Алишер Усманов",
+          role: "Старший мастер среднеазиатской каллиграфии и реставрации рукописей",
+          specialty: "Насталик и Бухарская школа",
+          bio: "Эксперт по восточной каллиграфии, посвятивший себя восстановлению древних рукописей и сохранению традиций Бухарской школы.",
+        },
+      ],
+    },
   },
   ar: {
     brand: {
@@ -533,6 +629,7 @@ const translations = {
       about: "من نحن",
       gallery: "المعرض",
       courses: "الدورات",
+      team: "فريقنا",
       contact: "اتصل بنا",
       enrol: "سجل الآن",
     },
@@ -668,6 +765,37 @@ const translations = {
       prev: "اللوحة السابقة",
       next: "اللوحة التالية",
       navigateHint: "استخدم أسهم لوحة المفاتيح للتنقل",
+    },
+    team: {
+      label: "أساتذتنا الكرام",
+      title: "أعضاء الهيئة التعليمية",
+      desc: "تعرف على كبار الخطاطين والباحثين الذين يقودون مسيرة الحفاظ على تراث الحرف العربي.",
+      members: [
+        {
+          name: "الشيخ حسن الفارسي",
+          role: "كبير المعلمين ومدير قسم الخط العربي",
+          specialty: "خطا الثلث والنسخ — مدرسة إسطنبول",
+          bio: "أستاذ خط عربي معتمد دولياً يتمتع بخبرة تزيد عن ٣٠ عاماً في تدريس الخطوط الإسلامية الكلاسيكية.",
+        },
+        {
+          name: "د. ليلى المنصوري",
+          role: "أستاذة وباحثة في الفنون الهندسية الإسلامية",
+          specialty: "الخط الكوفي الهندسي — الأسلوب الأندلسي",
+          bio: "باحثة مرموقة متخصصة في النقوش المعمارية وتصميم التراكيب الهندسية في المخطوطات القديمة.",
+        },
+        {
+          name: "الأستاذ كريم دياب",
+          role: "أستاذ الخط الديواني والأمين العام لنقابة الخطاطين",
+          specialty: "الديواني الجلي — أكاديمية القاهرة",
+          bio: "حائز على جوائز رفيعة في تركيب الخطوط الديوانية وتصميم لوحات النصوص الرسمية والمخطوطات الملكية.",
+        },
+        {
+          name: "الأستاذ علي شير عثمانوف",
+          role: "كبير أساتذة الخط في آسيا الوسطى وترميم المخطوطات",
+          specialty: "خط التعليق ومدرسة بخارى للخطاطة",
+          bio: "خبير رائد في خط التعليق (النسعليق) وترميم الدفاتر والمخطوطات التاريخية المرتبطة بتراث بخارى العريق.",
+        },
+      ],
     },
   },
 };
@@ -825,6 +953,7 @@ export default function App() {
   const aboutReveal = useScrollReveal();
   const galleryReveal = useScrollReveal();
   const coursesReveal = useScrollReveal();
+  const teamReveal = useScrollReveal();
   const statsReveal = useScrollReveal();
   const testimonialsReveal = useScrollReveal();
 
@@ -861,7 +990,7 @@ export default function App() {
 
   // Active section tracking
   useEffect(() => {
-    const sections = ["home", "about", "gallery", "courses", "contact"];
+    const sections = ["home", "about", "gallery", "courses", "team", "contact"];
     const observers: IntersectionObserver[] = [];
 
     sections.forEach((id) => {
@@ -1028,7 +1157,7 @@ export default function App() {
 
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-8" role="menubar">
-            {["Home", "About", "Gallery", "Courses", "Contact"].map((link) => {
+            {["Home", "About", "Gallery", "Courses", "Team", "Contact"].map((link) => {
               const id = link.toLowerCase();
               const isActive = activeSection === id;
               const translatedLabel = t.nav[id as keyof typeof t.nav];
@@ -1168,7 +1297,7 @@ export default function App() {
           }`}
         >
           <div className="bg-[#FAF9F6]/99 backdrop-blur-md border-t border-[#D4AF37]/20 px-6 py-6 flex flex-col gap-1">
-            {["Home", "About", "Gallery", "Courses", "Contact"].map((link) => {
+            {["Home", "About", "Gallery", "Courses", "Team", "Contact"].map((link) => {
               const id = link.toLowerCase();
               const isActive = activeSection === id;
               const translatedLabel = t.nav[id as keyof typeof t.nav];
@@ -1723,6 +1852,112 @@ export default function App() {
                   >
                     {t.courses.register}
                   </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ────────────────────────────────────────────────────────────────
+          6.5 OUR TEAM (TEACHERS)
+      ──────────────────────────────────────────────────────────────── */}
+      <section id="team" className="py-16 md:py-28 bg-[#EDE8DC]/40">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div
+            ref={teamReveal.ref}
+            className={`text-center mb-20 transition-all duration-700 ${
+              teamReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <SectionLabel>{t.team.label}</SectionLabel>
+            <h2
+              className="text-4xl lg:text-5xl text-[#1C2B3A] font-normal"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              {t.team.title}
+            </h2>
+            <GoldDivider />
+            <p className="text-[#6B7280] max-w-xl mx-auto text-[15px] leading-relaxed">
+              {t.team.desc}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-md mx-auto md:max-w-none">
+            {t.team.members.map((member, i) => (
+              <div
+                key={member.name}
+                className={`group bg-white border border-[#D4AF37]/20 flex flex-col transition-all duration-500 hover:shadow-2xl hover:border-[#D4AF37]/50 ${
+                  teamReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: `${i * 100}ms` }}
+              >
+                {/* Photo container */}
+                <div className="relative h-72 overflow-hidden bg-[#EDE8DC]">
+                  <img
+                    src={
+                      i === 0
+                        ? "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop&auto=format"
+                        : i === 1
+                        ? "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop&auto=format"
+                        : i === 2
+                        ? "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop&auto=format"
+                        : "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&auto=format"
+                    }
+                    alt={member.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  {/* Decorative Frame border inside photo */}
+                  <div className="absolute inset-3 border border-[#D4AF37]/20 pointer-events-none group-hover:border-[#D4AF37]/45 transition-colors duration-300" />
+                  
+                  {/* Overlay on hover for Socials */}
+                  <div className="absolute inset-0 bg-[#002A1C]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                    <a
+                      href="https://instagram.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37] hover:bg-[#D4AF37]/20 hover:text-white transition-all duration-200"
+                      aria-label="Instagram"
+                    >
+                      <Instagram className="w-4 h-4" />
+                    </a>
+                    <a
+                      href="mailto:calligraphy@islamicciv.uz"
+                      className="w-10 h-10 border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37] hover:bg-[#D4AF37]/20 hover:text-white transition-all duration-200"
+                      aria-label="Email"
+                    >
+                      <Mail className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Info block */}
+                <div className="p-6 flex-1 flex flex-col">
+                  {/* Specialty */}
+                  <span className="text-[#D4AF37] text-[10px] tracking-[0.15em] uppercase font-semibold mb-1">
+                    {member.specialty}
+                  </span>
+                  
+                  {/* Name */}
+                  <h3
+                    className="text-lg text-[#1C2B3A] font-normal mb-1.5"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    {member.name}
+                  </h3>
+                  
+                  {/* Position */}
+                  <p className="text-[#005F40] text-xs font-semibold tracking-wide mb-3 uppercase">
+                    {member.role}
+                  </p>
+                  
+                  <div className="w-8 h-px bg-[#D4AF37] mb-3" />
+                  
+                  {/* Bio */}
+                  <p className="text-[#6B7280] text-xs leading-relaxed flex-1">
+                    {member.bio}
+                  </p>
                 </div>
               </div>
             ))}

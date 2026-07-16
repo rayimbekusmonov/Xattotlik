@@ -1356,7 +1356,7 @@ export default function App() {
       {/* ────────────────────────────────────────────────────────────────
           4. ABOUT THE CENTER
       ──────────────────────────────────────────────────────────────── */}
-      <section id="about" className="py-28 bg-[#FAF9F6]">
+      <section id="about" className="py-16 md:py-28 bg-[#FAF9F6]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           {/* Section header */}
           <div
@@ -1386,7 +1386,7 @@ export default function App() {
                 <img
                   src="https://images.unsplash.com/photo-1486303954368-398fea0e72cd?w=800&h=900&fit=crop&auto=format"
                   alt="Master calligrapher practicing Thuluth script with a reed pen"
-                  className="w-full h-[560px] object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[320px] sm:h-[450px] lg:h-[560px] object-cover hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
                 {/* Gold border frame */}
@@ -1484,7 +1484,7 @@ export default function App() {
       {/* ────────────────────────────────────────────────────────────────
           5. GALLERY PREVIEW
       ──────────────────────────────────────────────────────────────── */}
-      <section id="gallery" className="py-28 bg-[#EDE8DC]/40">
+      <section id="gallery" className="py-16 md:py-28 bg-[#EDE8DC]/40">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div
             ref={galleryReveal.ref}
@@ -1585,7 +1585,7 @@ export default function App() {
       {/* ────────────────────────────────────────────────────────────────
           6. EDUCATIONAL PROGRAMS
       ──────────────────────────────────────────────────────────────── */}
-      <section id="courses" className="py-28 bg-[#FAF9F6]">
+      <section id="courses" className="py-16 md:py-28 bg-[#FAF9F6]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div
             ref={coursesReveal.ref}
@@ -1606,7 +1606,7 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-md mx-auto md:max-w-none">
             {courseItems.map((course, i) => (
               <div
                 key={course.level}
@@ -1733,7 +1733,7 @@ export default function App() {
       {/* ────────────────────────────────────────────────────────────────
           7. TESTIMONIALS
       ──────────────────────────────────────────────────────────────── */}
-      <section className="py-24 bg-[#003020] overflow-hidden">
+      <section className="py-16 md:py-24 bg-[#003020] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div
             ref={testimonialsReveal.ref}
@@ -1838,7 +1838,7 @@ export default function App() {
       <footer id="contact" className="bg-[#003020] text-white">
         {/* Contact row */}
         <div className="border-b border-[#D4AF37]/15">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 py-24">
+          <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 md:py-24">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               {/* Left: info + map */}
               <div>
@@ -2118,18 +2118,18 @@ export default function App() {
           {/* Prev */}
           <button
             onClick={lightboxPrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 border border-white/20 hover:border-white/40 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 border border-white/20 hover:border-white/40 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             aria-label={t.lightbox.prev}
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
           </button>
 
           {/* Image */}
-          <div className="max-w-4xl max-h-[85vh] flex flex-col items-center gap-4">
+          <div className="max-w-4xl max-h-[85vh] flex flex-col items-center gap-4 px-6 md:px-16 w-full">
             <img
               src={lightboxItem.img}
               alt={`${lightboxItem.title} — ${lightboxItem.style}`}
-              className="max-h-[70vh] max-w-full object-contain border border-[#D4AF37]/20"
+              className="max-h-[60vh] md:max-h-[70vh] max-w-full object-contain border border-[#D4AF37]/20"
             />
             <div className="text-center">
               <p
@@ -2150,10 +2150,10 @@ export default function App() {
           {/* Next */}
           <button
             onClick={lightboxNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 border border-white/20 hover:border-white/40 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 border border-white/20 hover:border-white/40 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             aria-label={t.lightbox.next}
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
 
           {/* Dots */}

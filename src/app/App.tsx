@@ -82,7 +82,7 @@ const translations = {
     brand: {
       sub: "Islom Sivilizatsiyasi Markazi",
       title: "Xattotlik Markazi",
-      full: "Islom Sivilizatsiyasi Markazi — Abu Dabi",
+      full: "Islom Sivilizatsiyasi Markazi — Toshkent",
     },
     nav: {
       home: "Bosh sahifa",
@@ -109,9 +109,9 @@ const translations = {
     about: {
       label: "Bizning tariximiz",
       title: "Markaz haqida",
-      est: "Tashkil etilgan 1989-yil — Abu Dabi",
+      est: "Tashkil etilgan 2017-yil — Toshkent",
       sub: "Muqaddas bitikning tirik arxivi",
-      p1: "1989-yilda Islom Sivilizatsiyasi Markazi homiyligida tashkil etilgan Xattotlik Markazi klassik arab va islom xattotligini o'rganish, saqlash va rivojlantirishga bag'ishlangan arab dunyosining eng nufuzli muassasalaridan biridir.",
+      p1: "2017-yilda Islom Sivilizatsiyasi Markazi homiyligida tashkil etilgan Xattotlik Markazi klassik arab va islom xattotligini o'rganish, saqlash va rivojlantirishga bag'ishlangan Markaziy Osiyodagi eng nufuzli muassasalaridan biridir.",
       p2: "Uch o'n yillik davomida biz 60 ta davlatdan 4000 dan ortiq talabalarni tayyorladik, 2000 dan ortiq tarixiy qo'lyozmalardan iborat jonli arxivni saqlab keldik va xalqaro miqyosda tan olingan mohir xattotlar jamoasini tarbiyaladik.",
       prominent: "Taniqli mohir xattotlar",
       specialties: {
@@ -196,7 +196,7 @@ const translations = {
       label: "Biz bilan bog'lanish",
       title: "Markaz bilan bog'lanish",
       address: "Manzil",
-      addressVal: "Islom Sivilizatsiyasi Markazi\nSaadiyat oroli, Abu Dabi, BAA",
+      addressVal: "Islom Sivilizatsiyasi Markazi\nQorasaroy ko'chasi, Toshkent, O'zbekiston",
       phone: "Telefon",
       email: "Elektron pochta",
       enquiryTitle: "Yangiliklar va so'rovlar",
@@ -230,7 +230,7 @@ const translations = {
     brand: {
       sub: "Center of Islamic Civilization",
       title: "Calligraphy Center",
-      full: "Center of Islamic Civilization — Abu Dhabi",
+      full: "Center of Islamic Civilization — Tashkent",
     },
     nav: {
       home: "Home",
@@ -257,9 +257,9 @@ const translations = {
     about: {
       label: "Our Story",
       title: "About The Center",
-      est: "Est. 1989 — Abu Dhabi",
+      est: "Est. 2017 — Tashkent",
       sub: "A Living Archive of Sacred Script",
-      p1: "Founded under the patronage of the Center of Islamic Civilization in 1989, our Calligraphy Center stands as one of the Arab world's foremost institutions dedicated to the study, preservation, and advancement of classical Arabic and Islamic scripts.",
+      p1: "Founded under the patronage of the Center of Islamic Civilization in 2017, our Calligraphy Center stands as one of Central Asia's foremost institutions dedicated to the study, preservation, and advancement of classical Arabic and Islamic scripts.",
       p2: "Over three decades, we have trained more than 4,000 students from 60 nations, maintained a living archive of over 2,000 historical manuscripts, and nurtured a faculty of internationally recognized master calligraphers.",
       prominent: "Prominent Master Calligraphers",
       specialties: {
@@ -344,7 +344,7 @@ const translations = {
       label: "Get In Touch",
       title: "Contact the Center",
       address: "Address",
-      addressVal: "Center of Islamic Civilization\nSaadiyat Island, Abu Dhabi, UAE",
+      addressVal: "Center of Islamic Civilization\nKarasaroy Street, Tashkent, Uzbekistan",
       phone: "Phone",
       email: "Email",
       enquiryTitle: "Newsletter & Enquiries",
@@ -378,7 +378,7 @@ const translations = {
     brand: {
       sub: "Центр исламской цивилизации",
       title: "Центр каллиграфии",
-      full: "Центр исламской цивилизации — Абу-Даби",
+      full: "Центр исламской цивилизации — Ташкент",
     },
     nav: {
       home: "Главная",
@@ -405,9 +405,9 @@ const translations = {
     about: {
       label: "Наша история",
       title: "О Центре",
-      est: "Основан в 1989 году — Абу-Даби",
+      est: "Основан в 2017 году — Ташкент",
       sub: "Живой архив священной письменности",
-      p1: "Основанный под покровительством Центра исламской цивилизации в 1989 году, наш Центр каллиграфии является одним из ведущих учреждений арабского мира, посвященных изучению, сохранению и развитию классической арабской и исламской письменности.",
+      p1: "Основанный под покровительством Центра исламской цивилизации в 2017 году, наш Центр каллиграфии является одним из ведущих учреждений Центральной Азии, посвященных изучению, сохранению и развитию классической арабской и исламской письменности.",
       p2: "За три десятилетия мы обучили более 4000 студентов из 60 стран, сохранили живой архив из более чем 2000 исторических рукописей и вырастили плеяду всемирно признанных мастеров каллиграфии.",
       prominent: "Выдающиеся мастера каллиграфии",
       specialties: {
@@ -492,7 +492,7 @@ const translations = {
       label: "Связаться с нами",
       title: "Контакты Центра",
       address: "Адрес",
-      addressVal: "Центр исламской цивилизации\nОстров Саадият, Абу-Даби, ОАЭ",
+      addressVal: "Центр исламской цивилизации\nулица Карасарай, Ташкент, Узбекистан",
       phone: "Телефон",
       email: "Электронная почта",
       enquiryTitle: "Новости и запросы",
@@ -526,7 +526,7 @@ const translations = {
     brand: {
       sub: "مركز الحضارة الإسلامية",
       title: "مركز الخط العربي",
-      full: "مركز الحضارة الإسلامية — أبوظبي",
+      full: "مركز الحضارة الإسلامية — طشقند",
     },
     nav: {
       home: "الرئيسية",
@@ -553,9 +553,9 @@ const translations = {
     about: {
       label: "قصتنا",
       title: "عن المركز",
-      est: "تأسس عام 1989 — أبوظبي",
+      est: "تأسس عام ٢٠١٧ — طشقند",
       sub: "أرشيف حي للحرف المقدس",
-      p1: "تأسس مركز الخط العربي عام 1989 تحت رعاية مركز الحضارة الإسلامية، ويعد أحد أبرز المؤسسات في العالم العربي المكرسة لدراسة الخطوط العربية والإسلامية الكلاسيكية وحفظها وتطويرها.",
+      p1: "تأسس مركز الخط العربي عام ٢٠١٧ تحت رعاية مركز الحضارة الإسلامية، ويعد أحد أبرز المؤسسات في آسيا الوسطى المكرسة لدراسة الخطوط العربية والإسلامية الكلاسيكية وحفظها وتطويرها.",
       p2: "على مدار ثلاثة عقود، قمنا بتدريب أكثر من 4000 طالب من 60 جنسية مختلفة، وحفظنا أرشيفاً حياً يضم أكثر من 2000 مخطوطة تاريخية، ونخرّج نخبة من كبار الخطاطين المعترف بهم دولياً.",
       prominent: "أبرز أساتذة الخط العربي",
       specialties: {
@@ -640,7 +640,7 @@ const translations = {
       label: "تواصل معنا",
       title: "الاتصال بالمركز",
       address: "العنوان",
-      addressVal: "مركز الحضارة الإسلامية\nجزيرة السعديات، أبوظبي، الإمارات العربية المتحدة",
+      addressVal: "مركز الحضارة الإسلامية\nشارع قره سراي، طشقند، أوزبكستان",
       phone: "الهاتف",
       email: "البريد الإلكتروني",
       enquiryTitle: "النشرة الإخبارية والاستفسارات",
@@ -726,7 +726,7 @@ const getCourses = (t: typeof translations.en) => [
     description: t.courses.beginnerDesc,
     duration: `12 ${t.locale === "ar" ? "أسبوعاً" : t.locale === "ru" ? "недель" : t.locale === "uz" ? "hafta" : "Weeks"}`,
     schedule: t.locale === "ar" ? "السبت 10:00–13:00" : t.locale === "ru" ? "Суббота 10:00–13:00" : t.locale === "uz" ? "Shanba 10:00–13:00" : "Saturdays 10:00–13:00",
-    price: t.locale === "ar" ? "٢,٤٠٠ درهم" : "AED 2,400",
+    price: t.locale === "ar" ? "٢,٥٠٠,٠٠٠ صوم" : t.locale === "ru" ? "2 500 000 сум" : t.locale === "uz" ? "2 500 000 so'm" : "2,500,000 UZS",
     icon: <PenLine className="w-7 h-7" />,
     features: [t.courses.features.kit, t.courses.features.sheets, t.courses.features.cert],
     featured: false,
@@ -737,7 +737,7 @@ const getCourses = (t: typeof translations.en) => [
     description: t.courses.intermediateDesc,
     duration: `16 ${t.locale === "ar" ? "أسبوعاً" : t.locale === "ru" ? "недель" : t.locale === "uz" ? "hafta" : "Weeks"}`,
     schedule: t.locale === "ar" ? "الأربعاء 18:00–21:00" : t.locale === "ru" ? "Среда 18:00–21:00" : t.locale === "uz" ? "Chorshanba 18:00–21:00" : "Wednesdays 18:00–21:00",
-    price: t.locale === "ar" ? "٣,٨٠٠ درهم" : "AED 3,800",
+    price: t.locale === "ar" ? "٤,٠٠٠,٠٠٠ صوم" : t.locale === "ru" ? "4 000 000 сум" : t.locale === "uz" ? "4 000 000 so'm" : "4,000,000 UZS",
     icon: <Droplet className="w-7 h-7" />,
     features: [t.courses.features.premiumKit, t.courses.features.feedback, t.courses.features.portfolio],
     featured: true,
@@ -748,7 +748,7 @@ const getCourses = (t: typeof translations.en) => [
     description: t.courses.masterDesc,
     duration: `20 ${t.locale === "ar" ? "أسبوعاً" : t.locale === "ru" ? "недель" : t.locale === "uz" ? "hafta" : "Weeks"}`,
     schedule: t.locale === "ar" ? "الجمعة 09:00–14:00" : t.locale === "ru" ? "Пятница 09:00–14:00" : t.locale === "uz" ? "Juma 09:00–14:00" : "Fridays 09:00–14:00",
-    price: t.locale === "ar" ? "٦,٢٠٠ درهم" : "AED 6,200",
+    price: t.locale === "ar" ? "٦,٥٠٠,٠٠٠ صوم" : t.locale === "ru" ? "6 500 000 сум" : t.locale === "uz" ? "6 500 000 so'm" : "6,500,000 UZS",
     icon: <Star className="w-7 h-7" />,
     features: [t.courses.features.goldKit, t.courses.features.international, t.courses.features.exhibition],
     featured: false,
@@ -1860,19 +1860,19 @@ export default function App() {
                       icon: <MapPin className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />,
                       label: t.contact.address,
                       value: t.contact.addressVal,
-                      href: "https://maps.google.com/?q=Saadiyat+Island+Abu+Dhabi",
+                      href: "https://maps.google.com/?q=Center+of+Islamic+Civilization+Tashkent",
                     },
                     {
                       icon: <Phone className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />,
                       label: t.contact.phone,
-                      value: t.locale === "ar" ? "+٩٧١ ٢ ٤٠١ ٧٠٠٠" : "+971 2 401 7000",
-                      href: "tel:+97124017000",
+                      value: t.locale === "ar" ? "+٩٩٨ ٧١ ٢٤٠ ٧٠٠٠" : "+998 71 240 7000",
+                      href: "tel:+998712407000",
                     },
                     {
                       icon: <Mail className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />,
                       label: t.contact.email,
-                      value: "calligraphy@islamicciv.ae",
-                      href: "mailto:calligraphy@islamicciv.ae",
+                      value: "calligraphy@islamicciv.uz",
+                      href: "mailto:calligraphy@islamicciv.uz",
                     },
                   ].map((item) => (
                     <a
@@ -1900,8 +1900,8 @@ export default function App() {
                 {/* Map embed */}
                 <div className="relative h-52 bg-[#002A1C] border border-[#D4AF37]/20 overflow-hidden rounded-sm">
                   <iframe
-                    title="Calligraphy Center Location — Saadiyat Island, Abu Dhabi"
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=54.40,24.53,54.45,24.56&layer=mapnik&marker=24.547,54.422"
+                    title="Calligraphy Center Location — Tashkent, Uzbekistan"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=69.22,41.32,69.26,41.35&layer=mapnik&marker=41.3352,69.2403"
                     className="w-full h-full opacity-70"
                     loading="lazy"
                   />
@@ -2043,12 +2043,12 @@ export default function App() {
 
           <p className="text-white/30 text-[11px] tracking-wide text-center">
             {t.locale === "ar"
-              ? "© ٢٠٢٤ مركز الحضارة الإسلامية — أبوظبي. جميع الحقوق محفوظة."
+              ? "© ٢٠٢٤ مركز الحضارة الإسلامية — طشقند. جميع الحقوق محفوظة."
               : t.locale === "ru"
-              ? "© 2024 Центр исламской цивилизации — Абу-Даби. Все права защищены."
+              ? "© 2024 Центр исламской цивилизации — Ташкент. Все права защищены."
               : t.locale === "uz"
-              ? "© 2024 Islom Sivilizatsiyasi Markazi — Abu Dabi. Barcha huquqlar himoyalangan."
-              : "© 2024 Center of Islamic Civilization — Abu Dhabi. All rights reserved."}
+              ? "© 2024 Islom Sivilizatsiyasi Markazi — Toshkent. Barcha huquqlar himoyalangan."
+              : "© 2024 Center of Islamic Civilization — Tashkent. All rights reserved."}
           </p>
 
           {/* Social & Partner */}
@@ -2084,7 +2084,7 @@ export default function App() {
               <Youtube className="w-4 h-4" />
             </a>
             <a
-              href="mailto:calligraphy@islamicciv.ae"
+              href="mailto:calligraphy@islamicciv.uz"
               aria-label="Email us"
               className="w-9 h-9 border border-[#D4AF37]/25 flex items-center justify-center text-[#D4AF37]/70 hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]"
             >

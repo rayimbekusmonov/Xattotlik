@@ -802,7 +802,7 @@ function useCounter(target: number, started: boolean, duration = 1800) {
 
 /* ══════════════════════════════════════════════════════════════════════ */
 export default function App() {
-  const [locale, setLocale] = useState<Locale>("en");
+  const [locale, setLocale] = useState<Locale>("uz");
   const [currentPage, setCurrentPage] = useState<"home" | "gallery">("home");
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);

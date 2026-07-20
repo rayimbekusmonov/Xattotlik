@@ -274,7 +274,7 @@ const translations = {
     },
     authorPage: {
       title: "Loyiha muallifi",
-      subtitle: "Biografiya va ijodiy yo'l",
+      subtitle: "Biografiya",
       role: "O'zbekiston Respublikasi Prezidenti, Xattotlik markazi tashabbuskori",
       family: "Oilaviy holati",
       familyVal: "Oilali, ikki qiz, bir o'g'il va olti nabirasi bor.\nRafiqasi Z.M. Mirziyoyeva — muhandis-iqtisodchi.",
@@ -480,7 +480,7 @@ const translations = {
     },
     authorPage: {
       title: "Project Author",
-      subtitle: "Biography and path of the project initiator",
+      subtitle: "Biography",
       role: "President of the Republic of Uzbekistan, Initiator of the Calligraphy Center",
       family: "Family Status",
       familyVal: "Married, has two daughters, a son, and six grandchildren.\nSpouse Z.M. Mirziyoyeva — engineer-economist by profession.",
@@ -686,7 +686,7 @@ const translations = {
     },
     authorPage: {
       title: "Автор проекта",
-      subtitle: "Биография и путь инициатора проекта",
+      subtitle: "Биография",
       role: "Президент Республики Узбекистан, инициатор Центра каллиграфии",
       family: "Семейное положение",
       familyVal: "Женат, имеет двух дочерей, сына и шесть внуков.\nСупруга З.М. Мирзиёева — инженер-экономист по специальности.",
@@ -892,7 +892,7 @@ const translations = {
     },
     authorPage: {
       title: "مؤلف المشروع",
-      subtitle: "السيرة الذاتية ومسيرة مبادر المشروع",
+      subtitle: "السيرة الذاتية",
       role: "رئيس جمهورية أوزبكستان، المبادر لمركز الخط العربي",
       family: "الحالة العائلية",
       familyVal: "متزوج ولديه ابنتان وابن وستة أحفاد.\nالزوجة ز.م. ميرزياييفا — مهندسة اقتصادية حسب التخصص.",
@@ -1359,7 +1359,7 @@ export default function App() {
 
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-8" role="menubar">
-            {["Home", "About", "Gallery", "Courses", "Team", "Author", "Contact"].map((link) => {
+            {["Home", "Author", "About", "Gallery", "Courses", "Team", "Contact"].map((link) => {
               const id = link.toLowerCase() as any;
               const isActive = currentPage === id;
               const translatedLabel = t.nav[id as keyof typeof t.nav];
@@ -1492,7 +1492,7 @@ export default function App() {
           }`}
         >
           <div className="bg-[#FAF9F6]/99 backdrop-blur-md border-t border-[#D4AF37]/20 px-6 py-6 flex flex-col gap-1">
-            {["Home", "About", "Gallery", "Courses", "Team", "Author", "Contact"].map((link) => {
+            {["Home", "Author", "About", "Gallery", "Courses", "Team", "Contact"].map((link) => {
               const id = link.toLowerCase() as any;
               const isActive = currentPage === id;
               const translatedLabel = t.nav[id as keyof typeof t.nav];

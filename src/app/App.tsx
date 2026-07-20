@@ -32,6 +32,7 @@ import teacher2Img from "../assets/teacher2.png";
 import teacher3Img from "../assets/teacher3.png";
 import teacher4Img from "../assets/teacher4.png";
 import teacher5Img from "../assets/teacher5.png";
+import ownerImg from "../assets/owner.png";
 
 const teacherImages = [teacher1Img, teacher2Img, teacher3Img, teacher4Img, teacher5Img];
 
@@ -97,6 +98,7 @@ const translations = {
       gallery: "Galereya",
       courses: "Kurslar",
       team: "Jamoamiz",
+      author: "Loyiha muallifi",
       contact: "Aloqa",
       enrol: "Hozir ro'yxatdan o'ting",
     },
@@ -270,6 +272,25 @@ const translations = {
         },
       ],
     },
+    authorPage: {
+      title: "Loyiha muallifi",
+      subtitle: "Biografiya va ijodiy yo'l",
+      role: "O'zbekiston Respublikasi Prezidenti, Xattotlik markazi tashabbuskori",
+      family: "Oilaviy holati",
+      familyVal: "Oilali, ikki qiz, bir o'g'il va olti nabirasi bor.\nRafiqasi Z.M. Mirziyoyeva — muhandis-iqtisodchi.",
+      awards: "Mukofotlari",
+      awardsVal: "«Mehnat shuhrati» va «Fidokorona xizmatlari uchun» ordenlari",
+      timeline: [
+        { year: "1957", text: "Shavkat Miromonovich Mirziyoyev 1957-yil 24-iyulda Jizzax viloyatining Zomin tumanida shifokor oilasida tug‘ilgan. Millati – o‘zbek. Oliy ma’lumotli, 1981-yili Toshkent irrigatsiya va qishloq xo‘jaligini mexanizatsiyalash muhandislari institutini tugatgan. Muhandis-mexanik mutaxassisligiga ega. Texnika fanlari nomzodi, dotsent." },
+        { year: "1981", text: "Mehnat faoliyatini 1981-yilda Toshkent irrigatsiya va qishloq xo‘jaligini mexanizatsiyalash muhandislari institutida boshlab, kichik ilmiy xodim, katta o‘qituvchi, dotsent, o‘quv ishlari bo‘yicha prorektor lavozimlarida ishladi." },
+        { year: "1990", text: "1990-yili Respublika Oliy Soveti deputatligiga saylanib, ayni vaqtda Mandat komissiyasining raisi sifatida ham faoliyat ko‘rsatdi." },
+        { year: "1992", text: "1992-yilda Toshkent shahrining Mirzo Ulug‘bek tumani hokimi lavozimiga tayinlandi. 1996-2001-yillarda Jizzax viloyati hokimi, 2001-2003-yillar mobaynida Samarqand viloyati hokimi lavozimlarida ishlab, mazkur tuman va viloyatlarni ijtimoiy-iqtisodiy jihatdan rivojlantirishga katta hissa qo‘shdi." },
+        { year: "1995-2003", text: "Ijro hokimiyatidagi faoliyati bilan bir paytda 1995-2003-yillarda O‘zbekiston Respublikasi Oliy Majlisining deputati sifatida ham mamlakatni siyosiy, ijtimoiy-iqtisodiy rivojlantirish hamda demokratik islohotlarni amalga oshirish borasidagi muhim qonun hujjatlarini ishlab chiqish va qabul qilish jarayonida faol ishtirok etib, samarali faoliyat olib bordi." },
+        { year: "2003", text: "Sh.M.Mirziyoyev 2003-yilda O‘zbekiston Respublikasining Bosh vaziri etib tasdiqlandi va ushbu lavozimga yana uch marta – 2005, 2010, 2015-yillarda Oliy Majlis palatalari tomonidan qayta tasdiqlandi.\n\nSh.M.Mirziyoyev mamlakatimiz mustaqillikka erishgan ilk yillardan boshlab O‘zbekiston Respublikasining Birinchi Prezidenti Islom Karimovning yuksak ishonchini qozonib, uning yaqin safdoshi va maslakdoshi sifatida samarali faoliyat olib bormoqda.\n\nSh.M.Mirziyoyev Hukumat boshlig‘i sifatida keng ko‘lamli ijtimoiy-iqtisodiy islohotlarni amalga oshirish, mamlakatimizni modernizatsiya qilish va yangilash, yirik va noyob loyihalarni hayotga joriy etish, xususiy mulkni ustuvor darajada rivojlantirish, iqtisodiyotda kichik biznes va xususiy tadbirkorlikning ulushini keskin oshirish hamda ularning huquqiy himoyasini yanada mustahkamlashda o‘zining yuksak salohiyati va mohir tashkilotchilik qobiliyatini namoyon etdi.\n\nMamlakat iqtisodiyotini industrial rivojlantirish, respublikaning eksport salohiyatini oshirish, agrar sohani tubdan isloh qilish, ayniqsa, fermerlik harakatini taraqqiy toptirish, qishloq xo‘jaligi mahsulotlarini chuqur qayta ishlash, respublikada oziq-ovqat xavfsizligini ta’minlash va aholini kafolatlangan va arzon mahsulotlar bilan ta’minlash ishlariga ustuvor darajada e’tibor qaratdi.\n\nYurtimizning barcha hududlarida ulkan bunyodkorlik va obodonchilik ishlarini olib borish, aholiga sifatli kommunal xizmat ko‘rsatish, respublikaning shahar va tumanlari, ayniqsa, uzoq qishloq tumanlarini kompleks rivojlantirish orqali aholining turmush va mehnat sharoitini tubdan yaxshilashga qaratilgan keng ko‘lamli va samarali tadbirlarni amalga oshirdi.\n\nSh.M.Mirziyoyevning faoliyatida sotsial-iqtisodiy masalalar bilan bir qatorda ta’lim, fan, sog‘liqni saqlash tizimlarini zamonaviy talablar asosida rivojlantirish, yoshlarning sog‘lom va barkamol bo‘lib voyaga yetishlari uchun munosib shart-sharoitlar yaratish, onalik va bolalikni kuchli muhofaza qilish ustuvor vazifa sifatida muhim o‘rin egalladi.\n\nO‘zini o‘zi boshqarishning noyob instituti bo‘lgan mahallaning nufuzi va obro‘sini yanada oshirish, shuningdek, boshqa jamoat tashkilotlarini demokratik islohotlarga keng jalb etish orqali jamiyatda ularning mavqeini mustahkamlash, milliy ma’naviy qadriyatlarni e’zozlash va izchil rivojlantirish ishlariga yuqori darajada e’tibor qaratdi.\n\nQayd etilganlar bilan bir qatorda, iqtisodiy va ijtimoiy vazifalarni amalga oshirishda xorijiy davlatlar va xalqaro tuzilmalar, shuningdek, xalqaro moliya institutlari bilan har tomonlama o‘zaro hamkorlikni kuchaytirish orqali mamlakatimizning milliy manfaatlariga va iqtisodiy rivojlanishiga xizmat qiladigan kelishuvlarga erishishda bevosita rahbarlik qildi." },
+        { year: "2016", text: "2016-yil 8-sentabr kuni O‘zbekiston Respublikasi Oliy Majlisi Qonunchilik palatasi va Senatining qo‘shma majlisida parlament palatalarining qo‘shma qaroriga muvofiq O‘zbekiston Respublikasi Prezidentining vazifa va vakolatlarini bajarish vaqtincha O‘zbekiston Respublikasi Bosh vaziri Sh.M.Mirziyoyev zimmasiga yuklandi.\n\n19-oktabr kuni Toshkentda Tadbirkorlar va ishbilarmonlar harakati — O‘zbekiston Liberal-demokratik partiyasining VIII syezdi bo‘lib o‘tdi. Unda Shavkat Miromonovich Mirziyoyev nomzodini Prezidentlikka tasdiqlash to‘g‘risidagi qaror qabul qilindi. 2016-yil 4-dekabr kuni bo'lib o'tgan Prezident saylovi yakunlari bo'yicha saylovchilarning 88,61 foiz ovozi bilan O'zbekiston Respublikasi Prezidenti etib saylandi. 2016-yil 14-dekabrda rasman o'z vazifasini bajarishga kirishdi." },
+        { year: "2021", text: "2021-yil 24-oktabr kuni Prezident Shavkat Mirziyoyev saylovchilarning 80,1 foiz ovozi bilan ikkinchi besh yillik muddatga qayta saylandi." }
+      ]
+    },
   },
   en: {
     brand: {
@@ -283,6 +304,7 @@ const translations = {
       gallery: "Gallery",
       courses: "Courses",
       team: "Our Team",
+      author: "Project Author",
       contact: "Contact",
       enrol: "Enrol Now",
     },
@@ -456,6 +478,25 @@ const translations = {
         },
       ],
     },
+    authorPage: {
+      title: "Project Author",
+      subtitle: "Biography and path of the project initiator",
+      role: "President of the Republic of Uzbekistan, Initiator of the Calligraphy Center",
+      family: "Family Status",
+      familyVal: "Married, has two daughters, a son, and six grandchildren.\nSpouse Z.M. Mirziyoyeva — engineer-economist by profession.",
+      awards: "Awards",
+      awardsVal: "Decorated with the Orders of «Mehnat Shuhrati» (Glory of Labor) and «Fidokorona Xizmatlari Uchun» (For Selfless Service).",
+      timeline: [
+        { year: "1957", text: "Shavkat Miromonovich Mirziyoyev was born on July 24, 1957 in Zaamin district of Jizzakh region in a doctor's family. Nationality - Uzbek. Higher education, in 1981 graduated from Tashkent Institute of Irrigation and Agricultural Mechanization Engineers as mechanical engineer. Candidate of Technical Sciences, Associate Professor." },
+        { year: "1981", text: "Started his career in 1981 at Tashkent Institute of Irrigation and Agricultural Mechanization Engineers, working as junior researcher, senior lecturer, associate professor, and vice-rector for academic affairs." },
+        { year: "1990", text: "Elected to the Supreme Soviet of the Republic in 1990, serving also as chairman of the Credentials Commission." },
+        { year: "1992", text: "Appointed hokim (governor) of Mirzo Ulugbek district of Tashkent in 1992. Served as hokim of Jizzakh region in 1996-2001, and hokim of Samarkand region in 2001-2003, contributing greatly to their socio-economic development." },
+        { year: "1995-2003", text: "Simultaneously served as deputy of the Oliy Majlis of the Republic of Uzbekistan in 1995-2003, actively participating in drafting and adopting key political and socio-economic legislation and democratic reforms." },
+        { year: "2003", text: "Approved as Prime Minister of the Republic of Uzbekistan in 2003, and re-approved by the Oliy Majlis in 2005, 2010, and 2015.\n\nFrom the early years of independence, won the trust of First President Islam Karimov, working effectively as his close associate.\n\nAs head of government, demonstrated high potential and organizational skills in implementing reforms, modernizing the country, and developing private property and small business.\n\nFocused on industrial growth, export potential, reforming agriculture, developing farming movement, and food security.\n\nImplemented large-scale construction, improved communal services, and comprehensively developed remote rural areas." },
+        { year: "2016", text: "On September 8, 2016, temporarily assigned the duties of the President of the Republic of Uzbekistan. Elected President on December 4, 2016 with 88.61% of votes. Assumed office on December 14, 2016." },
+        { year: "2021", text: "Re-elected President of the Republic of Uzbekistan for a second five-year term on October 24, 2021 with 80.1% of votes." }
+      ]
+    },
   },
   ru: {
     brand: {
@@ -469,6 +510,7 @@ const translations = {
       gallery: "Галерея",
       courses: "Курсы",
       team: "Наша команда",
+      author: "Автор проекта",
       contact: "Контакты",
       enrol: "Записаться",
     },
@@ -642,6 +684,25 @@ const translations = {
         },
       ],
     },
+    authorPage: {
+      title: "Автор проекта",
+      subtitle: "Биография и путь инициатора проекта",
+      role: "Президент Республики Узбекистан, инициатор Центра каллиграфии",
+      family: "Семейное положение",
+      familyVal: "Женат, имеет двух дочерей, сына и шесть внуков.\nСупруга З.М. Мирзиёева — инженер-экономист по специальности.",
+      awards: "Награды",
+      awardsVal: "Награжден орденами «Мехнат шухрати» (Слава труда) и «Фидокорона хизматлари учун» (За бескорыстную службу).",
+      timeline: [
+        { year: "1957", text: "Шавкат Миромонович Мирзиёев родился 24 июля 1957 года в Зааминском районе Джизакской области в семье врача. Нация – узбек. Высшее образование, окончил Ташкентский институт инженеров ирригации и механизации сельского хозяйства в 1981 году по специальности инженер-механик. Кандидат технических наук, доцент." },
+        { year: "1981", text: "Начал трудовую деятельность в 1981 году в Ташкентском институте инженеров ирригации и механизации сельского хозяйства, работал младшим научным сотрудником, старшим преподавателем, доцентом, проректором по учебной работе." },
+        { year: "1990", text: "В 1990 году избран депутатом Верховного Совета Республики, также работал председателем Мандатной комиссии." },
+        { year: "1992", text: "В 1992 году назначен хокимом Мирзо-Улугбекского района Ташкента. В 1996-2001 годах занимал должность хокима Джизакской области, в 2001-2003 годах — хокима Самаркандской области, внеся большой вклад в развитие этих районов и областей." },
+        { year: "1995-2003", text: "Одновременно в 1995-2003 годах являлся депутатом Олий Мажлиса Республики Узбекистан, активно участвуя в разработке и принятии важных законодательных актов по социально-экономическому развитию и демократическим реформам." },
+        { year: "2003", text: "В 2003 году утвержден Премьер-министром Республики Узбекистан и трижды (в 2005, 2010, 2015 годах) повторно утверждался палатами Олий Мажлиса.\n\nС первых лет независимости завоевал доверие Первого Президента Ислама Каримова, работая его близким соратником.\n\nВ качестве главы правительства проявил организаторские способности в проведении реформ, модернизации страны, поддержке малого бизнеса.\n\nУделял особое внимание индустриальному развитию, повышению экспортного потенциала, реформированию сельского хозяйства и обеспечению продовольственной безопасности." },
+        { year: "2016", text: "8 сентября 2016 года на совместном заседании палат Олий Мажлиса временно возложено исполнение обязанностей Президента. 4 декабря 2016 года на выборах избран Президентом Республики Узбекистан, набрав 88,61% голосов. Вступил в должность 14 декабря 2016 года." },
+        { year: "2021", text: "24 октября 2021 года переизбран Президентом Республики Узбекистан на второй пятилетний срок, набрав 80,1% голосов." }
+      ]
+    },
   },
   ar: {
     brand: {
@@ -655,6 +716,7 @@ const translations = {
       gallery: "المعرض",
       courses: "الدورات",
       team: "فريقنا",
+      author: "مؤلف المشروع",
       contact: "اتصل بنا",
       enrol: "سجل الآن",
     },
@@ -828,6 +890,25 @@ const translations = {
         },
       ],
     },
+    authorPage: {
+      title: "مؤلف المشروع",
+      subtitle: "السيرة الذاتية ومسيرة مبادر المشروع",
+      role: "رئيس جمهورية أوزبكستان، المبادر لمركز الخط العربي",
+      family: "الحالة العائلية",
+      familyVal: "متزوج ولديه ابنتان وابن وستة أحفاد.\nالزوجة ز.م. ميرزياييفا — مهندسة اقتصادية حسب التخصص.",
+      awards: "الجوائز والترشيحات",
+      awardsVal: "حائز على وسام «مجد العمل» و«الخدمة الفدائية».",
+      timeline: [
+        { year: "١٩٥٧", text: "ولد شوكت ميرومونوفيتش ميرضيايف في ٢٤ يوليو ١٩٥٧ في منطقة زامين بمحافظة جيزاخ لعائلة طبيب. الجنسية أوزبكي. نال تعليمه العالي وتخرج عام ١٩٨١ من معهد طشقند لمهندسي الري والميكنة الزراعية كمهندس ميكانيكي. حاصل على درجة مرشح العلوم التقنية، أستاذ مشارك." },
+        { year: "١٩٨١", text: "بدأ حياته المهنية في عام ١٩٨١ في معهد طشقند لمهندسي الري والميكنة الزراعية، حيث عمل كباحث مبتدئ ومحاضر أول وأستاذ مشارك ونائب رئيس المعهد للشؤون الأكاديمية." },
+        { year: "١٩٩٠", text: "انتخب عضواً في المجلس السوفيتي الأعلى للجمهورية في عام ١٩٩٠، وعمل رئيساً للجنة تفويض أوراق الاعتماد." },
+        { year: "١٩٩٢", text: "تم تعيينه حاكماً لمنطقة ميرزو أولوغبيك في طشقند عام ١٩٩٢. خدم كحاكم لمحافظة جيزاخ في الفترة ١٩٩٦-٢٠٠١، وحاكماً لمحافظة سمرقند في الفترة ٢٠٠١-٢٠٠٣، مساهماً بشكل كبير في التنمية الاجتماعية والاقتصادية لهذه المناطق." },
+        { year: "١٩٩٥-٢٠٠٣", text: "بالتزامن مع عمله التنفيذي، انتخب عضواً في المجلس الأعلى لجمهورية أوزبكستان في الفترة ١٩٩٥-٢٠٠٣، حيث شارك بفعالية في صياغة واعتماد القوانين المهمة للتنمية السياسية والاقتصادية والإصلاحات الديمقراطية." },
+        { year: "٢٠٠٣", text: "تمت الموافقة عليه كرئيس لوزراء جمهورية أوزبكستان في عام ٢٠٠٣، وأعيد تعيينه في أعوام ٢٠٠٥ و٢٠١٠ و٢٠١٥.\n\nمنذ السنوات الأولى للاستقلال، حظي بثقة الرئيس الأول إسلام كريموف، وعمل بنجاح كمساعد وصديق مقرب له.\n\nكرئيس للحكومة، أظهر كفاءة تنظيمية عالية في تنفيذ الإصلاحات الاجتماعية والاقتصادية، وتحديث البلاد، وتطوير الملكية الخاصة والمشاريع الصغيرة." },
+        { year: "٢٠١٦", text: "في ٨ سبتمبر ٢٠١٦، تم تكليفه مؤقتاً بمهام وصلاحيات رئيس الجمهورية بقرار مشترك من البرلمان. انتخب رئيساً لجمهورية أوزبكستان في ٤ ديسمبر ٢٠١٦ بنسبة ٨٨.٦١٪ من الأصوات. وتولى منصبه رسمياً في ١٤ ديسمبر ٢٠١٦." },
+        { year: "٢٠٢١", text: "أعيد انتخاب الرئيس شوكت ميرضيايف لولاية رئاسية ثانية مدتها خمس سنوات في ٢٤ أكتوبر ٢٠٢١ بنسبة ٨٠.١٪ من الأصوات." }
+      ]
+    },
   },
 };
 
@@ -959,10 +1040,111 @@ function useCounter(target: number, started: boolean, duration = 1800) {
   return count;
 }
 
+/* ── Biography Page (Loyiha muallifi) ─────────────────────────────────── */
+const AuthorBiographySection = ({ locale, t }: { locale: Locale; t: any }) => {
+  const isRtl = locale === "ar";
+  return (
+    <section className="py-16 md:py-24 bg-[#FAF9F6] text-[#1C2B3A]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        {/* Title block */}
+        <div className="text-center mb-16">
+          <SectionLabel>{locale === "ar" ? "تفاصيل" : locale === "ru" ? "Детали" : locale === "uz" ? "Tafsilotlar" : "Details"}</SectionLabel>
+          <h2
+            className="text-4xl lg:text-5xl font-normal text-[#005F40] mb-4"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            {t.authorPage.title}
+          </h2>
+          <GoldDivider />
+          <p className="text-[#6B7280] max-w-xl mx-auto text-[15px] leading-relaxed">
+            {t.authorPage.subtitle}
+          </p>
+        </div>
+
+        {/* Two-column layout */}
+        <div className="grid lg:grid-cols-3 gap-12 items-start">
+          {/* Left Column: Portrait Card */}
+          <div className="lg:col-span-1 bg-white border border-[#D4AF37]/20 p-6 shadow-md rounded-sm lg:sticky lg:top-28">
+            <div className="relative overflow-hidden bg-[#EDE8DC] mb-6">
+              <img
+                src={ownerImg}
+                alt={t.authorPage.title}
+                className="w-full h-auto object-cover border border-[#D4AF37]/35 p-1 bg-white hover:scale-[1.02] transition-transform duration-500"
+              />
+              <div className="absolute inset-4 border border-[#D4AF37]/20 pointer-events-none" />
+              <div className="absolute inset-3 border border-[#D4AF37]/10 pointer-events-none" />
+            </div>
+            <h3
+              className="text-2xl font-normal text-[#005F40] mb-1"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Shavkat Mirziyoyev
+            </h3>
+            <p className="text-xs text-[#D4AF37] tracking-[0.15em] uppercase font-semibold mb-4">
+              {t.authorPage.role}
+            </p>
+            <div className="w-full h-px bg-[#D4AF37]/15 mb-4" />
+
+            {/* Additional details */}
+            <div className="space-y-4 text-xs leading-relaxed">
+              <div>
+                <span className="font-semibold text-[#005F40] block mb-1 uppercase tracking-widest">
+                  {t.authorPage.family}
+                </span>
+                <p className="text-[#6B7280] whitespace-pre-line">
+                  {t.authorPage.familyVal}
+                </p>
+              </div>
+              <div>
+                <span className="font-semibold text-[#005F40] block mb-1 uppercase tracking-widest">
+                  {t.authorPage.awards}
+                </span>
+                <p className="text-[#6B7280]">
+                  {t.authorPage.awardsVal}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Interactive vertical timeline */}
+          <div className={`lg:col-span-2 relative ${isRtl ? "pr-8 sm:pr-12 border-r" : "pl-8 sm:pl-12 border-l"} border-[#D4AF37]/35 space-y-10 py-2`}>
+            {t.authorPage.timeline.map((item: any, index: number) => (
+              <div key={index} className="relative group">
+                {/* Timeline node dot */}
+                <div
+                  className={`absolute ${
+                    isRtl ? "-right-[41px] sm:-right-[57px]" : "-left-[41px] sm:-left-[57px]"
+                  } top-2 w-6 h-6 rounded-full bg-[#FAF9F6] border-2 border-[#D4AF37] flex items-center justify-center group-hover:bg-[#D4AF37] group-hover:scale-110 transition-all duration-300`}
+                >
+                  <div className="w-2 h-2 rotate-45 bg-[#D4AF37] group-hover:bg-white transition-colors duration-200" />
+                </div>
+
+                {/* Timeline card */}
+                <div className="bg-white border border-[#D4AF37]/15 hover:border-[#D4AF37]/45 p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 rounded-sm">
+                  <span className="inline-block text-lg font-bold text-[#D4AF37] tracking-[0.1em] mb-3 border-b border-[#D4AF37]/30 pb-0.5">
+                    {item.year}
+                  </span>
+                  <p className="text-[#4A5568] text-[14px] leading-relaxed whitespace-pre-line">
+                    {item.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 /* ══════════════════════════════════════════════════════════════════════ */
 export default function App() {
   const [locale, setLocale] = useState<Locale>("uz");
-  const [currentPage, setCurrentPage] = useState<"home" | "gallery">("home");
+  const [currentPage, setCurrentPage] = useState<"home" | "about" | "gallery" | "courses" | "team" | "author" | "contact">("home");
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -1127,18 +1309,7 @@ export default function App() {
     { code: "ar", name: "العربية", flag: "🇦🇪" },
   ];
 
-  // If on gallery page, render the dedicated gallery (after all hooks)
-  if (currentPage === "gallery") {
-    return (
-      <GalleryPage
-        locale={locale}
-        onBack={() => {
-          setCurrentPage("home");
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
-      />
-    );
-  }
+
 
   return (
     <div
@@ -1161,7 +1332,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
           {/* Brand */}
           <button
-            onClick={() => scrollTo("home")}
+            onClick={() => setCurrentPage("home")}
             className="flex items-center gap-3 flex-shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] rounded text-left"
             aria-label="Go to homepage"
           >
@@ -1188,21 +1359,14 @@ export default function App() {
 
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-8" role="menubar">
-            {["Home", "About", "Gallery", "Courses", "Team", "Contact"].map((link) => {
-              const id = link.toLowerCase();
-              const isActive = activeSection === id;
+            {["Home", "About", "Gallery", "Courses", "Team", "Author", "Contact"].map((link) => {
+              const id = link.toLowerCase() as any;
+              const isActive = currentPage === id;
               const translatedLabel = t.nav[id as keyof typeof t.nav];
-              const isGallery = id === "gallery";
               return (
                 <button
                   key={link}
-                  onClick={() => {
-                    if (isGallery) {
-                      setCurrentPage("gallery");
-                    } else {
-                      scrollTo(id);
-                    }
-                  }}
+                  onClick={() => setCurrentPage(id)}
                   role="menuitem"
                   className={`text-sm font-medium tracking-wide transition-colors duration-200 relative group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] rounded px-1 ${
                     isActive ? "text-[#D4AF37]" : "text-[#005F40] hover:text-[#D4AF37]"
@@ -1263,7 +1427,7 @@ export default function App() {
             </div>
 
             <button
-              onClick={() => scrollTo("courses")}
+              onClick={() => setCurrentPage("courses")}
               className="px-6 py-2.5 bg-[#005F40] text-[#FAF9F6] text-sm font-semibold tracking-wide rounded-sm hover:bg-[#004530] active:bg-[#003520] transition-all duration-200 border border-[#005F40] hover:border-[#004530] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]"
             >
               {t.nav.enrol}
@@ -1328,21 +1492,16 @@ export default function App() {
           }`}
         >
           <div className="bg-[#FAF9F6]/99 backdrop-blur-md border-t border-[#D4AF37]/20 px-6 py-6 flex flex-col gap-1">
-            {["Home", "About", "Gallery", "Courses", "Team", "Contact"].map((link) => {
-              const id = link.toLowerCase();
-              const isActive = activeSection === id;
+            {["Home", "About", "Gallery", "Courses", "Team", "Author", "Contact"].map((link) => {
+              const id = link.toLowerCase() as any;
+              const isActive = currentPage === id;
               const translatedLabel = t.nav[id as keyof typeof t.nav];
-              const isGallery = id === "gallery";
               return (
                 <button
                   key={link}
                   onClick={() => {
-                    if (isGallery) {
-                      setCurrentPage("gallery");
-                      setMenuOpen(false);
-                    } else {
-                      scrollTo(id);
-                    }
+                    setCurrentPage(id);
+                    setMenuOpen(false);
                   }}
                   className={`text-base font-medium py-3 border-b border-[#D4AF37]/10 text-left transition-colors duration-200 focus:outline-none ${
                     isActive ? "text-[#D4AF37]" : "text-[#005F40] hover:text-[#D4AF37]"
@@ -1354,7 +1513,10 @@ export default function App() {
               );
             })}
             <button
-              onClick={() => scrollTo("courses")}
+              onClick={() => {
+                setCurrentPage("courses");
+                setMenuOpen(false);
+              }}
               className="mt-3 px-6 py-3 bg-[#005F40] text-[#FAF9F6] text-sm font-semibold text-center tracking-wide rounded-sm hover:bg-[#004530] transition-colors duration-200"
             >
               {t.nav.enrol}
@@ -1363,14 +1525,17 @@ export default function App() {
         </div>
       </nav>
 
-      {/* ────────────────────────────────────────────────────────────────
-          2. HERO SECTION
-      ──────────────────────────────────────────────────────────────── */}
-      <section
-        id="home"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#003828]"
-        aria-label="Hero"
-      >
+      <main className="pt-20">
+        {currentPage === "home" && (
+          <>
+            {/* ────────────────────────────────────────────────────────────────
+                2. HERO SECTION
+            ──────────────────────────────────────────────────────────────── */}
+            <section
+              id="home"
+              className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#003828]"
+              aria-label="Hero"
+            >
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -1450,14 +1615,14 @@ export default function App() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-[fadeInUp_0.8s_ease_1s_both]">
             <button
-              onClick={() => scrollTo("gallery")}
+              onClick={() => setCurrentPage("gallery")}
               className="group inline-flex items-center gap-3 px-10 py-4 bg-[#D4AF37] text-[#1C2B3A] text-sm font-bold tracking-widest uppercase hover:bg-[#C49D2A] active:bg-[#B08D22] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               {t.hero.discover}
               <ArrowRight className={`w-4 h-4 transition-transform duration-300 ${locale === "ar" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`} />
             </button>
             <button
-              onClick={() => scrollTo("about")}
+              onClick={() => setCurrentPage("about")}
               className="inline-flex items-center gap-3 px-10 py-4 border border-[#D4AF37]/50 text-[#FAF9F6] text-sm font-medium tracking-widest uppercase hover:bg-white/10 hover:border-[#D4AF37]/80 active:bg-white/20 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               {t.hero.learnMore}
@@ -1467,7 +1632,7 @@ export default function App() {
 
         {/* Scroll cue */}
         <button
-          onClick={() => scrollTo("about")}
+          onClick={() => setCurrentPage("about")}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition-opacity duration-300 focus:outline-none group"
           aria-label="Scroll down"
         >
@@ -1512,11 +1677,14 @@ export default function App() {
           </div>
         </div>
       </div>
+      </>
+      )}
 
       {/* ────────────────────────────────────────────────────────────────
           4. ABOUT THE CENTER
       ──────────────────────────────────────────────────────────────── */}
-      <section id="about" className="py-16 md:py-28 bg-[#FAF9F6]">
+      {currentPage === "about" && (
+        <section id="about" className="py-16 md:py-28 bg-[#FAF9F6]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           {/* Section header */}
           <div
@@ -1640,11 +1808,21 @@ export default function App() {
           </div>
         </div>
       </section>
+      )}
+
+      {currentPage === "gallery" && (
+        <GalleryPage
+          locale={locale}
+          onBack={() => setCurrentPage("home")}
+          hideHeader={true}
+        />
+      )}
 
       {/* ────────────────────────────────────────────────────────────────
           5. GALLERY PREVIEW
       ──────────────────────────────────────────────────────────────── */}
-      <section id="gallery" className="py-16 md:py-28 bg-[#EDE8DC]/40">
+      {"gallery_preview" === currentPage && (
+        <section id="gallery" className="py-16 md:py-28 bg-[#EDE8DC]/40">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div
             ref={galleryReveal.ref}
@@ -1726,7 +1904,7 @@ export default function App() {
               <ChevronRight className={`w-4 h-4 transition-transform duration-200 ${locale === "ar" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`} />
             </button>
             <button
-              onClick={() => scrollTo("contact")}
+              onClick={() => setCurrentPage("contact")}
               className="px-10 py-4 border border-[#005F40] text-[#005F40] text-sm font-semibold tracking-widest uppercase hover:bg-[#005F40] hover:text-white active:bg-[#004530] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#005F40]"
             >
               {t.gallery.requestViewing}
@@ -1741,11 +1919,13 @@ export default function App() {
           </div>
         </div>
       </section>
+      )}
 
       {/* ────────────────────────────────────────────────────────────────
           6. EDUCATIONAL PROGRAMS
       ──────────────────────────────────────────────────────────────── */}
-      <section id="courses" className="py-16 md:py-28 bg-[#FAF9F6]">
+      {currentPage === "courses" && (
+        <section id="courses" className="py-16 md:py-28 bg-[#FAF9F6]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div
             ref={coursesReveal.ref}
@@ -1874,7 +2054,7 @@ export default function App() {
                     </span>
                   </div>
                   <button
-                    onClick={() => scrollTo("contact")}
+                    onClick={() => setCurrentPage("contact")}
                     className={`w-full py-3.5 text-sm font-bold tracking-widest uppercase transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
                       course.featured
                         ? "bg-[#D4AF37] text-[#1C2B3A] hover:bg-[#C49D2A] active:bg-[#B08D22] focus-visible:ring-[#D4AF37]"
@@ -1889,11 +2069,13 @@ export default function App() {
           </div>
         </div>
       </section>
+      )}
 
       {/* ────────────────────────────────────────────────────────────────
           6.5 OUR TEAM (TEACHERS)
       ──────────────────────────────────────────────────────────────── */}
-      <section id="team" className="py-16 md:py-28 bg-[#EDE8DC]/40">
+      {currentPage === "team" && (
+        <section id="team" className="py-16 md:py-28 bg-[#EDE8DC]/40">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div
             ref={teamReveal.ref}
@@ -1987,11 +2169,13 @@ export default function App() {
           </div>
         </div>
       </section>
+      )}
 
       {/* ────────────────────────────────────────────────────────────────
           7. TESTIMONIALS
       ──────────────────────────────────────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-[#003020] overflow-hidden">
+      {currentPage === "home" && (
+        <section className="py-16 md:py-24 bg-[#003020] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div
             ref={testimonialsReveal.ref}
@@ -2089,13 +2273,17 @@ export default function App() {
           </div>
         </div>
       </section>
+      )}
+
+      {currentPage === "author" && (
+        <AuthorBiographySection locale={locale} t={t} />
+      )}
 
       {/* ────────────────────────────────────────────────────────────────
           8. CONTACT & FOOTER
       ──────────────────────────────────────────────────────────────── */}
-      <footer id="contact" className="bg-[#003020] text-white">
-        {/* Contact row */}
-        <div className="border-b border-[#D4AF37]/15">
+      {currentPage === "contact" && (
+        <section className="bg-[#003020] text-white border-b border-[#D4AF37]/15">
           <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 md:py-24">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               {/* Left: info + map */}
@@ -2118,7 +2306,7 @@ export default function App() {
                       icon: <MapPin className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />,
                       label: t.contact.address,
                       value: t.contact.addressVal,
-                      href: "https://maps.google.com/?q=Center+of+Islamic+Civilization+Tashkent",
+                      href: "https://maps.google.com/?q=41.33384192698365,69.24160998403887",
                     },
                     {
                       icon: <Phone className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />,
@@ -2159,9 +2347,12 @@ export default function App() {
                 <div className="relative h-52 bg-[#002A1C] border border-[#D4AF37]/20 overflow-hidden rounded-sm">
                   <iframe
                     title="Calligraphy Center Location — Tashkent, Uzbekistan"
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=69.22,41.32,69.26,41.35&layer=mapnik&marker=41.3352,69.2403"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d471.81746402014136!2d69.24160998403887!3d41.33384192698365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sru!2s!4v1784544955793!5m2!1sru!2s"
                     className="w-full h-full opacity-70"
+                    style={{ border: 0 }}
+                    allowFullScreen
                     loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
                   />
                   <div className="absolute inset-0 border border-[#D4AF37]/20 pointer-events-none" />
                 </div>
@@ -2279,13 +2470,15 @@ export default function App() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
+      )}
+      </main>
 
-        {/* Footer bottom bar */}
+      <footer className="bg-[#003020] text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand */}
           <button
-            onClick={() => scrollTo("home")}
+            onClick={() => setCurrentPage("home")}
             className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] rounded"
           >
             <img

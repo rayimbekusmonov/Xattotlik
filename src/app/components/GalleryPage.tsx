@@ -51,6 +51,7 @@ type Locale = "uz" | "en" | "ru" | "ar";
 interface GalleryPageProps {
   locale: Locale;
   onBack: () => void;
+  hideHeader?: boolean;
 }
 
 type Category = "all" | "thuluth" | "naskh" | "kufic" | "diwani" | "tughra" | "ruqah";
@@ -145,7 +146,7 @@ const GoldDivider = () => (
 );
 
 /* ══════════════════════════════════════════════════════════════════════════ */
-export default function GalleryPage({ locale, onBack }: GalleryPageProps) {
+export default function GalleryPage({ locale, onBack, hideHeader }: GalleryPageProps) {
   const ui = uiText[locale];
   const isRtl = locale === "ar";
 
@@ -209,7 +210,8 @@ export default function GalleryPage({ locale, onBack }: GalleryPageProps) {
       dir={isRtl ? "rtl" : "ltr"}
     >
       {/* ── Header ──────────────────────────────────────────────────────── */}
-      <header className="relative bg-[#002A1C] overflow-hidden">
+      {!hideHeader && (
+        <header className="relative bg-[#002A1C] overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.07]"
           style={{
@@ -276,7 +278,8 @@ export default function GalleryPage({ locale, onBack }: GalleryPageProps) {
             <circle cx="210" cy="5" r="1.5" fill="#D4AF37" fillOpacity="0.35"/>
           </svg>
         </div>
-      </header>
+        </header>
+      )}
 
       {/* ── Sticky Filter Bar ─────────────────────────────────────────────── */}
       <div className="sticky top-0 z-30 bg-[#FAF9F6]/96 backdrop-blur-md border-b border-[#D4AF37]/20 shadow-sm">

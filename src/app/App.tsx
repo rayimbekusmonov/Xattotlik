@@ -1089,14 +1089,6 @@ const AuthorBiographySection = ({ locale, t }: { locale: Locale; t: any }) => {
             <div className="space-y-4 text-xs leading-relaxed">
               <div>
                 <span className="font-semibold text-[#005F40] block mb-1 uppercase tracking-widest">
-                  {t.authorPage.family}
-                </span>
-                <p className="text-[#6B7280] whitespace-pre-line">
-                  {t.authorPage.familyVal}
-                </p>
-              </div>
-              <div>
-                <span className="font-semibold text-[#005F40] block mb-1 uppercase tracking-widest">
                   {t.authorPage.awards}
                 </span>
                 <p className="text-[#6B7280]">
@@ -1388,19 +1380,16 @@ export default function App() {
             <div className="relative" ref={langDropdownRef}>
               <button
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="flex items-center gap-2 px-3 py-1.5 border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 rounded text-[#005F40] text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]"
+                className="flex items-center justify-center w-10 h-10 border border-[#D4AF37]/45 hover:border-[#D4AF37] rounded-full text-[#005F40] text-xs font-bold transition-all duration-200 focus:outline-none shadow-sm bg-white"
                 aria-label="Switch language"
                 aria-expanded={langMenuOpen}
               >
-                <Globe className="w-4 h-4 text-[#D4AF37]" />
-                <span>{languages.find((l) => l.code === locale)?.flag}</span>
-                <span className="hidden xl:inline">{languages.find((l) => l.code === locale)?.name}</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-250 ${langMenuOpen ? "rotate-180" : ""}`} />
+                {locale.toUpperCase()}
               </button>
 
               {langMenuOpen && (
                 <div
-                  className={`absolute ${locale === "ar" ? "left-0" : "right-0"} mt-2 w-40 bg-white border border-[#D4AF37]/25 shadow-xl rounded-sm py-1.5 z-[60]`}
+                  className={`absolute ${locale === "ar" ? "left-0" : "right-0"} mt-2 w-16 bg-white border border-[#D4AF37]/25 shadow-xl rounded-sm py-1 z-[60]`}
                   role="menu"
                 >
                   {languages.map((lang) => (
@@ -1411,15 +1400,13 @@ export default function App() {
                         setLangMenuOpen(false);
                       }}
                       role="menuitem"
-                      className={`w-full px-4 py-2 text-sm text-left flex items-center gap-3 transition-colors ${
+                      className={`w-full py-2 text-center text-xs font-bold transition-colors ${
                         locale === lang.code
-                          ? "bg-[#005F40]/10 text-[#005F40] font-semibold"
-                          : "text-foreground hover:bg-[#FAF9F6]"
+                          ? "bg-[#005F40] text-white"
+                          : "text-[#005F40] hover:bg-[#005F40]/10"
                       }`}
-                      style={{ textAlign: locale === "ar" ? "right" : "left" }}
                     >
-                      <span>{lang.flag}</span>
-                      <span>{lang.name}</span>
+                      {lang.code.toUpperCase()}
                     </button>
                   ))}
                 </div>
@@ -1440,14 +1427,14 @@ export default function App() {
             <div className="relative" ref={mobileLangDropdownRef}>
               <button
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="flex items-center justify-center w-9 h-9 border border-[#D4AF37]/30 rounded text-[#005F40] transition-colors focus:outline-none"
+                className="flex items-center justify-center w-9 h-9 border border-[#D4AF37]/45 rounded-full text-[#005F40] text-xs font-bold transition-colors focus:outline-none bg-white shadow-sm"
                 aria-label="Switch language"
               >
-                <Globe className="w-4 h-4 text-[#D4AF37]" />
+                {locale.toUpperCase()}
               </button>
               {langMenuOpen && (
                 <div
-                  className={`absolute ${locale === "ar" ? "left-0" : "right-0"} mt-2 w-32 bg-white border border-[#D4AF37]/25 shadow-lg rounded-sm py-1 z-[60]`}
+                  className={`absolute ${locale === "ar" ? "left-0" : "right-0"} mt-2 w-14 bg-white border border-[#D4AF37]/25 shadow-lg rounded-sm py-1 z-[60]`}
                 >
                   {languages.map((lang) => (
                     <button
@@ -1456,13 +1443,11 @@ export default function App() {
                         setLocale(lang.code);
                         setLangMenuOpen(false);
                       }}
-                      className={`w-full px-3 py-2 text-xs text-left flex items-center gap-2 ${
-                        locale === lang.code ? "bg-[#005F40]/10 text-[#005F40]" : "text-foreground"
+                      className={`w-full py-2 text-center text-xs font-bold ${
+                        locale === lang.code ? "bg-[#005F40] text-white" : "text-[#005F40]"
                       }`}
-                      style={{ textAlign: locale === "ar" ? "right" : "left" }}
                     >
-                      <span>{lang.flag}</span>
-                      <span>{lang.name}</span>
+                      {lang.code.toUpperCase()}
                     </button>
                   ))}
                 </div>

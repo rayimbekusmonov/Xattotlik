@@ -1332,6 +1332,83 @@ const AuthorBiographySection = ({ locale, t }: { locale: Locale; t: any }) => {
   );
 };
 
+/* ── SVG Flag Icons (Cross-Platform & Windows Compatible) ───────────────── */
+const FlagUZ = ({ className = "w-5 h-3.5" }: { className?: string }) => (
+  <svg viewBox="0 0 500 250" className={`inline-block rounded-[2px] shadow-sm flex-shrink-0 ${className}`} xmlns="http://www.w3.org/2000/svg">
+    <rect width="500" height="250" fill="#1eb53a" />
+    <rect width="500" height="166.7" fill="#fff" />
+    <rect width="500" height="83.3" fill="#0099b5" />
+    <rect y="80.3" width="500" height="6" fill="#d52b1e" />
+    <rect y="163.7" width="500" height="6" fill="#d52b1e" />
+    <circle cx="70" cy="41.6" r="22" fill="#fff" />
+    <circle cx="78" cy="41.6" r="19" fill="#0099b5" />
+    <g fill="#fff">
+      <circle cx="115" cy="22" r="3" />
+      <circle cx="130" cy="22" r="3" />
+      <circle cx="145" cy="22" r="3" />
+      <circle cx="100" cy="41" r="3" />
+      <circle cx="115" cy="41" r="3" />
+      <circle cx="130" cy="41" r="3" />
+      <circle cx="145" cy="41" r="3" />
+      <circle cx="85" cy="60" r="3" />
+      <circle cx="100" cy="60" r="3" />
+      <circle cx="115" cy="60" r="3" />
+      <circle cx="130" cy="60" r="3" />
+      <circle cx="145" cy="60" r="3" />
+    </g>
+  </svg>
+);
+
+const FlagGB = ({ className = "w-5 h-3.5" }: { className?: string }) => (
+  <svg viewBox="0 0 60 30" className={`inline-block rounded-[2px] shadow-sm flex-shrink-0 ${className}`} xmlns="http://www.w3.org/2000/svg">
+    <clipPath id="gb-s">
+      <path d="M0 0v30h60V0z"/>
+    </clipPath>
+    <clipPath id="gb-t">
+      <path d="M30 15h30v15zM0 0h30v15zM30 0h30v15zM0 15h30v15z"/>
+    </clipPath>
+    <g clipPath="url(#gb-s)">
+      <path d="M0 0v30h60V0z" fill="#012169"/>
+      <path d="M0 0l60 30M60 0L0 30" stroke="#fff" strokeWidth="6"/>
+      <path d="M0 0l60 30M60 0L0 30" clipPath="url(#gb-t)" stroke="#C8102E" strokeWidth="4"/>
+      <path d="M30 0v30M0 15h60" stroke="#fff" strokeWidth="10"/>
+      <path d="M30 0v30M0 15h60" stroke="#C8102E" strokeWidth="6"/>
+    </g>
+  </svg>
+);
+
+const FlagRU = ({ className = "w-5 h-3.5" }: { className?: string }) => (
+  <svg viewBox="0 0 9 6" className={`inline-block rounded-[2px] shadow-sm flex-shrink-0 ${className}`} xmlns="http://www.w3.org/2000/svg">
+    <rect fill="#fff" width="9" height="6"/>
+    <rect fill="#0039a6" y="2" width="9" height="4"/>
+    <rect fill="#d52b1e" y="4" width="9" height="2"/>
+  </svg>
+);
+
+const FlagAE = ({ className = "w-5 h-3.5" }: { className?: string }) => (
+  <svg viewBox="0 0 12 6" className={`inline-block rounded-[2px] shadow-sm flex-shrink-0 ${className}`} xmlns="http://www.w3.org/2000/svg">
+    <rect fill="#00732f" width="12" height="2"/>
+    <rect fill="#fff" y="2" width="12" height="2"/>
+    <rect fill="#000" y="4" width="12" height="2"/>
+    <rect fill="#ff0000" width="3" height="6"/>
+  </svg>
+);
+
+const FlagIcon = ({ code, className = "w-5 h-3.5" }: { code: Locale; className?: string }) => {
+  switch (code) {
+    case "uz":
+      return <FlagUZ className={className} />;
+    case "en":
+      return <FlagGB className={className} />;
+    case "ru":
+      return <FlagRU className={className} />;
+    case "ar":
+      return <FlagAE className={className} />;
+    default:
+      return null;
+  }
+};
+
 const escapeHtml = (str: string) =>
   (str || "")
     .replace(/&/g, "&amp;")
@@ -1592,11 +1669,11 @@ export default function App() {
     setFormData({ name: "", email: "", message: "" });
   };
 
-  const languages: { code: Locale; name: string; flag: string }[] = [
-    { code: "en", name: "English", flag: "🇬🇧" },
-    { code: "uz", name: "O'zbek", flag: "🇺🇿" },
-    { code: "ru", name: "Русский", flag: "🇷🇺" },
-    { code: "ar", name: "العربية", flag: "🇦🇪" },
+  const languages: { code: Locale; name: string }[] = [
+    { code: "uz", name: "O'zbek" },
+    { code: "en", name: "English" },
+    { code: "ru", name: "Русский" },
+    { code: "ar", name: "العربية" },
   ];
 
 
@@ -1678,16 +1755,18 @@ export default function App() {
             <div className="relative" ref={langDropdownRef}>
               <button
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="flex items-center justify-center w-10 h-10 border border-[#D4AF37]/45 hover:border-[#D4AF37] rounded-full text-[#005F40] text-xs font-bold transition-all duration-200 focus:outline-none shadow-sm bg-white"
+                className="flex items-center gap-2 px-3 py-1.5 border border-[#D4AF37]/45 hover:border-[#D4AF37] rounded-full text-[#005F40] text-xs font-bold transition-all duration-200 focus:outline-none shadow-sm bg-white cursor-pointer"
                 aria-label="Switch language"
                 aria-expanded={langMenuOpen}
               >
-                {locale.toUpperCase()}
+                <FlagIcon code={locale} className="w-5 h-3.5" />
+                <span>{locale.toUpperCase()}</span>
+                <ChevronDown className={`w-3.5 h-3.5 text-[#005F40] transition-transform duration-200 ${langMenuOpen ? "rotate-180" : ""}`} />
               </button>
 
               {langMenuOpen && (
                 <div
-                  className={`absolute ${locale === "ar" ? "left-0" : "right-0"} mt-2 w-16 bg-white border border-[#D4AF37]/25 shadow-xl rounded-sm py-1 z-[60]`}
+                  className={`absolute ${locale === "ar" ? "left-0" : "right-0"} mt-2 w-36 bg-white border border-[#D4AF37]/30 shadow-xl rounded-md py-1.5 z-[60]`}
                   role="menu"
                 >
                   {languages.map((lang) => (
@@ -1698,13 +1777,14 @@ export default function App() {
                         setLangMenuOpen(false);
                       }}
                       role="menuitem"
-                      className={`w-full py-2 text-center text-xs font-bold transition-colors ${
+                      className={`w-full px-3 py-2 flex items-center gap-2.5 text-xs font-semibold transition-colors cursor-pointer ${
                         locale === lang.code
                           ? "bg-[#005F40] text-white"
-                          : "text-[#005F40] hover:bg-[#005F40]/10"
+                          : "text-[#1C2B3A] hover:bg-[#005F40]/10 hover:text-[#005F40]"
                       }`}
                     >
-                      {lang.code.toUpperCase()}
+                      <FlagIcon code={lang.code} className="w-5 h-3.5" />
+                      <span>{lang.name}</span>
                     </button>
                   ))}
                 </div>
@@ -1721,18 +1801,20 @@ export default function App() {
 
           {/* Mobile toggle */}
           <div className="flex items-center gap-3 lg:hidden">
-            {/* Mobile Language Button (simple switcher) */}
+            {/* Mobile Language Button */}
             <div className="relative" ref={mobileLangDropdownRef}>
               <button
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="flex items-center justify-center w-9 h-9 border border-[#D4AF37]/45 rounded-full text-[#005F40] text-xs font-bold transition-colors focus:outline-none bg-white shadow-sm"
+                className="flex items-center gap-1.5 px-2.5 py-1.5 border border-[#D4AF37]/45 rounded-full text-[#005F40] text-xs font-bold transition-colors focus:outline-none bg-white shadow-sm cursor-pointer"
                 aria-label="Switch language"
               >
-                {locale.toUpperCase()}
+                <FlagIcon code={locale} className="w-5 h-3.5" />
+                <span>{locale.toUpperCase()}</span>
+                <ChevronDown className={`w-3 h-3 text-[#005F40] transition-transform duration-200 ${langMenuOpen ? "rotate-180" : ""}`} />
               </button>
               {langMenuOpen && (
                 <div
-                  className={`absolute ${locale === "ar" ? "left-0" : "right-0"} mt-2 w-14 bg-white border border-[#D4AF37]/25 shadow-lg rounded-sm py-1 z-[60]`}
+                  className={`absolute ${locale === "ar" ? "left-0" : "right-0"} mt-2 w-32 bg-white border border-[#D4AF37]/30 shadow-lg rounded-md py-1 z-[60]`}
                 >
                   {languages.map((lang) => (
                     <button
@@ -1741,11 +1823,12 @@ export default function App() {
                         setLocale(lang.code);
                         setLangMenuOpen(false);
                       }}
-                      className={`w-full py-2 text-center text-xs font-bold ${
-                        locale === lang.code ? "bg-[#005F40] text-white" : "text-[#005F40]"
+                      className={`w-full px-3 py-2 flex items-center gap-2 text-xs font-bold cursor-pointer ${
+                        locale === lang.code ? "bg-[#005F40] text-white" : "text-[#005F40] hover:bg-[#005F40]/10"
                       }`}
                     >
-                      {lang.code.toUpperCase()}
+                      <FlagIcon code={lang.code} className="w-5 h-3.5" />
+                      <span>{lang.name}</span>
                     </button>
                   ))}
                 </div>

@@ -1385,12 +1385,16 @@ const FlagRU = ({ className = "w-5 h-3.5" }: { className?: string }) => (
   </svg>
 );
 
-const FlagAE = ({ className = "w-5 h-3.5" }: { className?: string }) => (
-  <svg viewBox="0 0 12 6" className={`inline-block rounded-[2px] shadow-sm flex-shrink-0 ${className}`} xmlns="http://www.w3.org/2000/svg">
-    <rect fill="#00732f" width="12" height="2"/>
-    <rect fill="#fff" y="2" width="12" height="2"/>
-    <rect fill="#000" y="4" width="12" height="2"/>
-    <rect fill="#ff0000" width="3" height="6"/>
+const FlagSA = ({ className = "w-5 h-3.5" }: { className?: string }) => (
+  <svg viewBox="0 0 600 400" className={`inline-block rounded-[2px] shadow-sm flex-shrink-0 ${className}`} xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="400" fill="#006C35" />
+    <g fill="#FFFFFF">
+      {/* Calligraphy elements */}
+      <path d="M 140 150 C 180 130, 240 130, 280 150 C 320 130, 380 130, 460 150 L 460 185 C 380 165, 320 165, 280 185 C 240 165, 180 165, 140 185 Z" opacity="0.95" />
+      <path d="M 170 105 H 182 V 165 H 170 Z M 205 95 H 217 V 165 H 205 Z M 240 110 H 252 V 165 H 240 Z M 275 100 H 287 V 165 H 275 Z M 310 105 H 322 V 165 H 310 Z M 345 95 H 357 V 165 H 345 Z M 380 110 H 392 V 165 H 380 Z M 415 100 H 427 V 165 H 415 Z" />
+      {/* Sword */}
+      <path d="M 440 238 H 190 L 175 233 L 165 238 L 175 243 L 190 238 V 242 H 440 Z M 440 228 H 448 V 252 H 440 Z M 456 235 H 464 V 245 H 456 Z" />
+    </g>
   </svg>
 );
 
@@ -1403,7 +1407,7 @@ const FlagIcon = ({ code, className = "w-5 h-3.5" }: { code: Locale; className?:
     case "ru":
       return <FlagRU className={className} />;
     case "ar":
-      return <FlagAE className={className} />;
+      return <FlagSA className={className} />;
     default:
       return null;
   }

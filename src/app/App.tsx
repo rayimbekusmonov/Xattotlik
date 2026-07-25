@@ -1350,6 +1350,7 @@ export default function App() {
   const [formSent, setFormSent] = useState(false);
   const [formErrors, setFormErrors] = useState<{ name?: string; email?: string; message?: string }>({});
   const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [selectedCourse, setSelectedCourse] = useState<string>("");
 
   const t = { ...translations[locale], locale };
   const galleryItems = getGalleryItems(t as any);
@@ -1434,6 +1435,30 @@ export default function App() {
     }
     setMenuOpen(false);
   }, []);
+
+  const handleEnroll = useCallback(
+    (courseTitle?: string) => {
+      const courseToSelect = courseTitle || courseItems[0]?.title || "";
+      setSelectedCourse(courseToSelect);
+      if (courseToSelect) {
+        const msg =
+          locale === "ar"
+            ? `مرحباً، أود التسجيل في الدورة المجانية: ${courseToSelect}`
+            : locale === "ru"
+            ? `Здравствуйте, я хочу записаться на бесплатный курс: ${courseToSelect}`
+            : locale === "uz"
+            ? `Assalomu alaykum, men "${courseToSelect}" bepul kursiga ro'yxatdan o'tmoqchiman.`
+            : `Hello, I would like to enroll in the free course: ${courseToSelect}`;
+        setFormData((prev) => ({ ...prev, message: msg }));
+      }
+      setCurrentPage("contact");
+      setMenuOpen(false);
+      setTimeout(() => {
+        scrollTo("contact");
+      }, 100);
+    },
+    [courseItems, locale, scrollTo]
+  );
 
   // Lightbox navigation
   const openLightbox = (item: typeof galleryItems[0]) => {
@@ -1618,7 +1643,7 @@ export default function App() {
             </div>
 
             <button
-              onClick={() => setCurrentPage("courses")}
+              onClick={() => handleEnroll()}
               className="px-6 py-2.5 bg-[#005F40] text-[#FAF9F6] text-sm font-semibold tracking-wide rounded-sm hover:bg-[#004530] active:bg-[#003520] transition-all duration-200 border border-[#005F40] hover:border-[#004530] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]"
             >
               {t.nav.enrol}
@@ -1702,10 +1727,7 @@ export default function App() {
               );
             })}
             <button
-              onClick={() => {
-                setCurrentPage("courses");
-                setMenuOpen(false);
-              }}
+              onClick={() => handleEnroll()}
               className="mt-3 px-6 py-3 bg-[#005F40] text-[#FAF9F6] text-sm font-semibold text-center tracking-wide rounded-sm hover:bg-[#004530] transition-colors duration-200"
             >
               {t.nav.enrol}
@@ -1812,7 +1834,7 @@ export default function App() {
                     {/* Action Buttons */}
                     <div className="flex flex-wrap items-center gap-4 mb-8 w-full animate-[fadeInUp_0.8s_ease_0.6s_both]">
                       <button
-                        onClick={() => setCurrentPage("courses")}
+                        onClick={() => handleEnroll()}
                         className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#C49D2A] text-[#1C2B3A] text-sm font-bold tracking-widest uppercase rounded-sm shadow-lg shadow-[#D4AF37]/20 hover:from-[#E5BF47] hover:to-[#D4AF37] hover:shadow-[#D4AF37]/40 active:scale-[0.98] transition-all duration-300 focus:outline-none"
                       >
                         <GraduationCap className="w-5 h-5" />
@@ -2389,7 +2411,7 @@ export default function App() {
                     </span>
                   </div>
                   <button
-                    onClick={() => setCurrentPage("contact")}
+                    onClick={() => handleEnroll(course.title)}
                     className={`w-full py-3.5 text-sm font-bold tracking-widest uppercase transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
                       course.featured
                         ? "bg-[#D4AF37] text-[#1C2B3A] hover:bg-[#C49D2A] active:bg-[#B08D22] focus-visible:ring-[#D4AF37]"
@@ -2618,7 +2640,7 @@ export default function App() {
           8. CONTACT & FOOTER
       ──────────────────────────────────────────────────────────────── */}
       {currentPage === "contact" && (
-        <section className="bg-[#003020] text-white border-b border-[#D4AF37]/15">
+        <section id="contact" className="bg-[#003020] text-white border-b border-[#D4AF37]/15">
           <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 md:py-24">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               {/* Left: info + map */}
@@ -2694,7 +2716,7 @@ export default function App() {
               </div>
 
               {/* Right: contact form */}
-              <div>
+              <div id="contact-form">
                 <p
                   className="text-[#D4AF37] text-xs tracking-[0.25em] uppercase font-semibold mb-4"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -2705,22 +2727,65 @@ export default function App() {
                   className="text-2xl font-normal text-white mb-6"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  {t.locale === "ar" ? "ابق على تواصل مع" : t.locale === "ru" ? "Будьте на связи с нашим" : t.locale === "uz" ? "Merosimiz bilan" : "Stay Connected with Our"}{" "}
+                  {t.locale === "ar" ? "تسجيل الحضور و" : t.locale === "ru" ? "Запись и регистрация на" : t.locale === "uz" ? "Bepul kursga" : "Free Course"}{" "}
                   <em style={{ fontStyle: "italic", color: "#D4AF37" }}>
-                    {t.locale === "ar" ? "تراثنا" : t.locale === "ru" ? "наследием" : t.locale === "uz" ? "bog'laning" : "Heritage"}
+                    {t.locale === "ar" ? "الدورات المجانية" : t.locale === "ru" ? "бесплатные курсы" : t.locale === "uz" ? "ro'yxatdan o'tish" : "Registration"}
                   </em>
                 </h3>
 
                 {formSent ? (
-                  <div className="py-12 text-center border border-[#D4AF37]/30 bg-[#D4AF37]/5 rounded-sm">
+                  <div className="py-12 text-center border border-[#D4AF37]/30 bg-[#D4AF37]/5 rounded-sm p-6">
                     <CheckCircle className="w-12 h-12 text-[#D4AF37] mx-auto mb-4" />
-                    <p className="text-[#D4AF37] font-semibold tracking-wide text-lg">
+                    <p className="text-[#D4AF37] font-semibold tracking-wide text-xl">
                       {t.contact.successTitle}
                     </p>
-                    <p className="text-white/50 text-sm mt-2">{t.contact.successDesc}</p>
+                    {selectedCourse && (
+                      <p className="text-[#FAF9F6] font-medium text-sm mt-3 bg-[#005F40] py-2.5 px-4 inline-block border border-[#D4AF37]/40 rounded-sm">
+                        ✨ {locale === "ar" ? `تم التسجيل بنجاح في: ${selectedCourse}` : locale === "ru" ? `Запись на курс «${selectedCourse}» подтверждена!` : locale === "uz" ? `«${selectedCourse}» bepul kursiga ro'yxatdan o'tdingiz!` : `Successfully enrolled in: ${selectedCourse}!`}
+                      </p>
+                    )}
+                    <p className="text-white/60 text-sm mt-3">{t.contact.successDesc}</p>
                   </div>
                 ) : (
                   <form onSubmit={handleFormSubmit} className="space-y-5" noValidate>
+                    {/* Course Selection Dropdown */}
+                    <div>
+                      <label
+                        htmlFor="course-select"
+                        className="block text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-medium mb-2"
+                      >
+                        {locale === "ar" ? "الدورة المجانية المختارة" : locale === "ru" ? "Выбранный бесплатный курс" : locale === "uz" ? "Tanlangan bepul kurs" : "Selected Free Course"}
+                      </label>
+                      <select
+                        id="course-select"
+                        value={selectedCourse}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setSelectedCourse(val);
+                          if (val) {
+                            const msg =
+                              locale === "ar"
+                                ? `مرحباً، أود التسجيل في الدورة المجانية: ${val}`
+                                : locale === "ru"
+                                ? `Здравствуйте, я хочу записаться на бесплатный курс: ${val}`
+                                : locale === "uz"
+                                ? `Assalomu alaykum, men "${val}" bepul kursiga ro'yxatdan o'tmoqchiman.`
+                                : `Hello, I would like to enroll in the free course: ${val}`;
+                            setFormData((prev) => ({ ...prev, message: msg }));
+                          }
+                        }}
+                        className="w-full bg-[#002A1C] border border-[#D4AF37]/30 text-white px-4 py-3 text-sm outline-none transition-colors duration-200 cursor-pointer"
+                      >
+                        <option value="" className="bg-[#002A1C] text-white">
+                          {locale === "ar" ? "--- اختر دورة مجانية ---" : locale === "ru" ? "--- Выберите курс ---" : locale === "uz" ? "--- Bepul kursni tanlang ---" : "--- Select a free course ---"}
+                        </option>
+                        {courseItems.map((c) => (
+                          <option key={c.title} value={c.title} className="bg-[#002A1C] text-white">
+                            {c.title} ({c.price}) — {c.level}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
                     {[
                       { id: "name", label: t.contact.nameLabel, type: "text", placeholder: t.contact.namePlaceholder },
                       { id: "email", label: t.contact.emailLabel, type: "email", placeholder: t.contact.emailPlaceholder },

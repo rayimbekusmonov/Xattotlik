@@ -23,6 +23,11 @@ import {
   Send,
   Globe,
   ChevronDown,
+  GraduationCap,
+  Award,
+  BookOpen,
+  Sparkles,
+  CheckCircle2,
 } from "lucide-react";
 
 import logoImg from "../assets/logo.JPG";
@@ -34,7 +39,79 @@ import teacher4Img from "../assets/teacher4.png";
 import teacher5Img from "../assets/teacher5.png";
 import ownerImg from "../assets/owner.png";
 
+import sampleThuluthImg from "../assets/projects/sample1.png";
+import sampleNaskhImg from "../assets/projects/sample17.png";
+import sampleKuficImg from "../assets/projects/sample21.png";
+import sampleDiwaniImg from "../assets/projects/sample18.png";
+
 const teacherImages = [teacher1Img, teacher2Img, teacher3Img, teacher4Img, teacher5Img];
+
+const featuredHeroScripts = [
+  {
+    id: "thuluth",
+    nameEn: "Thuluth Script",
+    nameUz: "Sulus Xati",
+    nameRu: "Шрифт Сулюс",
+    nameAr: "خط الثلث",
+    artistEn: "Master Hassan Çelebi",
+    artistUz: "Ustoz Hasan Chelebi",
+    artistRu: "Мастер Хассан Челеби",
+    artistAr: "الأستاذ حسن تشلبي",
+    descEn: "Known as the King of Scripts, characterized by majestic curved proportions and monumental elegance.",
+    descUz: "Xatlar podshohi deb bilinar, ulug'vor egri nisbatlar va monumentallik bilan ajralib turadi.",
+    descRu: "Известен как 'Король шрифтов', отличается величественными изгибами и монументальной грацией.",
+    descAr: "سيد الخطوط وملكها، يتميز بنسبه الجليلة وزخارفه الفخمة.",
+    img: sampleThuluthImg,
+  },
+  {
+    id: "naskh",
+    nameEn: "Naskh Script",
+    nameUz: "Nasx Xati",
+    nameRu: "Шрифт Насх",
+    nameAr: "خط النسخ",
+    artistEn: "Master Karim Al-Baghdadi",
+    artistUz: "Ustoz Karim Al-Bag'dodiy",
+    artistRu: "Мастер Карим Аль-Багдади",
+    artistAr: "الأستاذ كريم البغدادي",
+    descEn: "The clear, rhythmic script of sacred manuscripts, celebrated for legibility and exquisite harmony.",
+    descUz: "Muqaddas qo'lyozmalarning aniq va ritmik xati, o'qishli va mukammal uyg'unlikka ega.",
+    descRu: "Чёткий ритмичный шрифт священных текстов, славящийся читаемостью и гармонией.",
+    descAr: "خط المصاحف الشريفة، يمتاز بالوضوح والدقة والجمال الإيقاعي.",
+    img: sampleNaskhImg,
+  },
+  {
+    id: "kufic",
+    nameEn: "Kufic Script",
+    nameUz: "Kufiy Xati",
+    nameRu: "Шрифт Куфик",
+    nameAr: "الخط الكوفي",
+    artistEn: "Master Layla Al-Andalusi",
+    artistUz: "Ustoz Laylo Al-Andalusiy",
+    artistRu: "Мастер Лейла Аль-Андалуси",
+    artistAr: "الأستاذة ليلى الأندلسية",
+    descEn: "The oldest calligraphic style with geometric precision, angular beauty and historic majesty.",
+    descUz: "Geometrik aniqlik, burchakli go'zallik va tarixiy ulug'vorlikka ega eng qadimiy xat turi.",
+    descRu: "Древнейший стиль с геометрической точностью, угловой эстетикой и древним величием.",
+    descAr: "أقدم الخطوط العربية، يمتاز بالهندسة الدقيقة والصلابة التاريخية.",
+    img: sampleKuficImg,
+  },
+  {
+    id: "diwani",
+    nameEn: "Diwani Script",
+    nameUz: "Devoniy Xati",
+    nameRu: "Шрифт Дивани",
+    nameAr: "الخط الديواني",
+    artistEn: "Master Usman Tashkandi",
+    artistUz: "Ustoz Usmon Toshkandiy",
+    artistRu: "Мастер Усман Ташканди",
+    artistAr: "الأستاذ عثمان الطشقندي",
+    descEn: "A royal court script featuring lyrical flourishes, interlocking loops and decorative grace.",
+    descUz: "Shohona saroy xati, lirik jilvalar va chirmashgan zanjirlar bilan boyitilgan.",
+    descRu: "Королевский придворный шрифт с изящными завитками и орнаментальной пластикой.",
+    descAr: "خط الدواوين الملوكية، يمتاز بالتداخل الزخرفي والانحناءات الشاعرية.",
+    img: sampleDiwaniImg,
+  },
+];
 
 /* ── Islamic 8-pointed star pattern tile ──────────────────────────────── */
 const StarTile = () => (
@@ -103,9 +180,31 @@ const translations = {
       enrol: "Hozir ro'yxatdan o'ting",
     },
     hero: {
-      titlePre: "San'ati",
-      titleItalic: "Abadiy Bitik",
-      subtitle: "Merosni asrab, kelajakni shakllantiramiz",
+      badge: "Islom Sivilizatsiyasi Markazi — Toshkent",
+      titlePre: "Xattotlik bo'yicha",
+      titleMain: "Xalqaro Xattotlik Maktabi",
+      titleItalic: "Xalqaro Xattotlik Maktabi",
+      subtitle: "Dunyoga mashhur xattotlik ustozlaridan mumtoz arab va islom xattotligini o'rganing. Akkreditatsiyalangan mahorat darslari, tarixiy qo'lyozmalarni asrash va xalqaro diplomlar.",
+      features: [
+        "Xalqaro akkreditatsiyalangan diplom",
+        "8 ta mumtoz xattotlik uslubi",
+        "2,000+ tarixiy qo'lyozma arxivi"
+      ],
+      enrollNow: "Kurslarga yozilish",
+      virtualTour: "Virtual Galereya",
+      ratingText: "4.9/5 baho • 60+ mamlakatdan 4,000+ bitiruvchilar",
+      scriptCard: {
+        title: "Mumtoz Xat Asarlari",
+        subtitle: "Eng nufuzli xattotlik uslublarini o'rganing",
+        viewDetails: "Galereyada ko'rish",
+        learnThis: "Ushbu uslubni o'rganish"
+      },
+      infoCards: [
+        { title: "Buyuk Ustozlar", desc: "Istanbul, Qohira va Toshkent oliy xattotlaridan saboq oling" },
+        { title: "Boy Qo'lyozma Arxivi", desc: "Noyob tarixiy qo'lyozmalar bilan bevosita amaliyot" },
+        { title: "Xalqaro Jamiyat", desc: "60 dan ortiq mamlakat talabalari va san'atkorlari tarmog'i" },
+        { title: "Rasmiy Ijoza Diplom", desc: "O'qishni muvaffaqiyatli yakunlab xalqaro sertifikatga ega bo'ling" }
+      ],
       discover: "Galereyamizni kashf eting",
       learnMore: "Batafsil ma'lumot",
       scroll: "Pastga",
@@ -309,9 +408,31 @@ const translations = {
       enrol: "Enrol Now",
     },
     hero: {
-      titlePre: "The Art of",
-      titleItalic: "Eternal Script",
-      subtitle: "Preserving Heritage, Shaping Future",
+      badge: "Center of Islamic Civilization — Tashkent",
+      titlePre: "Welcome to the",
+      titleMain: "International Calligraphy School",
+      titleItalic: "International Calligraphy School",
+      subtitle: "Master classical Arabic & Islamic calligraphy from world-renowned grandmasters. Explore accredited online & on-campus masterclasses, manuscript preservation, and global diplomas.",
+      features: [
+        "Accredited International Certification",
+        "8 Classical Script Masterclasses",
+        "2,000+ Historic Manuscript Archive"
+      ],
+      enrollNow: "Enroll in Courses",
+      virtualTour: "Virtual Gallery Tour",
+      ratingText: "4.9/5 Rating • 4,000+ Alumni from 60+ Nations",
+      scriptCard: {
+        title: "Classical Script Masterworks",
+        subtitle: "Explore major calligraphy script traditions",
+        viewDetails: "View in Gallery",
+        learnThis: "Learn This Script"
+      },
+      infoCards: [
+        { title: "Grandmaster Faculty", desc: "Learn directly from Istanbul, Cairo & Tashkent master calligraphers" },
+        { title: "Hands-on Archive", desc: "Direct practice with authentic historical manuscripts & parchments" },
+        { title: "Global Community", desc: "Join vibrant calligraphers and scholars from over 60 nations" },
+        { title: "Official Ijazah Diploma", desc: "Earn internationally recognized master certificate & diploma" }
+      ],
       discover: "Discover Our Gallery",
       learnMore: "Learn More",
       scroll: "Scroll",
@@ -515,9 +636,31 @@ const translations = {
       enrol: "Записаться",
     },
     hero: {
-      titlePre: "Искусство",
-      titleItalic: "Вечного Письма",
-      subtitle: "Сохраняя наследие, формируя будущее",
+      badge: "Центр исламской цивилизации — Ташкент",
+      titlePre: "Добро пожаловать в",
+      titleMain: "Международную Школу Каллиграфии",
+      titleItalic: "Международная Школа Каллиграфии",
+      subtitle: "Обучайтесь классической арабской и исламской каллиграфии у мировых гранд-мастеров. Аккредитованные мастер-классы, реставрация рукописей и международные дипломы.",
+      features: [
+        "Аккредитованная международная сертификация",
+        "8 классических стилей каллиграфии",
+        "Архив из 2000+ исторических рукописей"
+      ],
+      enrollNow: "Записаться на курсы",
+      virtualTour: "Виртуальная галерея",
+      ratingText: "Оценка 4.9/5 • 4000+ выпускников из 60+ стран",
+      scriptCard: {
+        title: "Шедевры классической каллиграфии",
+        subtitle: "Изучите ключевые традиции восточной письменности",
+        viewDetails: "Смотреть в галерее",
+        learnThis: "Изучить этот стиль"
+      },
+      infoCards: [
+        { title: "Мировые гранд-мастера", desc: "Обучение у мастеров из Стамбула, Каира и Ташкента" },
+        { title: "Практика с архивом", desc: "Прямая работа с подлинными древними рукописями" },
+        { title: "Международное сообщество", desc: "Студенты и искусствоведы из более чем 60 стран" },
+        { title: "Официальный диплом Иджаза", desc: "Получите признанный международный диплом мастера" }
+      ],
       discover: "Посетить галерею",
       learnMore: "Подробнее",
       scroll: "Листайте вниз",
@@ -721,9 +864,31 @@ const translations = {
       enrol: "سجل الآن",
     },
     hero: {
-      titlePre: "فن",
-      titleItalic: "الحرف الخالد",
-      subtitle: "نصون التراث، ونصنع المستقبل",
+      badge: "مركز الحضارة الإسلامية — طشقند",
+      titlePre: "مرحباً بكم في",
+      titleMain: "المدرسة الدولية للخط العربي",
+      titleItalic: "المدرسة الدولية للخط العربي",
+      subtitle: "تعلم فنون الخط العربي والإسلامي الأصيل على يد كبار أسياد الخط. دورات معتمدة، ترميم المخطوطات وشواهد دولية.",
+      features: [
+        "شهادات وإجازات معتمدة دولياً",
+        "٨ أساليب خط كلاسيكية",
+        "أكثر من ٢٠٠٠ مخطوطة تاريخية"
+      ],
+      enrollNow: "التسجيل في الدورات",
+      virtualTour: "جولة في المعرض",
+      ratingText: "تقييم ٤.٩/٥ • أكثر من ٤٠٠٠ خريج من ٦٠ دولة",
+      scriptCard: {
+        title: "روائع الخط الكلاسيكي",
+        subtitle: "استكشف أبرز مدارس وأساليب الخط العربي",
+        viewDetails: "عرض في المعرض",
+        learnThis: "تعلم هذا الخط"
+      },
+      infoCards: [
+        { title: "أسياد الخط العالمي", desc: "تعلم مباشرة من كبار كُتّاب إسطنبول والقاهرة وطشقند" },
+        { title: "تطبيق عملي مع المخطوطات", desc: "ممارسة مباشرة على المخطوطات والرقوق التاريخية" },
+        { title: "مجتمع عالمي", desc: "انضم إلى طلاب وفنانين من أكثر من ٦٠ دولة" },
+        { title: "إجازة رسمية معتمدة", desc: "احصل على شهادة وإجازة معتمدة دولياً عند التخرج" }
+      ],
       discover: "اكتشف معرضنا",
       learnMore: "اقرأ المزيد",
       scroll: "انزل للأسفل",
@@ -1133,6 +1298,7 @@ const AuthorBiographySection = ({ locale, t }: { locale: Locale; t: any }) => {
 export default function App() {
   const [locale, setLocale] = useState<Locale>("uz");
   const [currentPage, setCurrentPage] = useState<"home" | "about" | "gallery" | "courses" | "team" | "author" | "contact">("home");
+  const [activeScriptTab, setActiveScriptTab] = useState(0);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1514,117 +1680,267 @@ export default function App() {
         {currentPage === "home" && (
           <>
             {/* ────────────────────────────────────────────────────────────────
-                2. HERO SECTION
+                2. HERO SECTION (Redesigned & Modernized)
             ──────────────────────────────────────────────────────────────── */}
             <section
               id="home"
-              className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#003828]"
+              className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center overflow-hidden bg-gradient-to-b from-[#002217] via-[#003828] to-[#002217] py-16 lg:py-24 text-white"
               aria-label="Hero"
             >
-        {/* Background image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1646229227468-ba6eb534d368?w=1920&h=1080&fit=crop&auto=format')",
-          }}
-          role="img"
-          aria-label="Background calligraphy artwork"
-        />
-        {/* Dark emerald overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#002A1C]/85 via-[#003828]/80 to-[#002A1C]/90" />
+              {/* Background ambient lighting and art overlay */}
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-overlay"
+                style={{
+                  backgroundImage:
+                    "url('https://images.unsplash.com/photo-1646229227468-ba6eb534d368?w=1920&h=1080&fit=crop&auto=format')",
+                }}
+                role="img"
+                aria-label="Background calligraphy artwork"
+              />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#D4AF37]/15 via-transparent to-transparent pointer-events-none" />
 
-        {/* Geometric pattern overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpolygon points='40,4 49,28 74,28 54,45 63,73 40,56 17,73 26,45 6,28 31,28' fill='none' stroke='%23D4AF37' stroke-width='0.6' opacity='0.7'/%3E%3Ccircle cx='40' cy='40' r='2' fill='%23D4AF37' opacity='0.5'/%3E%3C/svg%3E")`,
-              backgroundSize: "80px 80px",
-            }}
-          />
-        </div>
+              {/* Geometric pattern overlay */}
+              <div className="absolute inset-0 opacity-10 pointer-events-none">
+                <div
+                  className="w-full h-full"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpolygon points='40,4 49,28 74,28 54,45 63,73 40,56 17,73 26,45 6,28 31,28' fill='none' stroke='%23D4AF37' stroke-width='0.6' opacity='0.7'/%3E%3Ccircle cx='40' cy='40' r='2' fill='%23D4AF37' opacity='0.5'/%3E%3C/svg%3E")`,
+                    backgroundSize: "80px 80px",
+                  }}
+                />
+              </div>
 
-        {/* Gold corner ornaments */}
-        <div className="absolute top-28 left-8 lg:left-16 w-20 h-20 text-[#D4AF37] opacity-30 animate-pulse" style={{ animationDuration: "4s" }}>
-          <StarTile />
-        </div>
-        <div className="absolute top-28 right-8 lg:right-16 w-20 h-20 text-[#D4AF37] opacity-30 animate-pulse" style={{ animationDuration: "5s" }}>
-          <StarTile />
-        </div>
-        <div className="absolute bottom-16 left-8 lg:left-16 w-16 h-16 text-[#D4AF37] opacity-20">
-          <StarTile />
-        </div>
-        <div className="absolute bottom-16 right-8 lg:right-16 w-16 h-16 text-[#D4AF37] opacity-20">
-          <StarTile />
-        </div>
+              {/* Decorative Corner Ornaments */}
+              <div className="absolute top-20 left-6 lg:left-12 w-24 h-24 text-[#D4AF37] opacity-20 animate-pulse pointer-events-none" style={{ animationDuration: "5s" }}>
+                <StarTile />
+              </div>
+              <div className="absolute top-20 right-6 lg:right-12 w-24 h-24 text-[#D4AF37] opacity-20 animate-pulse pointer-events-none" style={{ animationDuration: "6s" }}>
+                <StarTile />
+              </div>
 
-        {/* Hero content */}
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <p
-            className="text-[#D4AF37] text-xs tracking-[0.35em] uppercase mb-6 font-medium animate-[fadeInDown_0.8s_ease_0.2s_both]"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
-          >
-            {t.brand.full}
-          </p>
+              {/* Main Content Container */}
+              <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                  
+                  {/* Left Column: Heading, Info & Actions */}
+                  <div className={`lg:col-span-7 flex flex-col ${locale === "ar" ? "items-start text-right" : "items-start text-left"}`}>
+                    
+                    {/* Top Pill Badge */}
+                    <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 backdrop-blur-md mb-6 animate-[fadeInDown_0.6s_ease_both]">
+                      <Sparkles className="w-4 h-4 text-[#D4AF37] animate-pulse" />
+                      <span className="text-[#D4AF37] text-xs font-semibold tracking-wider uppercase" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                        {t.hero.badge}
+                      </span>
+                    </div>
 
-          {/* Decorative line */}
-          <div className="flex items-center justify-center gap-3 mb-8 animate-[fadeIn_0.8s_ease_0.4s_both]">
-            <div className="w-12 h-px bg-[#D4AF37]/60" />
-            <div className="w-1.5 h-1.5 rotate-45 bg-[#D4AF37]" />
-            <div className="w-12 h-px bg-[#D4AF37]/60" />
-          </div>
+                    {/* Main Headline */}
+                    <h1
+                      className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1] animate-[fadeInUp_0.8s_ease_0.2s_both]"
+                      style={{ fontFamily: "'Playfair Display', serif" }}
+                    >
+                      {t.hero.titlePre && (
+                        <span className="block text-2xl sm:text-3xl lg:text-4xl font-normal text-[#E2D9C8] mb-1 font-sans">
+                          {t.hero.titlePre}
+                        </span>
+                      )}
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFF5D6] via-[#D4AF37] to-[#F3C249]">
+                        {t.hero.titleMain}
+                      </span>
+                    </h1>
 
-          <h1
-            className="text-5xl lg:text-7xl font-normal text-white mb-4 leading-none tracking-tight animate-[fadeInUp_0.8s_ease_0.5s_both]"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            {t.hero.titlePre}{" "}
-            <em className="italic text-[#D4AF37]" style={{ fontStyle: "italic" }}>
-              {t.hero.titleItalic}
-            </em>
-          </h1>
+                    {/* Subtitle / Description */}
+                    <p
+                      className="text-[#EDE8DC]/90 text-base sm:text-lg lg:text-xl font-light mb-8 leading-relaxed max-w-2xl animate-[fadeInUp_0.8s_ease_0.4s_both]"
+                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    >
+                      {t.hero.subtitle}
+                    </p>
 
-          <div className="flex items-center justify-center gap-3 my-8 animate-[fadeIn_0.8s_ease_0.7s_both]">
-            <div className="w-16 h-px bg-[#D4AF37]/40" />
-            <div className="w-1 h-1 rotate-45 bg-[#D4AF37]/60" />
-            <div className="w-16 h-px bg-[#D4AF37]/40" />
-          </div>
+                    {/* Feature Badges Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full mb-8 animate-[fadeInUp_0.8s_ease_0.5s_both]">
+                      {t.hero.features.map((feat, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg bg-white/5 border border-[#D4AF37]/25 backdrop-blur-sm"
+                        >
+                          <CheckCircle2 className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />
+                          <span className="text-xs text-[#E2D9C8] font-medium leading-tight">
+                            {feat}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
 
-          <p
-            className="text-[#EDE8DC]/80 text-lg lg:text-xl mb-10 tracking-wide font-light max-w-xl mx-auto animate-[fadeInUp_0.8s_ease_0.8s_both]"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
-          >
-            {t.hero.subtitle}
-          </p>
+                    {/* Action Buttons */}
+                    <div className="flex flex-wrap items-center gap-4 mb-8 w-full animate-[fadeInUp_0.8s_ease_0.6s_both]">
+                      <button
+                        onClick={() => setCurrentPage("courses")}
+                        className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#C49D2A] text-[#1C2B3A] text-sm font-bold tracking-widest uppercase rounded-sm shadow-lg shadow-[#D4AF37]/20 hover:from-[#E5BF47] hover:to-[#D4AF37] hover:shadow-[#D4AF37]/40 active:scale-[0.98] transition-all duration-300 focus:outline-none"
+                      >
+                        <GraduationCap className="w-5 h-5" />
+                        <span>{t.hero.enrollNow}</span>
+                        <ArrowRight className={`w-4 h-4 transition-transform duration-300 ${locale === "ar" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`} />
+                      </button>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-[fadeInUp_0.8s_ease_1s_both]">
-            <button
-              onClick={() => setCurrentPage("gallery")}
-              className="group inline-flex items-center gap-3 px-10 py-4 bg-[#D4AF37] text-[#1C2B3A] text-sm font-bold tracking-widest uppercase hover:bg-[#C49D2A] active:bg-[#B08D22] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-            >
-              {t.hero.discover}
-              <ArrowRight className={`w-4 h-4 transition-transform duration-300 ${locale === "ar" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`} />
-            </button>
-            <button
-              onClick={() => setCurrentPage("about")}
-              className="inline-flex items-center gap-3 px-10 py-4 border border-[#D4AF37]/50 text-[#FAF9F6] text-sm font-medium tracking-widest uppercase hover:bg-white/10 hover:border-[#D4AF37]/80 active:bg-white/20 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-            >
-              {t.hero.learnMore}
-            </button>
-          </div>
-        </div>
+                      <button
+                        onClick={() => setCurrentPage("gallery")}
+                        className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-[#D4AF37]/50 bg-white/5 text-[#FAF9F6] text-sm font-medium tracking-widest uppercase rounded-sm hover:bg-white/10 hover:border-[#D4AF37] active:scale-[0.98] transition-all duration-300 focus:outline-none"
+                      >
+                        <BookOpen className="w-4 h-4 text-[#D4AF37]" />
+                        <span>{t.hero.virtualTour}</span>
+                      </button>
+                    </div>
 
-        {/* Scroll cue */}
-        <button
-          onClick={() => setCurrentPage("about")}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition-opacity duration-300 focus:outline-none group"
-          aria-label="Scroll down"
-        >
-          <span className="text-[#D4AF37] text-[10px] tracking-[0.3em] uppercase">{t.hero.scroll}</span>
-          <div className="w-px h-10 bg-gradient-to-b from-[#D4AF37] to-transparent animate-pulse" />
-        </button>
-      </section>
+                    {/* Social proof / Trust Rating */}
+                    <div className="flex items-center gap-4 pt-4 border-t border-[#D4AF37]/20 w-full animate-[fadeInUp_0.8s_ease_0.7s_both]">
+                      <div className="flex -space-x-2 overflow-hidden">
+                        {teacherImages.slice(0, 4).map((img, i) => (
+                          <img
+                            key={i}
+                            className="inline-block h-8 w-8 rounded-full ring-2 ring-[#003828] object-cover"
+                            src={img}
+                            alt="Master teacher"
+                          />
+                        ))}
+                      </div>
+                      <div className="flex flex-col text-xs text-[#EDE8DC]/80">
+                        <div className="flex items-center gap-1 text-[#D4AF37]">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-3.5 h-3.5 fill-[#D4AF37]" />
+                          ))}
+                        </div>
+                        <span className="font-medium">{t.hero.ratingText}</span>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  {/* Right Column: Interactive Script Showcase Card */}
+                  <div className="lg:col-span-5 animate-[fadeInRight_0.8s_ease_0.4s_both]">
+                    <div className="relative bg-[#002A1C]/80 border border-[#D4AF37]/40 rounded-2xl p-6 shadow-2xl backdrop-blur-xl overflow-hidden group">
+                      
+                      {/* Card Header & Tabs */}
+                      <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#D4AF37]/20">
+                        <div>
+                          <p className="text-[#D4AF37] text-[11px] font-bold uppercase tracking-wider">
+                            {t.hero.scriptCard.title}
+                          </p>
+                          <h3 className="text-white text-base font-semibold">
+                            {t.hero.scriptCard.subtitle}
+                          </h3>
+                        </div>
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-[#D4AF37]/20 text-[#D4AF37] text-[10px] font-semibold uppercase">
+                          <Award className="w-3 h-3" /> Masterpiece
+                        </span>
+                      </div>
+
+                      {/* Script Switcher Tabs */}
+                      <div className="grid grid-cols-4 gap-1.5 p-1 bg-black/40 rounded-lg mb-4">
+                        {featuredHeroScripts.map((script, idx) => {
+                          const isSelected = activeScriptTab === idx;
+                          const name = locale === "uz" ? script.nameUz : locale === "ru" ? script.nameRu : locale === "ar" ? script.nameAr : script.nameEn;
+                          return (
+                            <button
+                              key={script.id}
+                              onClick={() => setActiveScriptTab(idx)}
+                              className={`py-2 px-1 text-center text-xs font-semibold rounded-md transition-all duration-200 ${
+                                isSelected
+                                  ? "bg-[#D4AF37] text-[#1C2B3A] shadow-md"
+                                  : "text-[#EDE8DC]/70 hover:text-white hover:bg-white/5"
+                              }`}
+                            >
+                              {name.split(" ")[0]}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      {/* Active Script Preview Display */}
+                      {(() => {
+                        const script = featuredHeroScripts[activeScriptTab];
+                        const title = locale === "uz" ? script.nameUz : locale === "ru" ? script.nameRu : locale === "ar" ? script.nameAr : script.nameEn;
+                        const artist = locale === "uz" ? script.artistUz : locale === "ru" ? script.artistRu : locale === "ar" ? script.artistAr : script.artistEn;
+                        const desc = locale === "uz" ? script.descUz : locale === "ru" ? script.descRu : locale === "ar" ? script.descAr : script.descEn;
+
+                        return (
+                          <div className="flex flex-col gap-4">
+                            <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#D4AF37]/30 bg-black/50 group/img">
+                              <img
+                                src={script.img}
+                                alt={title}
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-105"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                              
+                              <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
+                                <div className="text-left">
+                                  <p className="text-[#D4AF37] text-xs font-bold font-serif">{title}</p>
+                                  <p className="text-white/80 text-[11px]">{artist}</p>
+                                </div>
+                                <button
+                                  onClick={() => setCurrentPage("gallery")}
+                                  className="p-2 rounded-full bg-[#D4AF37] text-[#1C2B3A] hover:bg-[#E5BF47] transition-colors"
+                                  title={t.hero.scriptCard.viewDetails}
+                                >
+                                  <ZoomIn className="w-4 h-4" />
+                                </button>
+                              </div>
+                            </div>
+
+                            <p className="text-xs text-[#EDE8DC]/80 line-clamp-2 leading-relaxed text-left">
+                              {desc}
+                            </p>
+
+                            <div className="pt-2 flex items-center justify-between border-t border-[#D4AF37]/15">
+                              <button
+                                onClick={() => setCurrentPage("gallery")}
+                                className="text-xs text-[#D4AF37] font-semibold hover:underline inline-flex items-center gap-1"
+                              >
+                                {t.hero.scriptCard.viewDetails} →
+                              </button>
+                              <button
+                                onClick={() => setCurrentPage("courses")}
+                                className="px-3 py-1.5 rounded bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] text-xs font-medium hover:bg-[#D4AF37]/25 transition-colors"
+                              >
+                                {t.hero.scriptCard.learnThis}
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      })()}
+
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Hero Bottom Info Cards Strip */}
+                <div className="mt-16 pt-10 border-t border-[#D4AF37]/20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 animate-[fadeInUp_0.8s_ease_0.8s_both]">
+                  {t.hero.infoCards.map((card, i) => {
+                    const icons = [GraduationCap, BookOpen, Users, Award];
+                    const IconComp = icons[i % icons.length];
+                    return (
+                      <div
+                        key={i}
+                        className="p-5 rounded-xl bg-white/5 border border-[#D4AF37]/20 backdrop-blur-md hover:bg-white/10 hover:border-[#D4AF37]/50 transition-all duration-300 text-left"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] mb-3">
+                          <IconComp className="w-5 h-5" />
+                        </div>
+                        <h4 className="text-white text-sm font-semibold mb-1.5">
+                          {card.title}
+                        </h4>
+                        <p className="text-xs text-[#EDE8DC]/70 leading-relaxed">
+                          {card.desc}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+
+              </div>
+
+            </section>
 
       {/* ────────────────────────────────────────────────────────────────
           3. STATS STRIP

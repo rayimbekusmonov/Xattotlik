@@ -38,6 +38,7 @@ import teacher2Img from "../assets/teacher2.png";
 import teacher3Img from "../assets/teacher3.png";
 import teacher4Img from "../assets/teacher4.png";
 import teacher5Img from "../assets/teacher5.png";
+import teacher6Img from "../assets/teacher6.png";
 import ownerImg from "../assets/owner.png";
 
 import sampleThuluthImg from "../assets/projects/sample1.png";
@@ -45,7 +46,7 @@ import sampleNaskhImg from "../assets/projects/sample17.png";
 import sampleKuficImg from "../assets/projects/sample21.png";
 import sampleDiwaniImg from "../assets/projects/sample18.png";
 
-const teacherImages = [teacher1Img, teacher2Img, teacher3Img, teacher4Img, teacher5Img];
+const teacherImages = [teacher1Img, teacher2Img, teacher3Img, teacher4Img, teacher5Img, teacher6Img];
 
 const featuredHeroScripts = [
   {
@@ -220,16 +221,17 @@ const translations = {
       label: "Bizning tariximiz",
       title: "Markaz haqida",
       est: "Tashkil etilgan 2017-yil — Toshkent",
-      sub: "Muqaddas bitikning tirik arxivi",
-      p1: "2017-yilda Islom Sivilizatsiyasi Markazi homiyligida tashkil etilgan Xattotlik Markazi klassik arab va islom xattotligini o'rganish, saqlash va rivojlantirishga bag'ishlangan Markaziy Osiyodagi eng nufuzli muassasalaridan biridir.",
-      p2: "Uch o'n yillik davomida biz 60 ta davlatdan 4000 dan ortiq talabalarni tayyorladik, 2000 dan ortiq tarixiy qo'lyozmalardan iborat jonli arxivni saqlab keldik va xalqaro miqyosda tan olingan mohir xattotlar jamoasini tarbiyaladik.",
-      prominent: "Taniqli mohir xattotlar",
+      sub: "Muqaddas bitik va xattotlik san'atining tirik maskani",
+      p1: "2017-yilda Toshkent shahrida Islom Sivilizatsiyasi Markazi homiyligida tashkil etilgan Xattotlik Markazi klassik arab va islom xattotligini o'rganish, saqlash va rivojlantirishga bag'ishlangan nufuzli ta'lim muassasasidir.",
+      p2: "Markazimizda tajribali va taniqli usta-xattotlar rahbarligida 60 dan ortiq mamlakatlardan kelgan talabalar va san'at ixlosmandlari ta'lim oladi. 2000 dan ortiq noyob tarixiy qo'lyozmalar asrab kelinadi hamda amaliy restavratsiya ishlari olib boriladi.",
+      prominent: "Yetakchi usta-xattotlarimiz",
       specialties: {
-        hassan: "Sulus va Nasx — Istanbul an'anasi",
-        layla: "Kufiy geometrik — Andalusiya uslubi",
-        karim: "Devoniy Jaliy — Qohira akademiyasi",
+        hassan: "Saliev Xabibulo Ismailovich — Sulus, Nasx va Kufiy maktabi",
+        layla: "Saliev Muxammad Xabibulaevich — Devoniy Jaliy va Sulus xatlari",
+        karim: "Xakberdiev Gafurjon — Nasx va Nastaliq xatlari",
+        toirov: "Toirov Oybek — Nastaliq va qo'lyozma restavratsiyasi",
       },
-      explore: "Bizning dasturlarimizni o'rganing",
+      explore: "Bizning ta'lim dasturlarimizni o'rganing",
     },
     gallery: {
       label: "To'plam",
@@ -448,16 +450,17 @@ const translations = {
       label: "Our Story",
       title: "About The Center",
       est: "Est. 2017 — Tashkent",
-      sub: "A Living Archive of Sacred Script",
-      p1: "Founded under the patronage of the Center of Islamic Civilization in 2017, our Calligraphy Center stands as one of Central Asia's foremost institutions dedicated to the study, preservation, and advancement of classical Arabic and Islamic scripts.",
-      p2: "Over three decades, we have trained more than 4,000 students from 60 nations, maintained a living archive of over 2,000 historical manuscripts, and nurtured a faculty of internationally recognized master calligraphers.",
-      prominent: "Prominent Master Calligraphers",
+      sub: "A Living Academy of Sacred Script & Heritage",
+      p1: "Founded under the patronage of the Center of Islamic Civilization in Tashkent in 2017, our Calligraphy Center stands as an internationally renowned academy dedicated to studying, preserving, and developing classical Arabic and Islamic scripts.",
+      p2: "Led by master calligraphers, our center educates students from over 60 nations, maintains an active archive of more than 2,000 historic manuscripts, and conducts expert manuscript restoration.",
+      prominent: "Prominent Master Faculty",
       specialties: {
-        hassan: "Thuluth & Naskh — Istanbul Tradition",
-        layla: "Kufic Geometric — Andalusian Style",
-        karim: "Diwani Jali — Cairo Academy",
+        hassan: "Saliev Xabibulo Ismailovich — Thuluth, Naskh & Kufic Master",
+        layla: "Saliev Muxammad Xabibulaevich — Diwani Jali & Thuluth Scripts",
+        karim: "Xakberdiev Gafurjon — Naskh & Nastaliq Scripts",
+        toirov: "Toirov Oybek — Nastaliq & Manuscript Restoration",
       },
-      explore: "Explore Our Programs",
+      explore: "Explore Our Educational Programs",
     },
     gallery: {
       label: "The Collection",
@@ -676,16 +679,17 @@ const translations = {
       label: "Наша история",
       title: "О Центре",
       est: "Основан в 2017 году — Ташкент",
-      sub: "Живой архив священной письменности",
-      p1: "Основанный под покровительством Центра исламской цивилизации в 2017 году, наш Центр каллиграфии является одним из ведущих учреждений Центральной Азии, посвященных изучению, сохранению и развитию классической арабской и исламской письменности.",
-      p2: "За три десятилетия мы обучили более 4000 студентов из 60 стран, сохранили живой архив из более чем 2000 исторических рукописей и вырастили плеяду всемирно признанных мастеров каллиграфии.",
-      prominent: "Выдающиеся мастера каллиграфии",
+      sub: "Академия священной письменности и наследия",
+      p1: "Основанный под покровительством Центра исламской цивилизации в Ташкенте в 2017 году, наш Центр каллиграфии является ведущим академическим институтом, посвященным изучению, сохранению и развитию классической арабской и исламской письменности.",
+      p2: "Под руководством выдающихся мастеров каллиграфии наш Центр обучает студентов из более чем 60 стран мира, сохраняет действующий архив из 2000+ древних рукописей и ведет научную реставрацию.",
+      prominent: "Выдающиеся мастера нашего центра",
       specialties: {
-        hassan: "Сулюс и насх — Стамбульская традиция",
-        layla: "Куфический геометрический — Андалузский стиль",
-        karim: "Дивани Джали — Каирская академия",
+        hassan: "Saliev Xabibulo Ismailovich — Мастер шрифтов Сулюс, Насх и Куфик",
+        layla: "Saliev Muxammad Xabibulaevich — Мастер шрифтов Дивани Джали и Сулюс",
+        karim: "Xakberdiev Gafurjon — Мастер шрифтов Насх и Насталик",
+        toirov: "Toirov Oybek — Насталик и реставрация рукописей",
       },
-      explore: "Изучить наши программы",
+      explore: "Изучить наши учебные программы",
     },
     gallery: {
       label: "Коллекция",
@@ -2072,11 +2076,7 @@ export default function App() {
                 >
                   {t.about.prominent}
                 </p>
-                {[
-                  { name: "Sheikh Hassan Al-Farsi", specialty: t.about.specialties.hassan },
-                  { name: "Dr. Layla Al-Mansoori", specialty: t.about.specialties.layla },
-                  { name: "Ustad Karim Diab", specialty: t.about.specialties.karim },
-                ].map((m) => (
+                {t.team.members.slice(0, 4).map((m) => (
                   <div key={m.name} className="flex items-start gap-3">
                     <div className="w-1 h-1 rotate-45 bg-[#D4AF37] mt-2.5 flex-shrink-0" />
                     <div>
@@ -2398,7 +2398,7 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-md mx-auto md:max-w-none">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-md mx-auto md:max-w-none">
             {t.team.members.map((member, i) => (
               <div
                 key={member.name}

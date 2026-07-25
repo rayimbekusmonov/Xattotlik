@@ -1332,7 +1332,12 @@ const AuthorBiographySection = ({ locale, t }: { locale: Locale; t: any }) => {
   );
 };
 
-/* ── Telegram Bot Notification Utility ────────────────────────────────── */
+const escapeHtml = (str: string) =>
+  (str || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+
 const sendTelegramNotification = async ({
   name,
   email,
@@ -1346,24 +1351,22 @@ const sendTelegramNotification = async ({
   message: string;
   locale: string;
 }) => {
-  const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
-  const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+  const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN || "8846414522:AAFzhtaa5SlgW7VzK-2-lrotMeAW6pR2KKY";
+  const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID || "8079703247";
 
   if (!botToken || !chatId) {
-    console.warn("Telegram credentials not found in environment variables (VITE_TELEGRAM_BOT_TOKEN, VITE_TELEGRAM_CHAT_ID).");
+    console.warn("Telegram credentials not found.");
     return false;
   }
 
-  const payloadText = `📥 *Yangi Ro'yxatdan O'tish (Xattotlik Markazi)*
-
-👤 *Ismi:* ${name}
-📧 *Email:* ${email}
-🎓 *Tanlangan Kurs:* ${course || "Umumiy so'rov (Bepul)"}
-🌐 *Til:* ${locale.toUpperCase()}
-📅 *Sana:* ${new Date().toLocaleString("uz-UZ")}
-
-💬 *Xabar:*
-${message}`;
+  const payloadText =
+    `📥 <b>Yangi Ro'yxatdan O'tish (Xattotlik Markazi)</b>\n\n` +
+    `👤 <b>Ismi:</b> ${escapeHtml(name)}\n` +
+    `📧 <b>Email:</b> ${escapeHtml(email)}\n` +
+    `🎓 <b>Tanlangan Kurs:</b> ${escapeHtml(course || "Umumiy so'rov (Bepul)")}\n` +
+    `🌐 <b>Til:</b> ${escapeHtml(locale.toUpperCase())}\n` +
+    `📅 <b>Sana:</b> ${new Date().toLocaleString("uz-UZ")}\n\n` +
+    `💬 <b>Xabar:</b>\n${escapeHtml(message)}`;
 
   try {
     const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
@@ -1374,7 +1377,7 @@ ${message}`;
       body: JSON.stringify({
         chat_id: chatId,
         text: payloadText,
-        parse_mode: "Markdown",
+        parse_mode: "HTML",
       }),
     });
     return response.ok;

@@ -28,6 +28,7 @@ import {
   BookOpen,
   Sparkles,
   CheckCircle2,
+  Users,
 } from "lucide-react";
 
 import logoImg from "../assets/logo.JPG";

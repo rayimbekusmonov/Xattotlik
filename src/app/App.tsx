@@ -1332,6 +1332,58 @@ const AuthorBiographySection = ({ locale, t }: { locale: Locale; t: any }) => {
   );
 };
 
+/* ── Telegram Bot Notification Utility ────────────────────────────────── */
+const sendTelegramNotification = async ({
+  name,
+  email,
+  course,
+  message,
+  locale,
+}: {
+  name: string;
+  email: string;
+  course: string;
+  message: string;
+  locale: string;
+}) => {
+  const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
+  const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+
+  if (!botToken || !chatId) {
+    console.warn("Telegram credentials not found in environment variables (VITE_TELEGRAM_BOT_TOKEN, VITE_TELEGRAM_CHAT_ID).");
+    return false;
+  }
+
+  const payloadText = `📥 *Yangi Ro'yxatdan O'tish (Xattotlik Markazi)*
+
+👤 *Ismi:* ${name}
+📧 *Email:* ${email}
+🎓 *Tanlangan Kurs:* ${course || "Umumiy so'rov (Bepul)"}
+🌐 *Til:* ${locale.toUpperCase()}
+📅 *Sana:* ${new Date().toLocaleString("uz-UZ")}
+
+💬 *Xabar:*
+${message}`;
+
+  try {
+    const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: payloadText,
+        parse_mode: "Markdown",
+      }),
+    });
+    return response.ok;
+  } catch (error) {
+    console.error("Failed to send Telegram message:", error);
+    return false;
+  }
+};
+
 /* ══════════════════════════════════════════════════════════════════════ */
 export default function App() {
   const [locale, setLocale] = useState<Locale>("uz");
@@ -1510,7 +1562,9 @@ export default function App() {
     return errors;
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errors = validateForm();
     if (Object.keys(errors).length > 0) {
@@ -1518,8 +1572,20 @@ export default function App() {
       return;
     }
     setFormErrors({});
+    setIsSubmitting(true);
+
+    // Dispatch message notification to Telegram Bot
+    await sendTelegramNotification({
+      name: formData.name,
+      email: formData.email,
+      course: selectedCourse,
+      message: formData.message,
+      locale: locale,
+    });
+
+    setIsSubmitting(false);
     setFormSent(true);
-    setTimeout(() => setFormSent(false), 5000);
+    setTimeout(() => setFormSent(false), 7000);
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -2857,10 +2923,20 @@ export default function App() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full py-4 bg-[#D4AF37] text-[#1C2B3A] text-sm font-bold tracking-widest uppercase hover:bg-[#C49D2A] active:bg-[#B08D22] transition-colors duration-200 flex items-center justify-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]"
+                      disabled={isSubmitting}
+                      className="w-full py-4 bg-[#D4AF37] text-[#1C2B3A] text-sm font-bold tracking-widest uppercase hover:bg-[#C49D2A] active:bg-[#B08D22] transition-colors duration-200 flex items-center justify-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] disabled:opacity-50 cursor-pointer"
                     >
-                      <Send className={`w-4 h-4 ${locale === "ar" ? "rotate-180" : ""}`} />
-                      {t.contact.send}
+                      {isSubmitting ? (
+                        <span className="flex items-center gap-2">
+                          <div className="w-4 h-4 border-2 border-[#1C2B3A] border-t-transparent rounded-full animate-spin" />
+                          {locale === "ar" ? "جاري الإرسال..." : locale === "ru" ? "Отправка..." : locale === "uz" ? "Yuborilmoqda..." : "Sending..."}
+                        </span>
+                      ) : (
+                        <>
+                          <Send className={`w-4 h-4 ${locale === "ar" ? "rotate-180" : ""}`} />
+                          {t.contact.send}
+                        </>
+                      )}
                     </button>
                     <p className="text-white/30 text-xs text-center">
                       {t.contact.requiredNotice}

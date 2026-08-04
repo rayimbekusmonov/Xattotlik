@@ -191,10 +191,10 @@ const translations = {
       titlePre: "Xattotlik bo'yicha",
       titleMain: "Xalqaro Xattotlik Maktabi",
       titleItalic: "Xalqaro Xattotlik Maktabi",
-      subtitle: "Dunyoga mashhur xattotlik ustozlaridan mumtoz arab va islom xattotligini o'rganing. Akkreditatsiyalangan mahorat darslari, tarixiy qo'lyozmalarni asrash va xalqaro diplomlar.",
+      subtitle: "Muqaddas \"Ustoz-Shogird\" an'anasida yetuk ustozlardan xattotlik sirlarini o'rganing — har bir qalam zarbida avloddan avlodga o'tadigan islom san'ati merosiga aylaning.",
       features: [
         "Xalqaro akkreditatsiyalangan diplom",
-        "8 ta mumtoz xattotlik uslubi",
+        "Ustoz-Shogird an'anasi asosida ta'lim",
         "2,000+ tarixiy qo'lyozma arxivi"
       ],
       enrollNow: "Kurslarga yozilish",
@@ -207,7 +207,7 @@ const translations = {
         learnThis: "Ushbu uslubni o'rganish"
       },
       infoCards: [
-        { title: "Buyuk Ustozlar", desc: "Istanbul, Qohira va Toshkent oliy xattotlaridan saboq oling" },
+        { title: "Ustoz-Shogird An'anasi", desc: "Istanbul, Qohira va Toshkent oliy ustozlaridan muqaddas meros zanjirida bilim oling" },
         { title: "Boy Qo'lyozma Arxivi", desc: "Noyob tarixiy qo'lyozmalar bilan bevosita amaliyot" },
         { title: "Xalqaro Jamiyat", desc: "60 dan ortiq mamlakat talabalari va san'atkorlari tarmog'i" },
         { title: "Rasmiy Ijoza Diplom", desc: "O'qishni muvaffaqiyatli yakunlab xalqaro sertifikatga ega bo'ling" }
@@ -266,16 +266,25 @@ const translations = {
     courses: {
       label: "Barcha kurslar bepul",
       title: "Ta'lim dasturlari",
-      desc: "Markazimizdagi barcha ta'lim dasturlari va mahorat darslari mutlaqo bepul taqdim etiladi — birinchi chiziqlardan tortib ko'rgazmaga tayyor mahoratgacha.",
-      levelBeginner: "Boshlang'ich",
-      levelIntermediate: "O'rta",
-      levelMaster: "Master-klass",
-      beginnerTitle: "Yozuv asoslari",
-      beginnerDesc: "Klassik arab harflarining asosiy chiziqlari, asboblari va mutanosibliklarini o'zlashtiring. Mutlaqo tajribaga ega bo'lmaganlar uchun juda mos keladi.",
-      intermediateTitle: "Nasx va Sulus mahorati",
-      intermediateDesc: "Murakkab kompozitsiyalar va tarixiy qo'lyozmalarni o'rganish orqali ikkita eng muhim klassik yozuv bo'yicha bilimlaringizni chuqurlashtiring.",
-      masterTitle: "Zarhal berish san'ati",
-      masterDesc: "Toshkent va xalqaro nufuzli ustozlar rahbarligida xattotlikni an'anaviy islomiy zarhal berish bilan birlashtirgan intensiv dastur.",
+      desc: "Barcha dasturlar muqaddas \"Ustoz-Shogird\" an'anasida amalga oshiriladi — birinchi qalam zarbidan to ko'rgazmaga tayyor mahoratgacha mutlaqo bepul.",
+      level1: "Boshlang'ich",
+      level2: "1-daraja",
+      level3: "2-daraja",
+      level4: "3-daraja",
+      level5: "4-daraja",
+      level6: "Master",
+      nasxiBuxoriyTitle: "Nasxi Buxoriy",
+      nasxiBuxoriyDesc: "Markaziy Osiyo xattotlik merosining asosi — Buxoro nasxi klassik xattotlikning eng qadimiy va asosiy uslubi. Mutlaqo tajribasiz boshlang'ich talabalar uchun.",
+      nastaliqTitle: "Nasta'liq xati",
+      nastaliqDesc: "Fors-turk mumtoz xati bo'lib, oqimli chiziqlari va yuqori badiiy ifodalilik bilan ajralib turadi. Sharq she'riyatining xati deb nom olgan.",
+      nasxTitle: "Nasx",
+      nasxDesc: "Muqaddas Qur'on matnlari va islomiy kitoblarda keng qo'llaniladigan aniq va o'qimli klassik xat. Islom xattotligining asosiy uslubi.",
+      riqiyTitle: "Riq'iy",
+      riqiyDesc: "Kundalik yozishuv uchun amaliy va tez yoziladigan o'rta murakkablikdagi xat turi. Tezlik va izchillikni rivojlantirish uchun ideal.",
+      sulusTitle: "Sulus",
+      sulusDesc: "Xatlar podshosi deb nom olgan, ulug'vor egri nisbatlar va monumentallik bilan ajralib turadigan yuksak badiiy xat. Har bir harfi mahorat talqinini talab etadi.",
+      devoniyTitle: "Devoniy",
+      devoniyDesc: "Usmonli saroy devonlarida qo'llangan shohona xat — chirmashgan zanjirlar va bezakli jilvalari bilan hayratlanarli. Xattotlikning eng oliy ifodalanishi.",
       duration: "Davomiyligi",
       schedule: "Dars jadvali",
       fee: "Dastur narxi",
@@ -292,6 +301,8 @@ const translations = {
         exhibition: "Yakuniy ko'rgazma namoyishi",
       },
       popular: "Eng mashhur",
+      suppliesTitle: "Xattotlik anjomlari",
+      suppliesDesc: "Sifatli xattotlik mashqlari uchun zarur bo'lgan barcha asbob-anjomlar",
     },
     testimonials: {
       label: "Bizning hamjamiyatimizdan",
@@ -323,9 +334,17 @@ const translations = {
       successTitle: "Xabar qabul qilindi — Shukran!",
       successDesc: "Biz 24 soat ichida javob beramiz.",
       nameLabel: "To'liq ismingiz",
-      namePlaceholder: "Sizning ismingiz",
+      namePlaceholder: "Sizning to'liq ismingiz",
       emailLabel: "Elektron pochta manzili",
       emailPlaceholder: "sizning@elektron.pochta",
+      birthDateLabel: "Tug'ilgan sana",
+      birthDatePlaceholder: "Tug'ilgan sanangizni tanlang",
+      schoolNameLabel: "Hozirda o'qiyotgan maktab / muassasa nomi",
+      schoolNamePlaceholder: "Maktab yoki muassasa nomini kiriting",
+      addressLabel: "Yashash manzili",
+      addressPlaceholder: "To'liq manzilingizni kiriting",
+      telegramLabel: "Telegram (majburiy)",
+      telegramPlaceholder: "@username yoki +998XXXXXXXXX",
       messageLabel: "Xabar",
       messagePlaceholder: "Sizning so'rovingiz yoki xabaringiz...",
       send: "Xabar yuborish",
@@ -334,6 +353,10 @@ const translations = {
         name: "Ism kiritilishi shart",
         email: "Elektron pochta kiritilishi shart",
         validEmail: "Iltimos, haqiqiy elektron pochta manzilini kiriting",
+        birthDate: "Tug'ilgan sana kiritilishi shart",
+        schoolName: "Maktab nomi kiritilishi shart",
+        address: "Manzil kiritilishi shart",
+        telegram: "Telegram manzili yoki raqam kiritilishi shart",
         message: "Xabar kiritilishi shart",
       },
     },
@@ -428,10 +451,10 @@ const translations = {
       titlePre: "Welcome to the",
       titleMain: "International Calligraphy School",
       titleItalic: "International Calligraphy School",
-      subtitle: "Master classical Arabic & Islamic calligraphy from world-renowned grandmasters. Explore accredited online & on-campus masterclasses, manuscript preservation, and global diplomas.",
+      subtitle: "Learn the sacred art of calligraphy through the revered 'Ustoz-Shogird' (Master-Apprentice) tradition — a timeless bond of knowledge passed from grandmaster to devoted student across generations.",
       features: [
         "Accredited International Certification",
-        "8 Classical Script Masterclasses",
+        "Ustoz-Shogird Master-Apprentice Lineage",
         "2,000+ Historic Manuscript Archive"
       ],
       enrollNow: "Enroll in Courses",
@@ -444,7 +467,7 @@ const translations = {
         learnThis: "Learn This Script"
       },
       infoCards: [
-        { title: "Grandmaster Faculty", desc: "Learn directly from Istanbul, Cairo & Tashkent master calligraphers" },
+        { title: "Ustoz-Shogird Tradition", desc: "Learn through the sacred Eastern master-apprentice lineage — Istanbul, Cairo & Tashkent grandmasters" },
         { title: "Hands-on Archive", desc: "Direct practice with authentic historical manuscripts & parchments" },
         { title: "Global Community", desc: "Join vibrant calligraphers and scholars from over 60 nations" },
         { title: "Official Ijazah Diploma", desc: "Earn internationally recognized master certificate & diploma" }
@@ -503,16 +526,25 @@ const translations = {
     courses: {
       label: "100% Free Educational Programs",
       title: "Educational Programs",
-      desc: "All educational programs and masterclasses at our center are provided completely free of charge — from first strokes to exhibition-ready mastery.",
-      levelBeginner: "Beginner",
-      levelIntermediate: "Intermediate",
-      levelMaster: "Masterclass",
-      beginnerTitle: "Foundation of Script",
-      beginnerDesc: "Master the foundational strokes, tools, and proportions of classical Arabic letterforms. Perfect for those with no prior experience.",
-      intermediateTitle: "Naskh & Thuluth Mastery",
-      intermediateDesc: "Deepen your command of the two most important classical scripts with advanced compositions and historical manuscript studies.",
-      masterTitle: "The Art of Illumination",
-      masterDesc: "An intensive program combining calligraphy with traditional Islamic illumination, led by renowned master calligraphers and illuminators.",
+      desc: "All programs follow the sacred Ustoz-Shogird (Master-Apprentice) tradition — from first strokes to exhibition-ready mastery, completely free of charge.",
+      level1: "Beginner",
+      level2: "Level 1",
+      level3: "Level 2",
+      level4: "Level 3",
+      level5: "Level 4",
+      level6: "Master",
+      nasxiBuxoriyTitle: "Nasxi Buxoriy",
+      nasxiBuxoriyDesc: "The foundational script of Central Asian heritage — Bukhara Naskh is the perfect starting point for absolute beginners in classical calligraphy.",
+      nastaliqTitle: "Nasta'liq",
+      nastaliqDesc: "The elegant Perso-Turkish script celebrated for its lyrical, flowing lines and refined aesthetic beauty. Known as the script of Eastern poetry.",
+      nasxTitle: "Nasx",
+      nasxDesc: "The clear, legible script of sacred manuscripts and Quranic texts — the most widely practiced classical Arabic calligraphic style.",
+      riqiyTitle: "Riq'iy",
+      riqiyDesc: "A swift, practical everyday script of medium complexity, ideal for developing speed and consistent, fluid letterforms.",
+      sulusTitle: "Sulus",
+      sulusDesc: "The King of Scripts — majestic curved proportions, monumental elegance and decorative grandeur define this pinnacle of calligraphic art.",
+      devoniyTitle: "Devoniy",
+      devoniyDesc: "A royal Ottoman chancellery script of interlocking loops, lyrical flourishes and ornamental grace — the ultimate expression of decorative mastery.",
       duration: "Duration",
       schedule: "Schedule",
       fee: "Program Fee",
@@ -529,6 +561,8 @@ const translations = {
         exhibition: "Final exhibition showcase",
       },
       popular: "Most Popular",
+      suppliesTitle: "Calligraphy Supplies",
+      suppliesDesc: "Essential tools and materials for your calligraphy practice",
     },
     testimonials: {
       label: "From Our Community",
@@ -563,6 +597,14 @@ const translations = {
       namePlaceholder: "Your full name",
       emailLabel: "Email Address",
       emailPlaceholder: "your@email.com",
+      birthDateLabel: "Date of Birth",
+      birthDatePlaceholder: "Select your date of birth",
+      schoolNameLabel: "Current School / Institution Name",
+      schoolNamePlaceholder: "Enter your school or institution name",
+      addressLabel: "Home Address",
+      addressPlaceholder: "Enter your full address",
+      telegramLabel: "Telegram (Mandatory)",
+      telegramPlaceholder: "@username or phone number",
       messageLabel: "Message",
       messagePlaceholder: "Your enquiry, course interest, or message...",
       send: "Send Message",
@@ -571,6 +613,10 @@ const translations = {
         name: "Name is required",
         email: "Email is required",
         validEmail: "Please enter a valid email",
+        birthDate: "Date of birth is required",
+        schoolName: "School name is required",
+        address: "Address is required",
+        telegram: "Telegram address or number is required",
         message: "Message is required",
       },
     },
@@ -665,10 +711,10 @@ const translations = {
       titlePre: "Добро пожаловать в",
       titleMain: "Международную Школу Каллиграфии",
       titleItalic: "Международная Школа Каллиграфии",
-      subtitle: "Обучайтесь классической арабской и исламской каллиграфии у мировых гранд-мастеров. Аккредитованные мастер-классы, реставрация рукописей и международные дипломы.",
+      subtitle: "Изучайте священное искусство каллиграфии через почитаемую восточную традицию «Устоз-Шогирд» (Мастер-Ученик) — вечная связь знания, передаваемого от великого мастера к преданному ученику сквозь века.",
       features: [
         "Аккредитованная международная сертификация",
-        "8 классических стилей каллиграфии",
+        "Традиция Устоз-Шогирд (Мастер-Ученик)",
         "Архив из 2000+ исторических рукописей"
       ],
       enrollNow: "Записаться на курсы",
@@ -681,7 +727,7 @@ const translations = {
         learnThis: "Изучить этот стиль"
       },
       infoCards: [
-        { title: "Мировые гранд-мастера", desc: "Обучение у мастеров из Стамбула, Каира и Ташкента" },
+        { title: "Традиция Устоз-Шогирд", desc: "Обучение через священную линию мастер-ученик у мастеров из Стамбула, Каира и Ташкента" },
         { title: "Практика с архивом", desc: "Прямая работа с подлинными древними рукописями" },
         { title: "Международное сообщество", desc: "Студенты и искусствоведы из более чем 60 стран" },
         { title: "Официальный диплом Иджаза", desc: "Получите признанный международный диплом мастера" }
@@ -740,16 +786,25 @@ const translations = {
     courses: {
       label: "Все курсы бесплатные",
       title: "Образовательные программы",
-      desc: "Все образовательные программы и мастер-классы нашего центра предоставляются абсолютно бесплатно — от первых штрихов до уровня выставочных работ.",
-      levelBeginner: "Начальный",
-      levelIntermediate: "Средний",
-      levelMaster: "Мастер-класс",
-      beginnerTitle: "Основы письма",
-      beginnerDesc: "Освойте базовые штрихи, инструменты и пропорции классических арабских букв. Идеально подходит для начинающих без опыта.",
-      intermediateTitle: "Мастерство Насх и Сулюс",
-      intermediateDesc: "Углубите свои знания двух важнейших классических шрифтов с помощью сложных композиций и изучения исторических рукописей.",
-      masterTitle: "Искусство иллюминирования",
-      masterDesc: "Интенсивная программа, сочетающая каллиграфию с традиционным исламским золочением, под руководством выдающихся мастеров.",
+      desc: "Все программы следуют священной традиции «Устоз-Шогирд» (Мастер-Ученик) — от первых штрихов до выставочного мастерства, абсолютно бесплатно.",
+      level1: "Начальный",
+      level2: "Уровень 1",
+      level3: "Уровень 2",
+      level4: "Уровень 3",
+      level5: "Уровень 4",
+      level6: "Мастер",
+      nasxiBuxoriyTitle: "Насхи Бухари",
+      nasxiBuxoriyDesc: "Основополагающий шрифт среднеазиатского наследия — бухарский насх идеально подходит для абсолютных начинающих.",
+      nastaliqTitle: "Насталик",
+      nastaliqDesc: "Элегантный персидско-тюркский шрифт, известный своими лирическими текучими линиями и изысканной эстетикой. Шрифт восточной поэзии.",
+      nasxTitle: "Насх",
+      nasxDesc: "Чёткий читабельный шрифт священных рукописей и коранических текстов — наиболее распространённый классический арабский стиль.",
+      riqiyTitle: "Рика",
+      riqiyDesc: "Практичный повседневный шрифт средней сложности, идеальный для развития скорости и стабильности написания букв.",
+      sulusTitle: "Сулюс",
+      sulusDesc: "Король шрифтов — величественные изгибы, монументальная элегантность и завораживающее великолепие. Вершина искусства каллиграфии.",
+      devoniyTitle: "Дивани",
+      devoniyDesc: "Шрифт османской канцелярии с переплетающимися петлями, лирическими завитками и орнаментальной грацией — высшее выражение декоративного мастерства.",
       duration: "Продолжительность",
       schedule: "Расписание",
       fee: "Стоимость обучения",
@@ -766,6 +821,8 @@ const translations = {
         exhibition: "Финальная выставка работ",
       },
       popular: "Самый популярный",
+      suppliesTitle: "Материалы для каллиграфии",
+      suppliesDesc: "Необходимые инструменты и материалы для ваших занятий по каллиграфии",
     },
     testimonials: {
       label: "От нашего сообщества",
@@ -800,6 +857,14 @@ const translations = {
       namePlaceholder: "Ваше имя",
       emailLabel: "Адрес электронной почты",
       emailPlaceholder: "your@email.com",
+      birthDateLabel: "Дата рождения",
+      birthDatePlaceholder: "Выберите даتу рождения",
+      schoolNameLabel: "Текущая школа / учебное заведение",
+      schoolNamePlaceholder: "Введите название школы",
+      addressLabel: "Домашний адрес",
+      addressPlaceholder: "Введите ваш адрес",
+      telegramLabel: "Telegram (обязательно)",
+      telegramPlaceholder: "@username или номер телефона",
       messageLabel: "Сообщение",
       messagePlaceholder: "Ваш запрос, интересующий курс или сообщение...",
       send: "Отправить сообщение",
@@ -808,6 +873,10 @@ const translations = {
         name: "Имя обязательно",
         email: "Электронная почта обязательна",
         validEmail: "Пожалуйста, введите корректный email",
+        birthDate: "Дата рождения обязательна",
+        schoolName: "Название школы обязательно",
+        address: "Адрес обязателен",
+        telegram: "Telegram-адрес или номер обязателен",
         message: "Сообщение обязательно",
       },
     },
@@ -902,10 +971,10 @@ const translations = {
       titlePre: "مرحباً بكم في",
       titleMain: "المدرسة الدولية للخط العربي",
       titleItalic: "المدرسة الدولية للخط العربي",
-      subtitle: "تعلم فنون الخط العربي والإسلامي الأصيل على يد كبار أسياد الخط. دورات معتمدة، ترميم المخطوطات وشواهد دولية.",
+      subtitle: "تعلم فن الخط الأصيل من خلال التقليد الشرقي المقدس «أستاذ-تلميذ» — رابط أزلي من المعرفة يُنقل من أستاذ كبير إلى تلميذ مخلص عبر القرون والأجيال.",
       features: [
         "شهادات وإجازات معتمدة دولياً",
-        "٨ أساليب خط كلاسيكية",
+        "تقليد أستاذ-تلميذ الشرقي المقدس",
         "أكثر من ٢٠٠٠ مخطوطة تاريخية"
       ],
       enrollNow: "التسجيل في الدورات",
@@ -918,7 +987,7 @@ const translations = {
         learnThis: "تعلم هذا الخط"
       },
       infoCards: [
-        { title: "أسياد الخط العالمي", desc: "تعلم مباشرة من كبار كُتّاب إسطنبول والقاهرة وطشقند" },
+        { title: "تقليد أستاذ-تلميذ", desc: "تعلم من خلال السلسلة المقدسة للمعلم والتلميذ عند كبار أساتذة إسطنبول والقاهرة وطشقند" },
         { title: "تطبيق عملي مع المخطوطات", desc: "ممارسة مباشرة على المخطوطات والرقوق التاريخية" },
         { title: "مجتمع عالمي", desc: "انضم إلى طلاب وفنانين من أكثر من ٦٠ دولة" },
         { title: "إجازة رسمية معتمدة", desc: "احصل على شهادة وإجازة معتمدة دولياً عند التخرج" }
@@ -977,16 +1046,25 @@ const translations = {
     courses: {
       label: "جميع الدورات مجانية بالكامل",
       title: "البرامج التعليمية",
-      desc: "جميع البرامج التعليمية والدروس في مركزنا تقدم مجاناً بالكامل — من الخطوات الأولى إلى التميز والاحترافية الجاهزة للمعارض.",
-      levelBeginner: "مبتدئ",
-      levelIntermediate: "متوسط",
-      levelMaster: "دروس الماجستير",
-      beginnerTitle: "أساسيات الخط العربي",
-      beginnerDesc: "أتقن الحركات الأساسية والأدوات والنسب للحروف العربية الكلاسيكية. مثالي لمن ليس لديهم خبرة سابقة.",
-      intermediateTitle: "إتقان النسخ والثلث",
-      intermediateDesc: "عمّق تمكنك من أهم خطين كلاسيكيين من خلال التراكيب المتقدمة ودراسة المخطوطات التاريخية.",
-      masterTitle: "فن التذهيب والزخرفة",
-      masterDesc: "برنامج مكثف يجمع بين الخط العربي والزخرفة والتذهيب الإسلامي التقليدي، بقيادة نخبة من كبار الأساتذة.",
+      desc: "جميع برامجنا تتبع التقليد المقدس «أستاذ-تلميذ» — من الخطوات الأولى إلى إتقان الخط الجاهز للمعارض، مجاناً بالكامل.",
+      level1: "مبتدئ",
+      level2: "المستوى الأول",
+      level3: "المستوى الثاني",
+      level4: "المستوى الثالث",
+      level5: "المستوى الرابع",
+      level6: "ماجستير",
+      nasxiBuxoriyTitle: "النسخ البخاري",
+      nasxiBuxoriyDesc: "الخط الأساسي للتراث الآسيوي الوسطى — النسخ البخاري هو نقطة البداية المثالية للمبتدئين المطلقين في الخط الكلاسيكي.",
+      nastaliqTitle: "النستعليق",
+      nastaliqDesc: "الخط الفارسي التركي الأنيق المشهور بخطوطه المتدفقة الغنائية وجماله الراقي. خط الشعر الشرقي.",
+      nasxTitle: "النسخ",
+      nasxDesc: "الخط الواضح المقروء للمخطوطات المقدسة والنصوص القرآنية — أكثر الأساليب العربية الكلاسيكية انتشاراً.",
+      riqiyTitle: "الرقعة",
+      riqiyDesc: "خط يومي عملي متوسط الصعوبة، مثالي لتطوير السرعة وثبات شكل الحروف.",
+      sulusTitle: "الثلث",
+      sulusDesc: "ملك الخطوط — نسب منحنية مهيبة وأناقة تذكارية وعظمة زخرفية تميز هذه القمة في فن الخط.",
+      devoniyTitle: "الديواني",
+      devoniyDesc: "خط الديوان العثماني بحلقاته المتشابكة وتزاويقه الغنائية وجماله الزخرفي — التعبير النهائي عن إتقان الفن الزخرفي.",
       duration: "المدة",
       schedule: "الجدول الدراسي",
       fee: "رسوم البرنامج",
@@ -1003,6 +1081,8 @@ const translations = {
         exhibition: "المعرض الختامي للخريجين",
       },
       popular: "الأكثر طلباً",
+      suppliesTitle: "لوازم الخط العربي",
+      suppliesDesc: "الأدوات والمواد الأساسية لممارسة فن الخط العربي",
     },
     testimonials: {
       label: "من مجتمعنا الفني",
@@ -1037,6 +1117,14 @@ const translations = {
       namePlaceholder: "اسمك الكريم",
       emailLabel: "البريد الإلكتروني",
       emailPlaceholder: "your@email.com",
+      birthDateLabel: "تاريخ الميلاد",
+      birthDatePlaceholder: "اختر تاريخ ميلادك",
+      schoolNameLabel: "اسم المدرسة / المؤسسة الحالية",
+      schoolNamePlaceholder: "أدخل اسم مدرستك",
+      addressLabel: "عنوان السكن",
+      addressPlaceholder: "أدخل عنوانك الكامل",
+      telegramLabel: "تيليجرام (إلزامي)",
+      telegramPlaceholder: "@username أو رقم الهاتف",
       messageLabel: "الرسالة",
       messagePlaceholder: "استفسارك، اهتمامك بالدورات، أو رسالتك...",
       send: "إرسال الرسالة",
@@ -1045,6 +1133,10 @@ const translations = {
         name: "الاسم مطلوب",
         email: "البريد الإلكتروني مطلوب",
         validEmail: "يرجى إدخال بريد إلكتروني صحيح",
+        birthDate: "تاريخ الميلاد مطلوب",
+        schoolName: "اسم المدرسة مطلوب",
+        address: "العنوان مطلوب",
+        telegram: "عنوان تيليجرام أو الرقم مطلوب",
         message: "محتوى الرسالة مطلوب",
       },
     },
@@ -1169,9 +1261,9 @@ const getGalleryItems = (t: typeof translations.en) => [
 /* ── Course mapping with translations ─────────────────────────────────── */
 const getCourses = (t: typeof translations.en) => [
   {
-    level: t.courses.levelBeginner,
-    title: t.courses.beginnerTitle,
-    description: t.courses.beginnerDesc,
+    level: t.courses.level1,
+    title: t.courses.nasxiBuxoriyTitle,
+    description: t.courses.nasxiBuxoriyDesc,
     duration: `12 ${t.locale === "ar" ? "أسبوعاً" : t.locale === "ru" ? "недель" : t.locale === "uz" ? "hafta" : "Weeks"}`,
     schedule: t.locale === "ar" ? "السبت 10:00–13:00" : t.locale === "ru" ? "Суббота 10:00–13:00" : t.locale === "uz" ? "Shanba 10:00–13:00" : "Saturdays 10:00–13:00",
     price: t.locale === "ar" ? "مجاناً" : t.locale === "ru" ? "Бесплатно" : t.locale === "uz" ? "Bepul" : "Free",
@@ -1180,9 +1272,20 @@ const getCourses = (t: typeof translations.en) => [
     featured: false,
   },
   {
-    level: t.courses.levelIntermediate,
-    title: t.courses.intermediateTitle,
-    description: t.courses.intermediateDesc,
+    level: t.courses.level2,
+    title: t.courses.nastaliqTitle,
+    description: t.courses.nastaliqDesc,
+    duration: `14 ${t.locale === "ar" ? "أسبوعاً" : t.locale === "ru" ? "недель" : t.locale === "uz" ? "hafta" : "Weeks"}`,
+    schedule: t.locale === "ar" ? "الثلاثاء 10:00–13:00" : t.locale === "ru" ? "Вторник 10:00–13:00" : t.locale === "uz" ? "Seshanba 10:00–13:00" : "Tuesdays 10:00–13:00",
+    price: t.locale === "ar" ? "مجاناً" : t.locale === "ru" ? "Бесплатно" : t.locale === "uz" ? "Bepul" : "Free",
+    icon: <BookOpen className="w-7 h-7" />,
+    features: [t.courses.features.kit, t.courses.features.sheets, t.courses.features.cert],
+    featured: false,
+  },
+  {
+    level: t.courses.level3,
+    title: t.courses.nasxTitle,
+    description: t.courses.nasxDesc,
     duration: `16 ${t.locale === "ar" ? "أسبوعاً" : t.locale === "ru" ? "недель" : t.locale === "uz" ? "hafta" : "Weeks"}`,
     schedule: t.locale === "ar" ? "الأربعاء 18:00–21:00" : t.locale === "ru" ? "Среда 18:00–21:00" : t.locale === "uz" ? "Chorshanba 18:00–21:00" : "Wednesdays 18:00–21:00",
     price: t.locale === "ar" ? "مجاناً" : t.locale === "ru" ? "Бесплатно" : t.locale === "uz" ? "Bepul" : "Free",
@@ -1191,9 +1294,31 @@ const getCourses = (t: typeof translations.en) => [
     featured: true,
   },
   {
-    level: t.courses.levelMaster,
-    title: t.courses.masterTitle,
-    description: t.courses.masterDesc,
+    level: t.courses.level4,
+    title: t.courses.riqiyTitle,
+    description: t.courses.riqiyDesc,
+    duration: `14 ${t.locale === "ar" ? "أسبوعاً" : t.locale === "ru" ? "недель" : t.locale === "uz" ? "hafta" : "Weeks"}`,
+    schedule: t.locale === "ar" ? "الخميس 17:00–20:00" : t.locale === "ru" ? "Четверг 17:00–20:00" : t.locale === "uz" ? "Payshanba 17:00–20:00" : "Thursdays 17:00–20:00",
+    price: t.locale === "ar" ? "مجاناً" : t.locale === "ru" ? "Бесплатно" : t.locale === "uz" ? "Bepul" : "Free",
+    icon: <GraduationCap className="w-7 h-7" />,
+    features: [t.courses.features.premiumKit, t.courses.features.feedback, t.courses.features.portfolio],
+    featured: false,
+  },
+  {
+    level: t.courses.level5,
+    title: t.courses.sulusTitle,
+    description: t.courses.sulusDesc,
+    duration: `18 ${t.locale === "ar" ? "أسبوعاً" : t.locale === "ru" ? "недель" : t.locale === "uz" ? "hafta" : "Weeks"}`,
+    schedule: t.locale === "ar" ? "الجمعة 09:00–13:00" : t.locale === "ru" ? "Пятница 09:00–13:00" : t.locale === "uz" ? "Juma 09:00–13:00" : "Fridays 09:00–13:00",
+    price: t.locale === "ar" ? "مجاناً" : t.locale === "ru" ? "Бесплатно" : t.locale === "uz" ? "Bepul" : "Free",
+    icon: <Award className="w-7 h-7" />,
+    features: [t.courses.features.goldKit, t.courses.features.international, t.courses.features.exhibition],
+    featured: false,
+  },
+  {
+    level: t.courses.level6,
+    title: t.courses.devoniyTitle,
+    description: t.courses.devoniyDesc,
     duration: `20 ${t.locale === "ar" ? "أسبوعاً" : t.locale === "ru" ? "недель" : t.locale === "uz" ? "hafta" : "Weeks"}`,
     schedule: t.locale === "ar" ? "الجمعة 09:00–14:00" : t.locale === "ru" ? "Пятница 09:00–14:00" : t.locale === "uz" ? "Juma 09:00–14:00" : "Fridays 09:00–14:00",
     price: t.locale === "ar" ? "مجاناً" : t.locale === "ru" ? "Бесплатно" : t.locale === "uz" ? "Bepul" : "Free",
@@ -1427,12 +1552,20 @@ const escapeHtml = (str: string) =>
 const sendTelegramNotification = async ({
   name,
   email,
+  birthDate,
+  schoolName,
+  address,
+  telegram,
   course,
   message,
   locale,
 }: {
   name: string;
   email: string;
+  birthDate: string;
+  schoolName: string;
+  address: string;
+  telegram: string;
   course: string;
   message: string;
   locale: string;
@@ -1449,6 +1582,10 @@ const sendTelegramNotification = async ({
     `📥 <b>Yangi Ro'yxatdan O'tish (Xattotlik Markazi)</b>\n\n` +
     `👤 <b>Ismi:</b> ${escapeHtml(name)}\n` +
     `📧 <b>Email:</b> ${escapeHtml(email)}\n` +
+    `🎂 <b>Tug'ilgan sana:</b> ${escapeHtml(birthDate)}\n` +
+    `🏫 <b>Maktab:</b> ${escapeHtml(schoolName)}\n` +
+    `🏠 <b>Manzil:</b> ${escapeHtml(address)}\n` +
+    `📱 <b>Telegram:</b> ${escapeHtml(telegram)}\n` +
     `🎓 <b>Tanlangan Kurs:</b> ${escapeHtml(course || "Umumiy so'rov (Bepul)")}\n` +
     `🌐 <b>Til:</b> ${escapeHtml(locale.toUpperCase())}\n` +
     `📅 <b>Sana:</b> ${new Date().toLocaleString("uz-UZ")}\n\n` +
@@ -1487,9 +1624,9 @@ export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", birthDate: "", schoolName: "", address: "", telegram: "", message: "" });
   const [formSent, setFormSent] = useState(false);
-  const [formErrors, setFormErrors] = useState<{ name?: string; email?: string; message?: string }>({});
+  const [formErrors, setFormErrors] = useState<{ name?: string; email?: string; message?: string; birthDate?: string; schoolName?: string; address?: string; telegram?: string }>({});
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const [selectedCourse, setSelectedCourse] = useState<string>("");
 
@@ -1656,6 +1793,10 @@ export default function App() {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       errors.email = t.contact.validation.validEmail;
     }
+    if (!formData.birthDate) errors.birthDate = t.contact.validation.birthDate;
+    if (!formData.schoolName.trim()) errors.schoolName = t.contact.validation.schoolName;
+    if (!formData.address.trim()) errors.address = t.contact.validation.address;
+    if (!formData.telegram.trim()) errors.telegram = t.contact.validation.telegram;
     if (!formData.message.trim()) errors.message = t.contact.validation.message;
     return errors;
   };
@@ -1676,6 +1817,10 @@ export default function App() {
     await sendTelegramNotification({
       name: formData.name,
       email: formData.email,
+      birthDate: formData.birthDate,
+      schoolName: formData.schoolName,
+      address: formData.address,
+      telegram: formData.telegram,
       course: selectedCourse,
       message: formData.message,
       locale: locale,
@@ -1684,7 +1829,7 @@ export default function App() {
     setIsSubmitting(false);
     setFormSent(true);
     setTimeout(() => setFormSent(false), 7000);
-    setFormData({ name: "", email: "", message: "" });
+    setFormData({ name: "", email: "", birthDate: "", schoolName: "", address: "", telegram: "", message: "" });
   };
 
   const languages: { code: Locale; name: string }[] = [
@@ -2596,7 +2741,45 @@ export default function App() {
                   </button>
                 </div>
               </div>
-            ))}
+             ))}
+          </div>
+
+          {/* ── Calligraphy Supplies ─────────────────────────────── */}
+          <div className="mt-20 pt-16 border-t border-[#D4AF37]/20">
+            <div className="text-center mb-12">
+              <SectionLabel>{t.courses.suppliesTitle}</SectionLabel>
+              <h3 className="text-3xl lg:text-4xl text-[#1C2B3A] font-normal mt-2" style={{ fontFamily: "'Playfair Display', serif" }}>
+                {t.courses.suppliesTitle}
+              </h3>
+              <GoldDivider />
+              <p className="text-[#6B7280] max-w-xl mx-auto text-[15px] leading-relaxed">{t.courses.suppliesDesc}</p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {[
+                { name: locale==="ar"?"أقلام الخط":locale==="ru"?"Каллиграф. ручки":locale==="uz"?"Xattotlik qalamlari":"Calligraphy Pens", icon: "✒️" },
+                { name: locale==="ar"?"حامل الريشة":locale==="ru"?"Держатель пера":locale==="uz"?"Qalam ushlagich":"Nib Holder", icon: "🖊️" },
+                { name: locale==="ar"?"الريش":locale==="ru"?"Перья":locale==="uz"?"Qalamlar":"Nibs", icon: "🖋️" },
+                { name: locale==="ar"?"أقلام الفرشاة":locale==="ru"?"Кисть-ручки":locale==="uz"?"Fırçalı qalamlar":"Brush Pens", icon: "🖌️" },
+                { name: locale==="ar"?"أقلام القصب":locale==="ru"?"Тростниковые перья":locale==="uz"?"Qamish qalamlar":"Reed Pens", icon: "🌾" },
+                { name: locale==="ar"?"حبر الخط":locale==="ru"?"Каллиграф. чернила":locale==="uz"?"Xattotlik siyohi":"Calligraphy Ink", icon: "🧴" },
+                { name: locale==="ar"?"الحبر الهندي":locale==="ru"?"Тушь Индия":locale==="uz"?"Hindiston siyohi":"India Ink", icon: "⬛" },
+                { name: locale==="ar"?"محبرة":locale==="ru"?"Чернильница":locale==="uz"?"Siyohdonga":"Inkwell", icon: "🫙" },
+                { name: locale==="ar"?"ورق التدريب":locale==="ru"?"Тренировочная бумага":locale==="uz"?"Mashq qog'ozi":"Practice Paper", icon: "📄" },
+                { name: locale==="ar"?"دفتر الشبكة":locale==="ru"?"Блокнот в клетку":locale==="uz"?"Katakli daftar":"Grid Pad", icon: "📓" },
+                { name: locale==="ar"?"ورق مقوى ناعم":locale==="ru"?"Гладкий картон":locale==="uz"?"Silliq karton":"Smooth Cardstock", icon: "🗒️" },
+                { name: locale==="ar"?"ورق بريستول":locale==="ru"?"Бумага Бристоль":locale==="uz"?"Bristol qog'ozi":"Bristol Paper", icon: "📋" },
+                { name: locale==="ar"?"قلم رصاص":locale==="ru"?"Карандаш":locale==="uz"?"Qalam":"Pencil", icon: "✏️" },
+                { name: locale==="ar"?"ممحاة":locale==="ru"?"Ластик":locale==="uz"?"O'chirg'ich":"Eraser", icon: "🔲" },
+                { name: locale==="ar"?"مسطرة":locale==="ru"?"Линейка":locale==="uz"?"Chizg'ich":"Ruler", icon: "📏" },
+                { name: locale==="ar"?"قماش التنظيف":locale==="ru"?"Чистящая ткань":locale==="uz"?"Tozalash matosi":"Cleaning Cloth", icon: "🧻" },
+                { name: locale==="ar"?"كوب الماء":locale==="ru"?"Стакан воды":locale==="uz"?"Suv idishi":"Water Cup", icon: "🥤" },
+              ].map((item, i) => (
+                <div key={i} className="flex flex-col items-center gap-3 p-5 bg-white border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 hover:shadow-lg transition-all duration-300 text-center group cursor-default">
+                  <span className="text-3xl group-hover:scale-125 transition-transform duration-300 leading-none">{item.icon}</span>
+                  <span className="text-[#1C2B3A] text-xs font-semibold leading-tight">{item.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -2637,11 +2820,11 @@ export default function App() {
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 {/* Photo container */}
-                <div className="relative h-72 overflow-hidden bg-[#EDE8DC]">
+                <div className="relative h-80 overflow-hidden bg-[#EDE8DC]">
                   <img
                     src={teacherImages[i]}
                     alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
                   {/* Decorative Frame border inside photo */}
@@ -2998,6 +3181,107 @@ export default function App() {
                         )}
                       </div>
                     ))}
+                    {/* Birth Date */}
+                    <div>
+                      <label htmlFor="birthDate" className="block text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-medium mb-2">
+                        {t.contact.birthDateLabel} <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        id="birthDate"
+                        type="date"
+                        required
+                        value={formData.birthDate}
+                        max={new Date().toISOString().split("T")[0]}
+                        onChange={(e) => {
+                          setFormData({ ...formData, birthDate: e.target.value });
+                          if (formErrors.birthDate) setFormErrors({ ...formErrors, birthDate: undefined });
+                        }}
+                        className={`w-full bg-[#002A1C] border ${
+                          formErrors.birthDate ? "border-red-500/60 focus:border-red-500" : "border-[#D4AF37]/20 focus:border-[#D4AF37]/60"
+                        } text-white px-4 py-3 text-sm outline-none transition-colors duration-200 [color-scheme:dark]`}
+                        aria-describedby={formErrors.birthDate ? "birthDate-error" : undefined}
+                        aria-invalid={!!formErrors.birthDate}
+                      />
+                      {formErrors.birthDate && (
+                        <p id="birthDate-error" className="text-red-400 text-xs mt-1" role="alert">{formErrors.birthDate}</p>
+                      )}
+                    </div>
+                    {/* School Name */}
+                    <div>
+                      <label htmlFor="schoolName" className="block text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-medium mb-2">
+                        {t.contact.schoolNameLabel} <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        id="schoolName"
+                        type="text"
+                        placeholder={t.contact.schoolNamePlaceholder}
+                        required
+                        value={formData.schoolName}
+                        onChange={(e) => {
+                          setFormData({ ...formData, schoolName: e.target.value });
+                          if (formErrors.schoolName) setFormErrors({ ...formErrors, schoolName: undefined });
+                        }}
+                        className={`w-full bg-[#002A1C] border ${
+                          formErrors.schoolName ? "border-red-500/60 focus:border-red-500" : "border-[#D4AF37]/20 focus:border-[#D4AF37]/60"
+                        } text-white placeholder-white/25 px-4 py-3 text-sm outline-none transition-colors duration-200`}
+                        aria-describedby={formErrors.schoolName ? "schoolName-error" : undefined}
+                        aria-invalid={!!formErrors.schoolName}
+                      />
+                      {formErrors.schoolName && (
+                        <p id="schoolName-error" className="text-red-400 text-xs mt-1" role="alert">{formErrors.schoolName}</p>
+                      )}
+                    </div>
+                    {/* Address */}
+                    <div>
+                      <label htmlFor="address" className="block text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-medium mb-2">
+                        {t.contact.addressLabel} <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        id="address"
+                        type="text"
+                        placeholder={t.contact.addressPlaceholder}
+                        required
+                        value={formData.address}
+                        onChange={(e) => {
+                          setFormData({ ...formData, address: e.target.value });
+                          if (formErrors.address) setFormErrors({ ...formErrors, address: undefined });
+                        }}
+                        className={`w-full bg-[#002A1C] border ${
+                          formErrors.address ? "border-red-500/60 focus:border-red-500" : "border-[#D4AF37]/20 focus:border-[#D4AF37]/60"
+                        } text-white placeholder-white/25 px-4 py-3 text-sm outline-none transition-colors duration-200`}
+                        aria-describedby={formErrors.address ? "address-error" : undefined}
+                        aria-invalid={!!formErrors.address}
+                      />
+                      {formErrors.address && (
+                        <p id="address-error" className="text-red-400 text-xs mt-1" role="alert">{formErrors.address}</p>
+                      )}
+                    </div>
+                    {/* Telegram */}
+                    <div>
+                      <label htmlFor="telegram" className="block text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-medium mb-2">
+                        {t.contact.telegramLabel} <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        id="telegram"
+                        type="text"
+                        placeholder={t.contact.telegramPlaceholder}
+                        required
+                        value={formData.telegram}
+                        onChange={(e) => {
+                          setFormData({ ...formData, telegram: e.target.value });
+                          if (formErrors.telegram) setFormErrors({ ...formErrors, telegram: undefined });
+                        }}
+                        className={`w-full bg-[#002A1C] border ${
+                          formErrors.telegram ? "border-red-500/60 focus:border-red-500" : "border-[#D4AF37]/20 focus:border-[#D4AF37]/60"
+                        } text-white placeholder-white/25 px-4 py-3 text-sm outline-none transition-colors duration-200`}
+                        aria-describedby={formErrors.telegram ? "telegram-error" : undefined}
+                        aria-invalid={!!formErrors.telegram}
+                      />
+                      {formErrors.telegram && (
+                        <p id="telegram-error" className="text-red-400 text-xs mt-1" role="alert">{formErrors.telegram}</p>
+                      )}
+                    </div>
+
                     <div>
                       <label
                         htmlFor="message"

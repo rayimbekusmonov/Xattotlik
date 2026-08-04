@@ -36,6 +36,7 @@ import {
 } from "lucide-react";
 
 import logoImg from "../assets/logo.JPG";
+import aboutVideo from "../assets/video.mp4";
 import partnerImg from "../assets/partner.png";
 import teacher1Img from "../assets/teacher1.png";
 import teacher2Img from "../assets/teacher2.png";
@@ -1492,31 +1493,14 @@ export default function App() {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const [selectedCourse, setSelectedCourse] = useState<string>("");
 
-  // About section video state & controls
-  const [isAboutVideoMuted, setIsAboutVideoMuted] = useState(true);
-  const [isAboutVideoPlaying, setIsAboutVideoPlaying] = useState(true);
+  // About section video ref & automatic autoplay
   const aboutVideoRef = useRef<HTMLVideoElement>(null);
-  const [aboutVideoSrc, setAboutVideoSrc] = useState<string>(
-    "https://v1.pinimg.com/videos/mc/720p/fb/1a/0d/fb1a0d8b58ff22030f2f01f8069d3002.mp4"
-  );
 
-  const toggleAboutVideoPlay = () => {
+  useEffect(() => {
     if (aboutVideoRef.current) {
-      if (isAboutVideoPlaying) {
-        aboutVideoRef.current.pause();
-      } else {
-        aboutVideoRef.current.play().catch(() => {});
-      }
-      setIsAboutVideoPlaying(!isAboutVideoPlaying);
+      aboutVideoRef.current.play().catch(() => {});
     }
-  };
-
-  const toggleAboutVideoMute = () => {
-    if (aboutVideoRef.current) {
-      aboutVideoRef.current.muted = !isAboutVideoMuted;
-      setIsAboutVideoMuted(!isAboutVideoMuted);
-    }
-  };
+  }, [currentPage]);
 
   const t = { ...translations[locale], locale };
   const galleryItems = getGalleryItems(t as any);
@@ -2260,41 +2244,17 @@ export default function App() {
               <div className="relative overflow-hidden bg-[#002A1C] mb-10 lg:mb-0 rounded-lg group shadow-2xl">
                 <video
                   ref={aboutVideoRef}
-                  src={aboutVideoSrc}
-                  poster="https://images.unsplash.com/photo-1486303954368-398fea0e72cd?w=800&h=900&fit=crop&auto=format"
+                  src={aboutVideo}
                   autoPlay
                   loop
-                  muted={isAboutVideoMuted}
+                  muted
                   playsInline
-                  onPlay={() => setIsAboutVideoPlaying(true)}
-                  onPause={() => setIsAboutVideoPlaying(false)}
-                  className="w-full h-[320px] sm:h-[450px] lg:h-[560px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-[320px] sm:h-[450px] lg:h-[560px] object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
                 />
                 
                 {/* Gold border frame */}
                 <div className="absolute inset-4 border border-[#D4AF37]/40 pointer-events-none z-10" />
                 <div className="absolute inset-3 border border-[#D4AF37]/20 pointer-events-none z-10" />
-
-                {/* Video controls overlay */}
-                <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2 bg-[#002A1C]/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#D4AF37]/40 text-[#D4AF37]">
-                  <button
-                    onClick={toggleAboutVideoPlay}
-                    className="p-1.5 hover:text-white transition-colors focus:outline-none cursor-pointer"
-                    title={isAboutVideoPlaying ? "Pause Video" : "Play Video"}
-                    aria-label={isAboutVideoPlaying ? "Pause Video" : "Play Video"}
-                  >
-                    {isAboutVideoPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-                  </button>
-                  <div className="w-px h-4 bg-[#D4AF37]/30" />
-                  <button
-                    onClick={toggleAboutVideoMute}
-                    className="p-1.5 hover:text-white transition-colors focus:outline-none cursor-pointer"
-                    title={isAboutVideoMuted ? "Unmute Sound" : "Mute Sound"}
-                    aria-label={isAboutVideoMuted ? "Unmute Sound" : "Mute Sound"}
-                  >
-                    {isAboutVideoMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-                  </button>
-                </div>
               </div>
 
               {/* Floating stat card */}

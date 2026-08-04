@@ -29,6 +29,10 @@ import {
   Sparkles,
   CheckCircle2,
   Users,
+  Play,
+  Pause,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
 
 import logoImg from "../assets/logo.JPG";
@@ -1488,6 +1492,32 @@ export default function App() {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const [selectedCourse, setSelectedCourse] = useState<string>("");
 
+  // About section video state & controls
+  const [isAboutVideoMuted, setIsAboutVideoMuted] = useState(true);
+  const [isAboutVideoPlaying, setIsAboutVideoPlaying] = useState(true);
+  const aboutVideoRef = useRef<HTMLVideoElement>(null);
+  const [aboutVideoSrc, setAboutVideoSrc] = useState<string>(
+    "https://v1.pinimg.com/videos/mc/720p/fb/1a/0d/fb1a0d8b58ff22030f2f01f8069d3002.mp4"
+  );
+
+  const toggleAboutVideoPlay = () => {
+    if (aboutVideoRef.current) {
+      if (isAboutVideoPlaying) {
+        aboutVideoRef.current.pause();
+      } else {
+        aboutVideoRef.current.play().catch(() => {});
+      }
+      setIsAboutVideoPlaying(!isAboutVideoPlaying);
+    }
+  };
+
+  const toggleAboutVideoMute = () => {
+    if (aboutVideoRef.current) {
+      aboutVideoRef.current.muted = !isAboutVideoMuted;
+      setIsAboutVideoMuted(!isAboutVideoMuted);
+    }
+  };
+
   const t = { ...translations[locale], locale };
   const galleryItems = getGalleryItems(t as any);
   const courseItems = getCourses(t as any);
@@ -2221,22 +2251,50 @@ export default function App() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left: image */}
+            {/* Left: Video */}
             <div
               className={`relative transition-all duration-700 delay-200 ${
                 aboutReveal.visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
               }`}
             >
-              <div className="relative overflow-hidden bg-[#EDE8DC] mb-10 lg:mb-0">
-                <img
-                  src="https://images.unsplash.com/photo-1486303954368-398fea0e72cd?w=800&h=900&fit=crop&auto=format"
-                  alt="Master calligrapher practicing Thuluth script with a reed pen"
-                  className="w-full h-[320px] sm:h-[450px] lg:h-[560px] object-cover hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
+              <div className="relative overflow-hidden bg-[#002A1C] mb-10 lg:mb-0 rounded-lg group shadow-2xl">
+                <video
+                  ref={aboutVideoRef}
+                  src={aboutVideoSrc}
+                  poster="https://images.unsplash.com/photo-1486303954368-398fea0e72cd?w=800&h=900&fit=crop&auto=format"
+                  autoPlay
+                  loop
+                  muted={isAboutVideoMuted}
+                  playsInline
+                  onPlay={() => setIsAboutVideoPlaying(true)}
+                  onPause={() => setIsAboutVideoPlaying(false)}
+                  className="w-full h-[320px] sm:h-[450px] lg:h-[560px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+                
                 {/* Gold border frame */}
-                <div className="absolute inset-4 border border-[#D4AF37]/40 pointer-events-none" />
-                <div className="absolute inset-3 border border-[#D4AF37]/20 pointer-events-none" />
+                <div className="absolute inset-4 border border-[#D4AF37]/40 pointer-events-none z-10" />
+                <div className="absolute inset-3 border border-[#D4AF37]/20 pointer-events-none z-10" />
+
+                {/* Video controls overlay */}
+                <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2 bg-[#002A1C]/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#D4AF37]/40 text-[#D4AF37]">
+                  <button
+                    onClick={toggleAboutVideoPlay}
+                    className="p-1.5 hover:text-white transition-colors focus:outline-none cursor-pointer"
+                    title={isAboutVideoPlaying ? "Pause Video" : "Play Video"}
+                    aria-label={isAboutVideoPlaying ? "Pause Video" : "Play Video"}
+                  >
+                    {isAboutVideoPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+                  </button>
+                  <div className="w-px h-4 bg-[#D4AF37]/30" />
+                  <button
+                    onClick={toggleAboutVideoMute}
+                    className="p-1.5 hover:text-white transition-colors focus:outline-none cursor-pointer"
+                    title={isAboutVideoMuted ? "Unmute Sound" : "Mute Sound"}
+                    aria-label={isAboutVideoMuted ? "Unmute Sound" : "Mute Sound"}
+                  >
+                    {isAboutVideoMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                  </button>
+                </div>
               </div>
 
               {/* Floating stat card */}

@@ -33,6 +33,24 @@ import {
   Pause,
   Volume2,
   VolumeX,
+  PenTool,
+  Edit3,
+  Feather,
+  Paintbrush,
+  Pen,
+  Droplets,
+  GlassWater,
+  FileText,
+  Grid,
+  File,
+  Layers,
+  Pencil,
+  Eraser,
+  Ruler,
+  Scissors,
+  CupSoda,
+  Package,
+  Filter,
 } from "lucide-react";
 
 import logoImg from "../assets/logo.JPG";
@@ -191,7 +209,7 @@ const translations = {
       titlePre: "Xattotlik bo'yicha",
       titleMain: "Xalqaro Xattotlik Maktabi",
       titleItalic: "Xalqaro Xattotlik Maktabi",
-      subtitle: "Muqaddas \"Ustoz-Shogird\" an'anasida yetuk ustozlardan xattotlik sirlarini o'rganing — har bir qalam zarbida avloddan avlodga o'tadigan islom san'ati merosiga aylaning.",
+      subtitle: "Muqaddas \"Ustoz-Shogird\" an'anasida yetuk ustozlardan xattotlik sirlarini o'rganing — har bir qalam izida avloddan avlodga o'tadigan islom san'ati merosiga aylaning.",
       features: [
         "Xalqaro akkreditatsiyalangan diplom",
         "Ustoz-Shogird an'anasi asosida ta'lim",
@@ -303,6 +321,9 @@ const translations = {
       popular: "Eng mashhur",
       suppliesTitle: "Xattotlik anjomlari",
       suppliesDesc: "Sifatli xattotlik mashqlari uchun zarur bo'lgan barcha asbob-anjomlar",
+      tabAll: "Barchasi",
+      tabPrograms: "Ta'lim Dasturlari",
+      tabSupplies: "Xattotlik Anjomlari",
     },
     testimonials: {
       label: "Bizning hamjamiyatimizdan",
@@ -563,6 +584,9 @@ const translations = {
       popular: "Most Popular",
       suppliesTitle: "Calligraphy Supplies",
       suppliesDesc: "Essential tools and materials for your calligraphy practice",
+      tabAll: "All Categories",
+      tabPrograms: "Course Programs",
+      tabSupplies: "Calligraphy Supplies",
     },
     testimonials: {
       label: "From Our Community",
@@ -823,6 +847,9 @@ const translations = {
       popular: "Самый популярный",
       suppliesTitle: "Материалы для каллиграфии",
       suppliesDesc: "Необходимые инструменты и материалы для ваших занятий по каллиграфии",
+      tabAll: "Все категории",
+      tabPrograms: "Учебные программы",
+      tabSupplies: "Материалы и инструменты",
     },
     testimonials: {
       label: "От нашего сообщества",
@@ -1083,6 +1110,9 @@ const translations = {
       popular: "الأكثر طلباً",
       suppliesTitle: "لوازم الخط العربي",
       suppliesDesc: "الأدوات والمواد الأساسية لممارسة فن الخط العربي",
+      tabAll: "الكل",
+      tabPrograms: "البرامج التعليمية",
+      tabSupplies: "لوازم الخط العربي",
     },
     testimonials: {
       label: "من مجتمعنا الفني",
@@ -1615,6 +1645,8 @@ export default function App() {
   const [locale, setLocale] = useState<Locale>("uz");
   const [currentPage, setCurrentPage] = useState<"home" | "about" | "gallery" | "courses" | "team" | "author" | "contact">("home");
   const [activeScriptTab, setActiveScriptTab] = useState(0);
+  const [coursesSubTab, setCoursesSubTab] = useState<"all" | "programs" | "supplies">("all");
+  const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1893,6 +1925,80 @@ export default function App() {
               const id = link.toLowerCase() as any;
               const isActive = currentPage === id;
               const translatedLabel = t.nav[id as keyof typeof t.nav];
+
+              if (link === "Courses") {
+                return (
+                  <div key={link} className="relative group/courses" onMouseLeave={() => setCoursesDropdownOpen(false)}>
+                    <button
+                      onClick={() => {
+                        setCurrentPage("courses");
+                        setCoursesSubTab("all");
+                      }}
+                      onMouseEnter={() => setCoursesDropdownOpen(true)}
+                      role="menuitem"
+                      className={`text-sm font-medium tracking-wide transition-colors duration-200 relative inline-flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] rounded px-1 cursor-pointer ${
+                        isActive ? "text-[#D4AF37]" : "text-[#005F40] hover:text-[#D4AF37]"
+                      }`}
+                    >
+                      <span>{translatedLabel}</span>
+                      <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover/courses:rotate-180" />
+                      <span
+                        className={`absolute -bottom-1 left-0 h-px bg-[#D4AF37] transition-all duration-300 ${
+                          isActive ? "w-full" : "w-0 group-hover/courses:w-full"
+                        }`}
+                      />
+                    </button>
+
+                    {/* Courses Sub-Menu Dropdown */}
+                    <div
+                      className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white border border-[#D4AF37]/30 shadow-2xl rounded-xl py-2 transition-all duration-200 z-[70] ${
+                        coursesDropdownOpen ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none group-hover/courses:opacity-100 group-hover/courses:scale-100 group-hover/courses:pointer-events-auto"
+                      }`}
+                    >
+                      <button
+                        onClick={() => {
+                          setCoursesSubTab("all");
+                          setCurrentPage("courses");
+                          setCoursesDropdownOpen(false);
+                        }}
+                        className={`w-full px-4 py-2.5 flex items-center gap-2.5 text-xs font-semibold transition-colors cursor-pointer ${
+                          coursesSubTab === "all" && currentPage === "courses" ? "bg-[#005F40] text-white" : "text-[#1C2B3A] hover:bg-[#005F40]/10 hover:text-[#005F40]"
+                        }`}
+                      >
+                        <Filter className="w-4 h-4 text-[#D4AF37]" />
+                        <span>{t.courses.tabAll}</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setCoursesSubTab("programs");
+                          setCurrentPage("courses");
+                          setCoursesDropdownOpen(false);
+                        }}
+                        className={`w-full px-4 py-2.5 flex items-center gap-2.5 text-xs font-semibold transition-colors cursor-pointer ${
+                          coursesSubTab === "programs" && currentPage === "courses" ? "bg-[#005F40] text-white" : "text-[#1C2B3A] hover:bg-[#005F40]/10 hover:text-[#005F40]"
+                        }`}
+                      >
+                        <GraduationCap className="w-4 h-4 text-[#D4AF37]" />
+                        <span>{t.courses.tabPrograms}</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setCoursesSubTab("supplies");
+                          setCurrentPage("courses");
+                          setCoursesDropdownOpen(false);
+                        }}
+                        className={`w-full px-4 py-2.5 flex items-center gap-2.5 text-xs font-semibold transition-colors cursor-pointer ${
+                          coursesSubTab === "supplies" && currentPage === "courses" ? "bg-[#005F40] text-white" : "text-[#1C2B3A] hover:bg-[#005F40]/10 hover:text-[#005F40]"
+                        }`}
+                      >
+                        <PenTool className="w-4 h-4 text-[#D4AF37]" />
+                        <span>{t.courses.tabSupplies}</span>
+                      </button>
+                    </div>
+                  </div>
+                );
+              }
+
               return (
                 <button
                   key={link}
@@ -2017,7 +2123,7 @@ export default function App() {
         {/* Mobile drawer */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            menuOpen ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <div className="bg-[#FAF9F6]/99 backdrop-blur-md border-t border-[#D4AF37]/20 px-6 py-6 flex flex-col gap-1">
@@ -2025,6 +2131,62 @@ export default function App() {
               const id = link.toLowerCase() as any;
               const isActive = currentPage === id;
               const translatedLabel = t.nav[id as keyof typeof t.nav];
+
+              if (link === "Courses") {
+                return (
+                  <div key={link} className="flex flex-col border-b border-[#D4AF37]/10 py-2">
+                    <button
+                      onClick={() => {
+                        setCurrentPage("courses");
+                        setCoursesSubTab("all");
+                        setMenuOpen(false);
+                      }}
+                      className={`text-base font-medium py-1 text-left flex items-center justify-between transition-colors ${
+                        isActive ? "text-[#D4AF37]" : "text-[#005F40]"
+                      }`}
+                    >
+                      <span>{translatedLabel}</span>
+                      <ChevronRight className="w-4 h-4 text-[#D4AF37]" />
+                    </button>
+                    <div className="pl-4 flex flex-col gap-1.5 mt-2 border-l-2 border-[#D4AF37]/30">
+                      <button
+                        onClick={() => {
+                          setCoursesSubTab("all");
+                          setCurrentPage("courses");
+                          setMenuOpen(false);
+                        }}
+                        className="text-xs font-semibold py-1.5 text-[#005F40] hover:text-[#D4AF37] text-left flex items-center gap-2"
+                      >
+                        <Filter className="w-3.5 h-3.5 text-[#D4AF37]" />
+                        <span>{t.courses.tabAll}</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setCoursesSubTab("programs");
+                          setCurrentPage("courses");
+                          setMenuOpen(false);
+                        }}
+                        className="text-xs font-semibold py-1.5 text-[#005F40] hover:text-[#D4AF37] text-left flex items-center gap-2"
+                      >
+                        <GraduationCap className="w-3.5 h-3.5 text-[#D4AF37]" />
+                        <span>{t.courses.tabPrograms}</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setCoursesSubTab("supplies");
+                          setCurrentPage("courses");
+                          setMenuOpen(false);
+                        }}
+                        className="text-xs font-semibold py-1.5 text-[#005F40] hover:text-[#D4AF37] text-left flex items-center gap-2"
+                      >
+                        <PenTool className="w-3.5 h-3.5 text-[#D4AF37]" />
+                        <span>{t.courses.tabSupplies}</span>
+                      </button>
+                    </div>
+                  </div>
+                );
+              }
+
               return (
                 <button
                   key={link}
@@ -2598,14 +2760,14 @@ export default function App() {
       )}
 
       {/* ────────────────────────────────────────────────────────────────
-          6. EDUCATIONAL PROGRAMS
+          6. EDUCATIONAL PROGRAMS & CALLIGRAPHY SUPPLIES
       ──────────────────────────────────────────────────────────────── */}
       {currentPage === "courses" && (
         <section id="courses" className="py-16 md:py-28 bg-[#FAF9F6]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div
             ref={coursesReveal.ref}
-            className={`text-center mb-20 transition-all duration-700 ${
+            className={`text-center mb-12 transition-all duration-700 ${
               coursesReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -2622,165 +2784,215 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-md mx-auto md:max-w-none">
-            {courseItems.map((course, i) => (
-              <div
-                key={course.level}
-                className={`relative flex flex-col transition-all duration-500 hover:shadow-xl hover:-translate-y-1 ${
-                  course.featured
-                    ? "bg-[#005F40] text-white shadow-lg"
-                    : "bg-white border border-[#D4AF37]/25 hover:border-[#D4AF37]/60"
-                } ${
-                  coursesReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-                style={{ transitionDelay: `${i * 120}ms` }}
-              >
-                {course.featured && (
-                  <div className="absolute -top-px left-1/2 -translate-x-1/2 bg-[#D4AF37] text-[#1C2B3A] text-[10px] font-bold tracking-[0.25em] uppercase px-6 py-1.5">
-                    {t.courses.popular}
-                  </div>
-                )}
+          {/* Sub-navigation Split Tabs */}
+          <div className="flex items-center justify-center gap-3 mb-16 flex-wrap">
+            <button
+              onClick={() => setCoursesSubTab("all")}
+              className={`px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2.5 border cursor-pointer ${
+                coursesSubTab === "all"
+                  ? "bg-[#005F40] text-white border-[#005F40] shadow-lg shadow-[#005F40]/20 scale-105"
+                  : "bg-white text-[#1C2B3A] border-[#D4AF37]/30 hover:border-[#D4AF37] hover:bg-[#EDE8DC]/50"
+              }`}
+            >
+              <Filter className="w-4 h-4 text-[#D4AF37]" />
+              <span>{t.courses.tabAll}</span>
+            </button>
 
-                <div className="p-8 flex-1">
-                  {/* Icon */}
-                  <div
-                    className={`w-14 h-14 flex items-center justify-center mb-6 ${
-                      course.featured ? "bg-white/10 text-[#D4AF37]" : "bg-[#EDE8DC] text-[#005F40]"
-                    }`}
-                  >
-                    {course.icon}
-                  </div>
+            <button
+              onClick={() => setCoursesSubTab("programs")}
+              className={`px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2.5 border cursor-pointer ${
+                coursesSubTab === "programs"
+                  ? "bg-[#005F40] text-white border-[#005F40] shadow-lg shadow-[#005F40]/20 scale-105"
+                  : "bg-white text-[#1C2B3A] border-[#D4AF37]/30 hover:border-[#D4AF37] hover:bg-[#EDE8DC]/50"
+              }`}
+            >
+              <GraduationCap className="w-4 h-4 text-[#D4AF37]" />
+              <span>{t.courses.tabPrograms}</span>
+            </button>
 
-                  <p
-                    className="text-xs tracking-[0.2em] uppercase font-semibold mb-1 text-[#D4AF37]"
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
-                  >
-                    {course.level}
-                  </p>
-                  <h3
-                    className={`text-xl font-normal mb-4 ${
-                      course.featured ? "text-white" : "text-[#1C2B3A]"
-                    }`}
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    {course.title}
-                  </h3>
-                  <p
-                    className={`text-sm leading-relaxed mb-6 ${
-                      course.featured ? "text-white/75" : "text-[#6B7280]"
-                    }`}
-                  >
-                    {course.description}
-                  </p>
+            <button
+              onClick={() => setCoursesSubTab("supplies")}
+              className={`px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2.5 border cursor-pointer ${
+                coursesSubTab === "supplies"
+                  ? "bg-[#005F40] text-white border-[#005F40] shadow-lg shadow-[#005F40]/20 scale-105"
+                  : "bg-white text-[#1C2B3A] border-[#D4AF37]/30 hover:border-[#D4AF37] hover:bg-[#EDE8DC]/50"
+              }`}
+            >
+              <PenTool className="w-4 h-4 text-[#D4AF37]" />
+              <span>{t.courses.tabSupplies}</span>
+            </button>
+          </div>
 
-                  {/* Meta */}
-                  <div
-                    className={`space-y-2.5 mb-6 text-sm ${
-                      course.featured ? "text-white/70" : "text-[#4A5568]"
-                    }`}
-                  >
-                    <div className="flex items-center gap-2.5">
-                      <Clock className="w-3.5 h-3.5 flex-shrink-0" />
-                      <span>{t.courses.duration}: {course.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-2.5">
-                      <Calendar className="w-3.5 h-3.5 flex-shrink-0" />
-                      <span>{t.courses.schedule}: {course.schedule}</span>
-                    </div>
-                  </div>
-
-                  {/* Features */}
-                  <div
-                    className={`space-y-2 mb-8 ${
-                      course.featured ? "border-t border-white/20" : "border-t border-[#D4AF37]/15"
-                    } pt-6`}
-                  >
-                    {course.features.map((f) => (
-                      <div key={f} className="flex items-start gap-2.5 text-xs">
-                        <div
-                          className="w-1 h-1 rotate-45 mt-1.5 flex-shrink-0 bg-[#D4AF37]"
-                        />
-                        <span className={course.featured ? "text-white/75" : "text-[#6B7280]"}>{f}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Price + CTA */}
+          {/* 1. Educational Courses Grid */}
+          {(coursesSubTab === "all" || coursesSubTab === "programs") && (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-md mx-auto md:max-w-none mb-16">
+              {courseItems.map((course, i) => (
                 <div
-                  className={`px-8 py-6 border-t ${
-                    course.featured ? "border-white/20" : "border-[#D4AF37]/20"
+                  key={course.level}
+                  className={`relative flex flex-col transition-all duration-500 hover:shadow-xl hover:-translate-y-1 ${
+                    course.featured
+                      ? "bg-[#005F40] text-white shadow-lg"
+                      : "bg-white border border-[#D4AF37]/25 hover:border-[#D4AF37]/60"
+                  } ${
+                    coursesReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
+                  style={{ transitionDelay: `${i * 120}ms` }}
                 >
-                  <div className="flex items-center justify-between mb-4">
-                    <span
-                      className={`text-xs uppercase tracking-widest ${
-                        course.featured ? "text-white/50" : "text-[#6B7280]"
+                  {course.featured && (
+                    <div className="absolute -top-px left-1/2 -translate-x-1/2 bg-[#D4AF37] text-[#1C2B3A] text-[10px] font-bold tracking-[0.25em] uppercase px-6 py-1.5">
+                      {t.courses.popular}
+                    </div>
+                  )}
+
+                  <div className="p-8 flex-1">
+                    {/* Icon */}
+                    <div
+                      className={`w-14 h-14 flex items-center justify-center mb-6 ${
+                        course.featured ? "bg-white/10 text-[#D4AF37]" : "bg-[#EDE8DC] text-[#005F40]"
                       }`}
                     >
-                      {t.courses.fee}
-                    </span>
-                    <span
-                      className={`text-xl font-bold ${
-                        course.featured ? "text-[#D4AF37]" : "text-[#005F40]"
+                      {course.icon}
+                    </div>
+
+                    <p
+                      className="text-xs tracking-[0.2em] uppercase font-semibold mb-1 text-[#D4AF37]"
+                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    >
+                      {course.level}
+                    </p>
+                    <h3
+                      className={`text-xl font-normal mb-4 ${
+                        course.featured ? "text-white" : "text-[#1C2B3A]"
                       }`}
                       style={{ fontFamily: "'Playfair Display', serif" }}
                     >
-                      {course.price}
-                    </span>
+                      {course.title}
+                    </h3>
+                    <p
+                      className={`text-sm leading-relaxed mb-6 ${
+                        course.featured ? "text-white/75" : "text-[#6B7280]"
+                      }`}
+                    >
+                      {course.description}
+                    </p>
+
+                    {/* Meta */}
+                    <div
+                      className={`space-y-2.5 mb-6 text-sm ${
+                        course.featured ? "text-white/70" : "text-[#4A5568]"
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <Clock className="w-3.5 h-3.5 flex-shrink-0" />
+                        <span>{t.courses.duration}: {course.duration}</span>
+                      </div>
+                      <div className="flex items-center gap-2.5">
+                        <Calendar className="w-3.5 h-3.5 flex-shrink-0" />
+                        <span>{t.courses.schedule}: {course.schedule}</span>
+                      </div>
+                    </div>
+
+                    {/* Features */}
+                    <div
+                      className={`space-y-2 mb-8 ${
+                        course.featured ? "border-t border-white/20" : "border-t border-[#D4AF37]/15"
+                      } pt-6`}
+                    >
+                      {course.features.map((f) => (
+                        <div key={f} className="flex items-start gap-2.5 text-xs">
+                          <div
+                            className="w-1 h-1 rotate-45 mt-1.5 flex-shrink-0 bg-[#D4AF37]"
+                          />
+                          <span className={course.featured ? "text-white/75" : "text-[#6B7280]"}>{f}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <button
-                    onClick={() => handleEnroll(course.title)}
-                    className={`w-full py-3.5 text-sm font-bold tracking-widest uppercase transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-                      course.featured
-                        ? "bg-[#D4AF37] text-[#1C2B3A] hover:bg-[#C49D2A] active:bg-[#B08D22] focus-visible:ring-[#D4AF37]"
-                        : "bg-[#005F40] text-white hover:bg-[#004530] active:bg-[#003520] focus-visible:ring-[#005F40]"
+
+                  {/* Price + CTA */}
+                  <div
+                    className={`px-8 py-6 border-t ${
+                      course.featured ? "border-white/20" : "border-[#D4AF37]/20"
                     }`}
                   >
-                    {t.courses.register}
-                  </button>
-                </div>
-              </div>
-             ))}
-          </div>
-
-          {/* ── Calligraphy Supplies ─────────────────────────────── */}
-          <div className="mt-20 pt-16 border-t border-[#D4AF37]/20">
-            <div className="text-center mb-12">
-              <SectionLabel>{t.courses.suppliesTitle}</SectionLabel>
-              <h3 className="text-3xl lg:text-4xl text-[#1C2B3A] font-normal mt-2" style={{ fontFamily: "'Playfair Display', serif" }}>
-                {t.courses.suppliesTitle}
-              </h3>
-              <GoldDivider />
-              <p className="text-[#6B7280] max-w-xl mx-auto text-[15px] leading-relaxed">{t.courses.suppliesDesc}</p>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {[
-                { name: locale==="ar"?"أقلام الخط":locale==="ru"?"Каллиграф. ручки":locale==="uz"?"Xattotlik qalamlari":"Calligraphy Pens", icon: "✒️" },
-                { name: locale==="ar"?"حامل الريشة":locale==="ru"?"Держатель пера":locale==="uz"?"Qalam ushlagich":"Nib Holder", icon: "🖊️" },
-                { name: locale==="ar"?"الريش":locale==="ru"?"Перья":locale==="uz"?"Qalamlar":"Nibs", icon: "🖋️" },
-                { name: locale==="ar"?"أقلام الفرشاة":locale==="ru"?"Кисть-ручки":locale==="uz"?"Fırçalı qalamlar":"Brush Pens", icon: "🖌️" },
-                { name: locale==="ar"?"أقلام القصب":locale==="ru"?"Тростниковые перья":locale==="uz"?"Qamish qalamlar":"Reed Pens", icon: "🌾" },
-                { name: locale==="ar"?"حبر الخط":locale==="ru"?"Каллиграф. чернила":locale==="uz"?"Xattotlik siyohi":"Calligraphy Ink", icon: "🧴" },
-                { name: locale==="ar"?"الحبر الهندي":locale==="ru"?"Тушь Индия":locale==="uz"?"Hindiston siyohi":"India Ink", icon: "⬛" },
-                { name: locale==="ar"?"محبرة":locale==="ru"?"Чернильница":locale==="uz"?"Siyohdonga":"Inkwell", icon: "🫙" },
-                { name: locale==="ar"?"ورق التدريب":locale==="ru"?"Тренировочная бумага":locale==="uz"?"Mashq qog'ozi":"Practice Paper", icon: "📄" },
-                { name: locale==="ar"?"دفتر الشبكة":locale==="ru"?"Блокнот в клетку":locale==="uz"?"Katakli daftar":"Grid Pad", icon: "📓" },
-                { name: locale==="ar"?"ورق مقوى ناعم":locale==="ru"?"Гладкий картон":locale==="uz"?"Silliq karton":"Smooth Cardstock", icon: "🗒️" },
-                { name: locale==="ar"?"ورق بريستول":locale==="ru"?"Бумага Бристоль":locale==="uz"?"Bristol qog'ozi":"Bristol Paper", icon: "📋" },
-                { name: locale==="ar"?"قلم رصاص":locale==="ru"?"Карандаш":locale==="uz"?"Qalam":"Pencil", icon: "✏️" },
-                { name: locale==="ar"?"ممحاة":locale==="ru"?"Ластик":locale==="uz"?"O'chirg'ich":"Eraser", icon: "🔲" },
-                { name: locale==="ar"?"مسطرة":locale==="ru"?"Линейка":locale==="uz"?"Chizg'ich":"Ruler", icon: "📏" },
-                { name: locale==="ar"?"قماش التنظيف":locale==="ru"?"Чистящая ткань":locale==="uz"?"Tozalash matosi":"Cleaning Cloth", icon: "🧻" },
-                { name: locale==="ar"?"كوب الماء":locale==="ru"?"Стакан воды":locale==="uz"?"Suv idishi":"Water Cup", icon: "🥤" },
-              ].map((item, i) => (
-                <div key={i} className="flex flex-col items-center gap-3 p-5 bg-white border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 hover:shadow-lg transition-all duration-300 text-center group cursor-default">
-                  <span className="text-3xl group-hover:scale-125 transition-transform duration-300 leading-none">{item.icon}</span>
-                  <span className="text-[#1C2B3A] text-xs font-semibold leading-tight">{item.name}</span>
+                    <div className="flex items-center justify-between mb-4">
+                      <span
+                        className={`text-xs uppercase tracking-widest ${
+                          course.featured ? "text-white/50" : "text-[#6B7280]"
+                        }`}
+                      >
+                        {t.courses.fee}
+                      </span>
+                      <span
+                        className={`text-xl font-bold ${
+                          course.featured ? "text-[#D4AF37]" : "text-[#005F40]"
+                        }`}
+                        style={{ fontFamily: "'Playfair Display', serif" }}
+                      >
+                        {course.price}
+                      </span>
+                    </div>
+                    <button
+                      onClick={() => handleEnroll(course.title)}
+                      className={`w-full py-3.5 text-sm font-bold tracking-widest uppercase transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 cursor-pointer ${
+                        course.featured
+                          ? "bg-[#D4AF37] text-[#1C2B3A] hover:bg-[#C49D2A] active:bg-[#B08D22] focus-visible:ring-[#D4AF37]"
+                          : "bg-[#005F40] text-white hover:bg-[#004530] active:bg-[#003520] focus-visible:ring-[#005F40]"
+                      }`}
+                    >
+                      {t.courses.register}
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
+          )}
+
+          {/* 2. Calligraphy Supplies Grid with Modern Lucide Icons */}
+          {(coursesSubTab === "all" || coursesSubTab === "supplies") && (
+            <div className={`${coursesSubTab === "all" ? "mt-20 pt-16 border-t border-[#D4AF37]/20" : ""}`}>
+              <div className="text-center mb-12">
+                <SectionLabel>{t.courses.suppliesTitle}</SectionLabel>
+                <h3 className="text-3xl lg:text-4xl text-[#1C2B3A] font-normal mt-2" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  {t.courses.suppliesTitle}
+                </h3>
+                <GoldDivider />
+                <p className="text-[#6B7280] max-w-xl mx-auto text-[15px] leading-relaxed">{t.courses.suppliesDesc}</p>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
+                {[
+                  { name: locale==="ar"?"أقلام الخط":locale==="ru"?"Каллиграф. ручки":locale==="uz"?"Xattotlik qalamlari":"Calligraphy Pens", Icon: PenTool },
+                  { name: locale==="ar"?"حامل الريشة":locale==="ru"?"Держатель пера":locale==="uz"?"Qalam ushlagich":"Nib Holder", Icon: Edit3 },
+                  { name: locale==="ar"?"الريش":locale==="ru"?"Перья":locale==="uz"?"Qalamlar":"Nibs", Icon: Feather },
+                  { name: locale==="ar"?"أقلام الفرشاة":locale==="ru"?"Кисть-ручки":locale==="uz"?"Fırçalı qalamlar":"Brush Pens", Icon: Paintbrush },
+                  { name: locale==="ar"?"أقلام القصب":locale==="ru"?"Тростниковые перья":locale==="uz"?"Qamish qalamlar":"Reed Pens", Icon: Pen },
+                  { name: locale==="ar"?"حبر الخط":locale==="ru"?"Каллиграф. чернила":locale==="uz"?"Xattotlik siyohi":"Calligraphy Ink", Icon: Droplet },
+                  { name: locale==="ar"?"الحبر الهندي":locale==="ru"?"Тушь Индия":locale==="uz"?"Hindiston siyohi":"India Ink", Icon: Droplets },
+                  { name: locale==="ar"?"محبرة":locale==="ru"?"Чернильница":locale==="uz"?"Siyohdonga":"Inkwell", Icon: GlassWater },
+                  { name: locale==="ar"?"ورق التدريب":locale==="ru"?"Тренировочная бумага":locale==="uz"?"Mashq qog'ozi":"Practice Paper", Icon: FileText },
+                  { name: locale==="ar"?"دفتر الشبكة":locale==="ru"?"Блокнот в клетку":locale==="uz"?"Katakli daftar":"Grid Pad", Icon: Grid },
+                  { name: locale==="ar"?"ورق مقوى ناعم":locale==="ru"?"Гладкий картон":locale==="uz"?"Silliq karton":"Smooth Cardstock", Icon: File },
+                  { name: locale==="ar"?"ورق بريستول":locale==="ru"?"Бумага Бристоль":locale==="uz"?"Bristol qog'ozi":"Bristol Paper", Icon: Layers },
+                  { name: locale==="ar"?"قلم رصاص":locale==="ru"?"Карандаш":locale==="uz"?"Qalam":"Pencil", Icon: Pencil },
+                  { name: locale==="ar"?"ممحاة":locale==="ru"?"Ластик":locale==="uz"?"O'chirg'ich":"Eraser", Icon: Eraser },
+                  { name: locale==="ar"?"مسطرة":locale==="ru"?"Линейка":locale==="uz"?"Chizg'ich":"Ruler", Icon: Ruler },
+                  { name: locale==="ar"?"قماش التنظيف":locale==="ru"?"Чистящая ткань":locale==="uz"?"Tozalash matosi":"Cleaning Cloth", Icon: Scissors },
+                  { name: locale==="ar"?"كوب الماء":locale==="ru"?"Стакан воды":locale==="uz"?"Suv idishi":"Water Cup", Icon: CupSoda },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col items-center gap-3.5 p-6 bg-white border border-[#D4AF37]/20 rounded-xl hover:border-[#D4AF37]/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center group cursor-default"
+                  >
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#005F40]/10 to-[#D4AF37]/20 border border-[#D4AF37]/30 text-[#005F40] flex items-center justify-center group-hover:bg-[#005F40] group-hover:text-[#D4AF37] group-hover:border-[#D4AF37] transition-all duration-300 shadow-sm">
+                      <item.Icon className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
+                    </div>
+                    <span className="text-[#1C2B3A] text-xs font-semibold leading-snug">{item.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
       )}

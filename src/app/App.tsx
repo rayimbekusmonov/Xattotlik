@@ -209,15 +209,15 @@ const translations = {
       titlePre: "Xattotlik bo'yicha",
       titleMain: "Xalqaro Xattotlik Maktabi",
       titleItalic: "Xalqaro Xattotlik Maktabi",
-      subtitle: "Muqaddas \"Ustoz-Shogird\" an'anasida yetuk ustozlardan xattotlik sirlarini o'rganing — har bir qalam izida avloddan avlodga o'tadigan islom san'ati merosiga aylaning.",
+      subtitle: "Xattotlik sirlarini muqaddas \"Ustoz-Shogird\" an'anasi asosida yetuk ustozlardan o'rganing.",
       features: [
-        "Xalqaro akkreditatsiyalangan diplom",
+        "Kursni muvaffaqiyatli tugatganingiz haqidagi sertifikat",
         "Ustoz-Shogird an'anasi asosida ta'lim",
-        "2,000+ tarixiy qo'lyozma arxivi"
+        "5+ turli xil turdagi yozuvlar"
       ],
       enrollNow: "Kurslarga yozilish",
       virtualTour: "Virtual Galereya",
-      ratingText: "4.9/5 baho • 60+ mamlakatdan 4,000+ bitiruvchilar",
+      ratingText: "4.9/5 baho • Malakali usta-xattotlar jamoasi",
       scriptCard: {
         title: "Mumtoz Xat Asarlari",
         subtitle: "Eng nufuzli xattotlik uslublarini o'rganing",
@@ -472,15 +472,15 @@ const translations = {
       titlePre: "Welcome to the",
       titleMain: "International Calligraphy School",
       titleItalic: "International Calligraphy School",
-      subtitle: "Learn the sacred art of calligraphy through the revered 'Ustoz-Shogird' (Master-Apprentice) tradition — a timeless bond of knowledge passed from grandmaster to devoted student across generations.",
+      subtitle: "Learn the secrets of calligraphy based on the sacred 'Ustoz-Shogird' tradition from master calligraphers.",
       features: [
-        "Accredited International Certification",
+        "Certificate of successful course completion",
         "Ustoz-Shogird Master-Apprentice Lineage",
-        "2,000+ Historic Manuscript Archive"
+        "5+ diverse classical script styles"
       ],
       enrollNow: "Enroll in Courses",
       virtualTour: "Virtual Gallery Tour",
-      ratingText: "4.9/5 Rating • 4,000+ Alumni from 60+ Nations",
+      ratingText: "4.9/5 Rating • Master Calligraphers Team",
       scriptCard: {
         title: "Classical Script Masterworks",
         subtitle: "Explore major calligraphy script traditions",
@@ -735,15 +735,15 @@ const translations = {
       titlePre: "Добро пожаловать в",
       titleMain: "Международную Школу Каллиграфии",
       titleItalic: "Международная Школа Каллиграфии",
-      subtitle: "Изучайте священное искусство каллиграфии через почитаемую восточную традицию «Устоз-Шогирд» (Мастер-Ученик) — вечная связь знания, передаваемого от великого мастера к преданному ученику сквозь века.",
+      subtitle: "Изучайте секреты каллиграфии на основе священной традиции «Устоз-Шогирд» у признанных мастеров.",
       features: [
-        "Аккредитованная международная сертификация",
+        "Сертификат об успешном окончании курса",
         "Традиция Устоз-Шогирд (Мастер-Ученик)",
-        "Архив из 2000+ исторических рукописей"
+        "5+ различных видов классического письма"
       ],
       enrollNow: "Записаться на курсы",
       virtualTour: "Виртуальная галерея",
-      ratingText: "Оценка 4.9/5 • 4000+ выпускников из 60+ стран",
+      ratingText: "Оценка 4.9/5 • Команда признанных мастеров",
       scriptCard: {
         title: "Шедевры классической каллиграфии",
         subtitle: "Изучите ключевые традиции восточной письменности",
@@ -998,15 +998,15 @@ const translations = {
       titlePre: "مرحباً بكم في",
       titleMain: "المدرسة الدولية للخط العربي",
       titleItalic: "المدرسة الدولية للخط العربي",
-      subtitle: "تعلم فن الخط الأصيل من خلال التقليد الشرقي المقدس «أستاذ-تلميذ» — رابط أزلي من المعرفة يُنقل من أستاذ كبير إلى تلميذ مخلص عبر القرون والأجيال.",
+      subtitle: "تعلم أسرار الخط العربي على أساس تقليد «أستاذ-تلميذ» المقدس عند كبار الأساتذة.",
       features: [
-        "شهادات وإجازات معتمدة دولياً",
+        "شهادة إتمام الدورة بنجاح",
         "تقليد أستاذ-تلميذ الشرقي المقدس",
-        "أكثر من ٢٠٠٠ مخطوطة تاريخية"
+        "أكثر من ٥ أنواع خطوط متنوعة"
       ],
       enrollNow: "التسجيل في الدورات",
       virtualTour: "جولة في المعرض",
-      ratingText: "تقييم ٤.٩/٥ • أكثر من ٤٠٠٠ خريج من ٦٠ دولة",
+      ratingText: "تقييم ٤.٩/٥ • نخبة من كبار خطاطي المركز",
       scriptCard: {
         title: "روائع الخط الكلاسيكي",
         subtitle: "استكشف أبرز مدارس وأساليب الخط العربي",
@@ -1746,14 +1746,7 @@ export default function App() {
   const galleryReveal = useScrollReveal();
   const coursesReveal = useScrollReveal();
   const teamReveal = useScrollReveal();
-  const statsReveal = useScrollReveal();
   const testimonialsReveal = useScrollReveal();
-
-  // Animated counters
-  const studentsCount = useCounter(4000, statsReveal.visible);
-  const nationsCount = useCounter(60, statsReveal.visible);
-  const manuscriptsCount = useCounter(2000, statsReveal.visible);
-  const mastersCount = useCounter(35, statsReveal.visible);
 
   // Close language menu on outside click
   const langDropdownRef = useRef<HTMLDivElement>(null);
@@ -2846,45 +2839,8 @@ export default function App() {
               </div>
 
             </section>
-
-      {/* ────────────────────────────────────────────────────────────────
-          3. STATS STRIP
-      ──────────────────────────────────────────────────────────────── */}
-      <div
-        ref={statsReveal.ref}
-        className={`bg-[#005F40] py-12 transition-all duration-700 ${
-          statsReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 text-center">
-            {[
-              { value: studentsCount, suffix: "+", label: t.stats.students },
-              { value: nationsCount, suffix: "+", label: t.stats.nations },
-              { value: manuscriptsCount, suffix: "+", label: t.stats.manuscripts },
-              { value: mastersCount, suffix: "+", label: t.stats.heritage },
-            ].map((stat, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center gap-2"
-                style={{ transitionDelay: `${i * 100}ms` }}
-              >
-                <p
-                  className="text-4xl lg:text-5xl font-bold text-[#D4AF37]"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  {t.locale === "ar" ? stat.value.toLocaleString("ar-EG") : stat.value.toLocaleString()}{stat.suffix}
-                </p>
-                <p className="text-white/70 text-xs tracking-widest uppercase font-medium">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      </>
-      )}
+          </>
+        )}
 
       {/* ────────────────────────────────────────────────────────────────
           4. ABOUT THE CENTER

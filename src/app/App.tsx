@@ -1291,7 +1291,6 @@ const getGalleryItems = (t: typeof translations.en) => [
 /* ── Course mapping with translations ─────────────────────────────────── */
 const getCourses = (t: typeof translations.en) => [
   {
-    level: t.courses.level1,
     title: t.courses.nasxiBuxoriyTitle,
     description: t.courses.nasxiBuxoriyDesc,
     duration: `12 ${t.locale === "ar" ? "أسبوعاً" : t.locale === "ru" ? "недель" : t.locale === "uz" ? "hafta" : "Weeks"}`,
@@ -1302,7 +1301,6 @@ const getCourses = (t: typeof translations.en) => [
     featured: false,
   },
   {
-    level: t.courses.level2,
     title: t.courses.nastaliqTitle,
     description: t.courses.nastaliqDesc,
     duration: `14 ${t.locale === "ar" ? "أسبوعاً" : t.locale === "ru" ? "недель" : t.locale === "uz" ? "hafta" : "Weeks"}`,
@@ -1313,7 +1311,6 @@ const getCourses = (t: typeof translations.en) => [
     featured: false,
   },
   {
-    level: t.courses.level3,
     title: t.courses.nasxTitle,
     description: t.courses.nasxDesc,
     duration: `16 ${t.locale === "ar" ? "أسبوعاً" : t.locale === "ru" ? "недель" : t.locale === "uz" ? "hafta" : "Weeks"}`,
@@ -1324,7 +1321,6 @@ const getCourses = (t: typeof translations.en) => [
     featured: true,
   },
   {
-    level: t.courses.level4,
     title: t.courses.riqiyTitle,
     description: t.courses.riqiyDesc,
     duration: `14 ${t.locale === "ar" ? "أسبوعاً" : t.locale === "ru" ? "недель" : t.locale === "uz" ? "hafta" : "Weeks"}`,
@@ -1335,7 +1331,6 @@ const getCourses = (t: typeof translations.en) => [
     featured: false,
   },
   {
-    level: t.courses.level5,
     title: t.courses.sulusTitle,
     description: t.courses.sulusDesc,
     duration: `18 ${t.locale === "ar" ? "أسبوعاً" : t.locale === "ru" ? "недель" : t.locale === "uz" ? "hafta" : "Weeks"}`,
@@ -1346,7 +1341,6 @@ const getCourses = (t: typeof translations.en) => [
     featured: false,
   },
   {
-    level: t.courses.level6,
     title: t.courses.devoniyTitle,
     description: t.courses.devoniyDesc,
     duration: `20 ${t.locale === "ar" ? "أسبوعاً" : t.locale === "ru" ? "недель" : t.locale === "uz" ? "hafta" : "Weeks"}`,
@@ -1640,10 +1634,78 @@ const sendTelegramNotification = async ({
   }
 };
 
+const heroRegTranslations = {
+  uz: {
+    badge: "Rasmiy bepul qabul 2026",
+    status: "Qabul ochiq",
+    title: "Bepul kurslarga onlayn yozilish",
+    subtitle: "Xalqaro xattotlik maktabiga bepul ta'lim arizasi",
+    tabRegister: "Ro'yxatdan o'tish",
+    tabShowcase: "Mumtoz Xatlar",
+    courseLabel: "Tanlangan bepul kurs",
+    selectCourse: "--- Bepul kursni tanlang ---",
+    submitBtn: "Arizani yuborish",
+    submitting: "Yuborilmoqda...",
+    successTitle: "Arizangiz qabul qilindi!",
+    successSub: "Tez orada xattotlik markazi ma'muriyati siz bilan bog'lanadi.",
+    resetBtn: "Yana ariza topshirish",
+    trustBadge: "100% bepul ta'lim • Rasmiy xalqaro diplom • Bepul anjomlar",
+  },
+  ru: {
+    badge: "Официальный бесплатный прием 2026",
+    status: "Прием открыт",
+    title: "Запись на бесплатные курсы",
+    subtitle: "Онлайн-регистрация в школу каллиграфии",
+    tabRegister: "Записаться",
+    tabShowcase: "Шедевры каллиграфии",
+    courseLabel: "Выбранный бесплатный курс",
+    selectCourse: "--- Выберите курс ---",
+    submitBtn: "Отправить заявку",
+    submitting: "Отправка...",
+    successTitle: "Ваша заявка принята!",
+    successSub: "Администрация центра каллиграфии свяжется с вами в ближайшее время.",
+    resetBtn: "Подать еще заявку",
+    trustBadge: "100% бесплатное обучение • Международный диплом • Набор каллиграфа",
+  },
+  en: {
+    badge: "Official Free Admission 2026",
+    status: "Admission Open",
+    title: "Free Course Registration",
+    subtitle: "Online enrollment for calligraphy academy",
+    tabRegister: "Register Now",
+    tabShowcase: "Script Showcase",
+    courseLabel: "Selected Free Course",
+    selectCourse: "--- Select a free course ---",
+    submitBtn: "Submit Application",
+    submitting: "Submitting...",
+    successTitle: "Application Received!",
+    successSub: "The Calligraphy Center administration will contact you shortly.",
+    resetBtn: "Submit another application",
+    trustBadge: "100% Free Tuition • International Diploma • Full Kit Provided",
+  },
+  ar: {
+    badge: "القبول المجاني الرسمي ٢٠٢٦",
+    status: "التسجيل مفتوح",
+    title: "التسجيل في الدورات المجانية",
+    subtitle: "التسجيل الإلكتروني في أكاديمية الخط العربي",
+    tabRegister: "تسجيل الحضور",
+    tabShowcase: "روائع الخط",
+    courseLabel: "الدورة المجانية المختارة",
+    selectCourse: "--- اختر دورة مجانية ---",
+    submitBtn: "إرسال طلب التسجيل",
+    submitting: "جاري الإرسال...",
+    successTitle: "تم استلام طلبكم بنجاح!",
+    successSub: "ستتواصل معكم إدارة مركز الخط في أقرب وقت.",
+    resetBtn: "تقديم طلب آخر",
+    trustBadge: "تعليم مجاني ١٠٠٪ • شهادة إجازة دولية • أدوات خط مجانية",
+  },
+};
+
 /* ══════════════════════════════════════════════════════════════════════ */
 export default function App() {
   const [locale, setLocale] = useState<Locale>("uz");
   const [currentPage, setCurrentPage] = useState<"home" | "about" | "gallery" | "courses" | "team" | "author" | "contact">("home");
+  const [heroRightTab, setHeroRightTab] = useState<"register" | "scripts">("register");
   const [activeScriptTab, setActiveScriptTab] = useState(0);
   const [coursesSubTab, setCoursesSubTab] = useState<"all" | "programs" | "supplies">("all");
   const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
@@ -1672,6 +1734,7 @@ export default function App() {
   }, [currentPage]);
 
   const t = { ...translations[locale], locale };
+  const regT = heroRegTranslations[locale] || heroRegTranslations.uz;
   const galleryItems = getGalleryItems(t as any);
   const courseItems = getCourses(t as any);
 
@@ -1770,13 +1833,28 @@ export default function App() {
             : `Hello, I would like to enroll in the free course: ${courseToSelect}`;
         setFormData((prev) => ({ ...prev, message: msg }));
       }
-      setCurrentPage("contact");
+      setHeroRightTab("register");
       setMenuOpen(false);
-      setTimeout(() => {
-        scrollTo("contact");
-      }, 100);
+      if (currentPage === "home") {
+        const el = document.getElementById("hero-register");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+          const firstInput = el.querySelector("select, input") as HTMLElement | null;
+          firstInput?.focus();
+        }
+      } else {
+        setCurrentPage("home");
+        setTimeout(() => {
+          const el = document.getElementById("hero-register");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "center" });
+            const firstInput = el.querySelector("select, input") as HTMLElement | null;
+            firstInput?.focus();
+          }
+        }, 150);
+      }
     },
-    [courseItems, locale, scrollTo]
+    [courseItems, currentPage, locale]
   );
 
   // Lightbox navigation
@@ -2257,10 +2335,10 @@ export default function App() {
 
               {/* Main Content Container */}
               <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
                   
                   {/* Left Column: Heading, Info & Actions */}
-                  <div className={`lg:col-span-7 flex flex-col ${locale === "ar" ? "items-start text-right" : "items-start text-left"}`}>
+                  <div className={`lg:col-span-6 flex flex-col ${locale === "ar" ? "items-start text-right" : "items-start text-left"}`}>
                     
                     {/* Top Pill Badge */}
                     <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 backdrop-blur-md mb-6 animate-[fadeInDown_0.6s_ease_both]">
@@ -2312,7 +2390,7 @@ export default function App() {
                     <div className="flex flex-wrap items-center gap-4 mb-8 w-full animate-[fadeInUp_0.8s_ease_0.6s_both]">
                       <button
                         onClick={() => handleEnroll()}
-                        className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#C49D2A] text-[#1C2B3A] text-sm font-bold tracking-widest uppercase rounded-sm shadow-lg shadow-[#D4AF37]/20 hover:from-[#E5BF47] hover:to-[#D4AF37] hover:shadow-[#D4AF37]/40 active:scale-[0.98] transition-all duration-300 focus:outline-none"
+                        className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#C49D2A] text-[#1C2B3A] text-sm font-bold tracking-widest uppercase rounded-sm shadow-lg shadow-[#D4AF37]/20 hover:from-[#E5BF47] hover:to-[#D4AF37] hover:shadow-[#D4AF37]/40 active:scale-[0.98] transition-all duration-300 focus:outline-none cursor-pointer"
                       >
                         <GraduationCap className="w-5 h-5" />
                         <span>{t.hero.enrollNow}</span>
@@ -2321,7 +2399,7 @@ export default function App() {
 
                       <button
                         onClick={() => setCurrentPage("gallery")}
-                        className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-[#D4AF37]/50 bg-white/5 text-[#FAF9F6] text-sm font-medium tracking-widest uppercase rounded-sm hover:bg-white/10 hover:border-[#D4AF37] active:scale-[0.98] transition-all duration-300 focus:outline-none"
+                        className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-[#D4AF37]/50 bg-white/5 text-[#FAF9F6] text-sm font-medium tracking-widest uppercase rounded-sm hover:bg-white/10 hover:border-[#D4AF37] active:scale-[0.98] transition-all duration-300 focus:outline-none cursor-pointer"
                       >
                         <BookOpen className="w-4 h-4 text-[#D4AF37]" />
                         <span>{t.hero.virtualTour}</span>
@@ -2352,99 +2430,389 @@ export default function App() {
 
                   </div>
 
-                  {/* Right Column: Interactive Script Showcase Card */}
-                  <div className="lg:col-span-5 animate-[fadeInRight_0.8s_ease_0.4s_both]">
-                    <div className="relative bg-[#002A1C]/80 border border-[#D4AF37]/40 rounded-2xl p-6 shadow-2xl backdrop-blur-xl overflow-hidden group">
-                      
-                      {/* Card Header & Tabs */}
+                  {/* Right Column: Prominent Online Registration Card & Script Showcase */}
+                  <div id="hero-register" className="lg:col-span-6 animate-[fadeInRight_0.8s_ease_0.4s_both] w-full">
+                    <div className="relative bg-[#002217]/90 border border-[#D4AF37]/50 rounded-2xl p-5 sm:p-7 shadow-2xl backdrop-blur-xl overflow-hidden">
+                      {/* Decorative ambient gold glow in corner */}
+                      <div className="absolute -top-12 -right-12 w-36 h-36 bg-[#D4AF37]/15 rounded-full blur-2xl pointer-events-none" />
+
+                      {/* Header */}
                       <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#D4AF37]/20">
                         <div>
-                          <p className="text-[#D4AF37] text-[11px] font-bold uppercase tracking-wider">
-                            {t.hero.scriptCard.title}
-                          </p>
-                          <h3 className="text-white text-base font-semibold">
-                            {t.hero.scriptCard.subtitle}
+                          <div className="flex items-center gap-2">
+                            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                            <p className="text-[#D4AF37] text-[11px] font-bold uppercase tracking-wider">
+                              {regT.badge}
+                            </p>
+                          </div>
+                          <h3 className="text-white text-base sm:text-lg font-bold mt-0.5" style={{ fontFamily: "'Playfair Display', serif" }}>
+                            {heroRightTab === "register" ? regT.title : t.hero.scriptCard.title}
                           </h3>
                         </div>
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-[#D4AF37]/20 text-[#D4AF37] text-[10px] font-semibold uppercase">
-                          <Award className="w-3 h-3" /> Masterpiece
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#005F40] text-[#D4AF37] text-[10px] font-bold tracking-wider uppercase border border-[#D4AF37]/40 shadow-sm">
+                          <Sparkles className="w-3 h-3 text-[#D4AF37]" /> {regT.status}
                         </span>
                       </div>
 
-                      {/* Script Switcher Tabs */}
-                      <div className="grid grid-cols-4 gap-1.5 p-1 bg-black/40 rounded-lg mb-4">
-                        {featuredHeroScripts.map((script, idx) => {
-                          const isSelected = activeScriptTab === idx;
-                          const name = locale === "uz" ? script.nameUz : locale === "ru" ? script.nameRu : locale === "ar" ? script.nameAr : script.nameEn;
-                          return (
-                            <button
-                              key={script.id}
-                              onClick={() => setActiveScriptTab(idx)}
-                              className={`py-2 px-1 text-center text-xs font-semibold rounded-md transition-all duration-200 ${
-                                isSelected
-                                  ? "bg-[#D4AF37] text-[#1C2B3A] shadow-md"
-                                  : "text-[#EDE8DC]/70 hover:text-white hover:bg-white/5"
-                              }`}
-                            >
-                              {name.split(" ")[0]}
-                            </button>
-                          );
-                        })}
+                      {/* Dual Mode Switcher Tabs */}
+                      <div className="flex items-center gap-1.5 p-1 bg-black/50 rounded-lg border border-[#D4AF37]/20 mb-4">
+                        <button
+                          type="button"
+                          onClick={() => setHeroRightTab("register")}
+                          className={`flex-1 py-2 px-2 text-center text-xs font-bold rounded-md transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+                            heroRightTab === "register"
+                              ? "bg-gradient-to-r from-[#D4AF37] to-[#C49D2A] text-[#1C2B3A] shadow-md"
+                              : "text-[#EDE8DC]/70 hover:text-white hover:bg-white/5"
+                          }`}
+                        >
+                          <GraduationCap className="w-3.5 h-3.5" />
+                          <span>{regT.tabRegister}</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setHeroRightTab("scripts")}
+                          className={`flex-1 py-2 px-2 text-center text-xs font-bold rounded-md transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+                            heroRightTab === "scripts"
+                              ? "bg-gradient-to-r from-[#D4AF37] to-[#C49D2A] text-[#1C2B3A] shadow-md"
+                              : "text-[#EDE8DC]/70 hover:text-white hover:bg-white/5"
+                          }`}
+                        >
+                          <BookOpen className="w-3.5 h-3.5" />
+                          <span>{regT.tabShowcase}</span>
+                        </button>
                       </div>
 
-                      {/* Active Script Preview Display */}
-                      {(() => {
-                        const script = featuredHeroScripts[activeScriptTab];
-                        const title = locale === "uz" ? script.nameUz : locale === "ru" ? script.nameRu : locale === "ar" ? script.nameAr : script.nameEn;
-                        const artist = locale === "uz" ? script.artistUz : locale === "ru" ? script.artistRu : locale === "ar" ? script.artistAr : script.artistEn;
-                        const desc = locale === "uz" ? script.descUz : locale === "ru" ? script.descRu : locale === "ar" ? script.descAr : script.descEn;
-
-                        return (
-                          <div className="flex flex-col gap-4">
-                            <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#D4AF37]/30 bg-black/50 group/img">
-                              <img
-                                src={script.img}
-                                alt={title}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-105"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                              
-                              <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
-                                <div className="text-left">
-                                  <p className="text-[#D4AF37] text-xs font-bold font-serif">{title}</p>
-                                  <p className="text-white/80 text-[11px]">{artist}</p>
+                      {/* Content: Registration Form */}
+                      {heroRightTab === "register" && (
+                        <div>
+                          {formSent ? (
+                            <div className="py-8 px-4 text-center border border-[#D4AF37]/40 bg-[#D4AF37]/10 rounded-xl">
+                              <CheckCircle className="w-12 h-12 text-[#D4AF37] mx-auto mb-3 animate-bounce" />
+                              <h4 className="text-lg sm:text-xl font-bold text-white mb-1">
+                                {regT.successTitle}
+                              </h4>
+                              {selectedCourse && (
+                                <div className="inline-block my-2.5 px-3 py-1 rounded bg-[#005F40] border border-[#D4AF37]/50 text-xs text-[#D4AF37] font-semibold">
+                                  ✨ {selectedCourse}
                                 </div>
-                                <button
-                                  onClick={() => setCurrentPage("gallery")}
-                                  className="p-2 rounded-full bg-[#D4AF37] text-[#1C2B3A] hover:bg-[#E5BF47] transition-colors"
-                                  title={t.hero.scriptCard.viewDetails}
+                              )}
+                              <p className="text-xs text-white/80 max-w-sm mx-auto mb-4 leading-relaxed">
+                                {regT.successSub}
+                              </p>
+                              <button
+                                type="button"
+                                onClick={() => setFormSent(false)}
+                                className="px-4 py-2 border border-[#D4AF37]/50 text-[#D4AF37] hover:bg-[#D4AF37]/20 text-xs font-semibold rounded transition-colors cursor-pointer"
+                              >
+                                {regT.resetBtn}
+                              </button>
+                            </div>
+                          ) : (
+                            <form onSubmit={handleFormSubmit} noValidate className="space-y-3">
+                              {/* Course Dropdown */}
+                              <div>
+                                <label
+                                  htmlFor="hero-course-select"
+                                  className="block text-[10px] tracking-[0.2em] uppercase text-[#D4AF37] font-semibold mb-1"
                                 >
-                                  <ZoomIn className="w-4 h-4" />
-                                </button>
+                                  {regT.courseLabel} <span className="text-red-400">*</span>
+                                </label>
+                                <select
+                                  id="hero-course-select"
+                                  value={selectedCourse}
+                                  onChange={(e) => {
+                                    const val = e.target.value;
+                                    setSelectedCourse(val);
+                                    if (val) {
+                                      const msg =
+                                        locale === "ar"
+                                          ? `مرحباً، أود التسجيل في الدورة المجانية: ${val}`
+                                          : locale === "ru"
+                                          ? `Здравствуйте, я хочу записаться на бесплатный курс: ${val}`
+                                          : locale === "uz"
+                                          ? `Assalomu alaykum, men "${val}" bepul kursiga ro'yxatdan o'tmoqchiman.`
+                                          : `Hello, I would like to enroll in the free course: ${val}`;
+                                      setFormData((prev) => ({ ...prev, message: msg }));
+                                    }
+                                  }}
+                                  className="w-full bg-[#00180F] border border-[#D4AF37]/40 text-white px-3.5 py-2.5 rounded-lg text-xs sm:text-sm outline-none focus:border-[#D4AF37] transition-colors cursor-pointer"
+                                >
+                                  <option value="" className="bg-[#002A1C] text-white">
+                                    {regT.selectCourse}
+                                  </option>
+                                  {courseItems.map((c) => (
+                                    <option key={c.title} value={c.title} className="bg-[#002A1C] text-white">
+                                      {c.title} ({c.price})
+                                    </option>
+                                  ))}
+                                </select>
                               </div>
-                            </div>
 
-                            <p className="text-xs text-[#EDE8DC]/80 line-clamp-2 leading-relaxed text-left">
-                              {desc}
-                            </p>
+                              {/* Row 1: Name + Telegram */}
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                                <div>
+                                  <label htmlFor="hero-name" className="block text-[10px] tracking-[0.15em] uppercase text-[#D4AF37] font-medium mb-1">
+                                    {t.contact.nameLabel} <span className="text-red-400">*</span>
+                                  </label>
+                                  <input
+                                    id="hero-name"
+                                    type="text"
+                                    placeholder={t.contact.namePlaceholder}
+                                    required
+                                    value={formData.name}
+                                    onChange={(e) => {
+                                      setFormData({ ...formData, name: e.target.value });
+                                      if (formErrors.name) setFormErrors({ ...formErrors, name: undefined });
+                                    }}
+                                    className={`w-full bg-[#00180F] border ${
+                                      formErrors.name ? "border-red-500/80 focus:border-red-500" : "border-[#D4AF37]/30 focus:border-[#D4AF37]"
+                                    } text-white placeholder-white/30 px-3 py-2 rounded-lg text-xs sm:text-sm outline-none transition-colors`}
+                                  />
+                                  {formErrors.name && <p className="text-red-400 text-[10px] mt-0.5">{formErrors.name}</p>}
+                                </div>
 
-                            <div className="pt-2 flex items-center justify-between border-t border-[#D4AF37]/15">
+                                <div>
+                                  <label htmlFor="hero-telegram" className="block text-[10px] tracking-[0.15em] uppercase text-[#D4AF37] font-medium mb-1">
+                                    {t.contact.telegramLabel} <span className="text-red-400">*</span>
+                                  </label>
+                                  <input
+                                    id="hero-telegram"
+                                    type="text"
+                                    placeholder={t.contact.telegramPlaceholder}
+                                    required
+                                    value={formData.telegram}
+                                    onChange={(e) => {
+                                      setFormData({ ...formData, telegram: e.target.value });
+                                      if (formErrors.telegram) setFormErrors({ ...formErrors, telegram: undefined });
+                                    }}
+                                    className={`w-full bg-[#00180F] border ${
+                                      formErrors.telegram ? "border-red-500/80 focus:border-red-500" : "border-[#D4AF37]/30 focus:border-[#D4AF37]"
+                                    } text-white placeholder-white/30 px-3 py-2 rounded-lg text-xs sm:text-sm outline-none transition-colors`}
+                                  />
+                                  {formErrors.telegram && <p className="text-red-400 text-[10px] mt-0.5">{formErrors.telegram}</p>}
+                                </div>
+                              </div>
+
+                              {/* Row 2: Birth Date + School */}
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                                <div>
+                                  <label htmlFor="hero-birthDate" className="block text-[10px] tracking-[0.15em] uppercase text-[#D4AF37] font-medium mb-1">
+                                    {t.contact.birthDateLabel} <span className="text-red-400">*</span>
+                                  </label>
+                                  <input
+                                    id="hero-birthDate"
+                                    type="date"
+                                    required
+                                    value={formData.birthDate}
+                                    max={new Date().toISOString().split("T")[0]}
+                                    onChange={(e) => {
+                                      setFormData({ ...formData, birthDate: e.target.value });
+                                      if (formErrors.birthDate) setFormErrors({ ...formErrors, birthDate: undefined });
+                                    }}
+                                    className={`w-full bg-[#00180F] border ${
+                                      formErrors.birthDate ? "border-red-500/80 focus:border-red-500" : "border-[#D4AF37]/30 focus:border-[#D4AF37]"
+                                    } text-white px-3 py-2 rounded-lg text-xs sm:text-sm outline-none transition-colors [color-scheme:dark]`}
+                                  />
+                                  {formErrors.birthDate && <p className="text-red-400 text-[10px] mt-0.5">{formErrors.birthDate}</p>}
+                                </div>
+
+                                <div>
+                                  <label htmlFor="hero-schoolName" className="block text-[10px] tracking-[0.15em] uppercase text-[#D4AF37] font-medium mb-1">
+                                    {t.contact.schoolNameLabel} <span className="text-red-400">*</span>
+                                  </label>
+                                  <input
+                                    id="hero-schoolName"
+                                    type="text"
+                                    placeholder={t.contact.schoolNamePlaceholder}
+                                    required
+                                    value={formData.schoolName}
+                                    onChange={(e) => {
+                                      setFormData({ ...formData, schoolName: e.target.value });
+                                      if (formErrors.schoolName) setFormErrors({ ...formErrors, schoolName: undefined });
+                                    }}
+                                    className={`w-full bg-[#00180F] border ${
+                                      formErrors.schoolName ? "border-red-500/80 focus:border-red-500" : "border-[#D4AF37]/30 focus:border-[#D4AF37]"
+                                    } text-white placeholder-white/30 px-3 py-2 rounded-lg text-xs sm:text-sm outline-none transition-colors`}
+                                  />
+                                  {formErrors.schoolName && <p className="text-red-400 text-[10px] mt-0.5">{formErrors.schoolName}</p>}
+                                </div>
+                              </div>
+
+                              {/* Row 3: Address + Email */}
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                                <div>
+                                  <label htmlFor="hero-address" className="block text-[10px] tracking-[0.15em] uppercase text-[#D4AF37] font-medium mb-1">
+                                    {t.contact.addressLabel} <span className="text-red-400">*</span>
+                                  </label>
+                                  <input
+                                    id="hero-address"
+                                    type="text"
+                                    placeholder={t.contact.addressPlaceholder}
+                                    required
+                                    value={formData.address}
+                                    onChange={(e) => {
+                                      setFormData({ ...formData, address: e.target.value });
+                                      if (formErrors.address) setFormErrors({ ...formErrors, address: undefined });
+                                    }}
+                                    className={`w-full bg-[#00180F] border ${
+                                      formErrors.address ? "border-red-500/80 focus:border-red-500" : "border-[#D4AF37]/30 focus:border-[#D4AF37]"
+                                    } text-white placeholder-white/30 px-3 py-2 rounded-lg text-xs sm:text-sm outline-none transition-colors`}
+                                  />
+                                  {formErrors.address && <p className="text-red-400 text-[10px] mt-0.5">{formErrors.address}</p>}
+                                </div>
+
+                                <div>
+                                  <label htmlFor="hero-email" className="block text-[10px] tracking-[0.15em] uppercase text-[#D4AF37] font-medium mb-1">
+                                    {t.contact.emailLabel} <span className="text-red-400">*</span>
+                                  </label>
+                                  <input
+                                    id="hero-email"
+                                    type="email"
+                                    placeholder={t.contact.emailPlaceholder}
+                                    required
+                                    value={formData.email}
+                                    onChange={(e) => {
+                                      setFormData({ ...formData, email: e.target.value });
+                                      if (formErrors.email) setFormErrors({ ...formErrors, email: undefined });
+                                    }}
+                                    className={`w-full bg-[#00180F] border ${
+                                      formErrors.email ? "border-red-500/80 focus:border-red-500" : "border-[#D4AF37]/30 focus:border-[#D4AF37]"
+                                    } text-white placeholder-white/30 px-3 py-2 rounded-lg text-xs sm:text-sm outline-none transition-colors`}
+                                  />
+                                  {formErrors.email && <p className="text-red-400 text-[10px] mt-0.5">{formErrors.email}</p>}
+                                </div>
+                              </div>
+
+                              {/* Row 4: Optional Message */}
+                              <div>
+                                <label htmlFor="hero-message" className="block text-[10px] tracking-[0.15em] uppercase text-[#D4AF37] font-medium mb-1">
+                                  {t.contact.messageLabel} <span className="text-red-400">*</span>
+                                </label>
+                                <textarea
+                                  id="hero-message"
+                                  rows={2}
+                                  placeholder={t.contact.messagePlaceholder}
+                                  required
+                                  value={formData.message}
+                                  onChange={(e) => {
+                                    setFormData({ ...formData, message: e.target.value });
+                                    if (formErrors.message) setFormErrors({ ...formErrors, message: undefined });
+                                  }}
+                                  className={`w-full bg-[#00180F] border ${
+                                    formErrors.message ? "border-red-500/80 focus:border-red-500" : "border-[#D4AF37]/30 focus:border-[#D4AF37]"
+                                  } text-white placeholder-white/30 px-3 py-1.5 rounded-lg text-xs sm:text-sm outline-none transition-colors resize-none`}
+                                />
+                                {formErrors.message && <p className="text-red-400 text-[10px] mt-0.5">{formErrors.message}</p>}
+                              </div>
+
+                              {/* Submit Button */}
                               <button
-                                onClick={() => setCurrentPage("gallery")}
-                                className="text-xs text-[#D4AF37] font-semibold hover:underline inline-flex items-center gap-1"
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="w-full py-3 sm:py-3.5 bg-gradient-to-r from-[#D4AF37] via-[#F3C249] to-[#C49D2A] text-[#1C2B3A] text-xs sm:text-sm font-bold tracking-widest uppercase rounded-lg shadow-lg shadow-[#D4AF37]/25 hover:brightness-105 active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                               >
-                                {t.hero.scriptCard.viewDetails} →
+                                {isSubmitting ? (
+                                  <span className="flex items-center gap-2">
+                                    <div className="w-4 h-4 border-2 border-[#1C2B3A] border-t-transparent rounded-full animate-spin" />
+                                    {regT.submitting}
+                                  </span>
+                                ) : (
+                                  <>
+                                    <Send className={`w-4 h-4 ${locale === "ar" ? "rotate-180" : ""}`} />
+                                    <span>{regT.submitBtn}</span>
+                                  </>
+                                )}
                               </button>
-                              <button
-                                onClick={() => setCurrentPage("courses")}
-                                className="px-3 py-1.5 rounded bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] text-xs font-medium hover:bg-[#D4AF37]/25 transition-colors"
-                              >
-                                {t.hero.scriptCard.learnThis}
-                              </button>
-                            </div>
+
+                              {/* Trust badge */}
+                              <div className="pt-2 text-center border-t border-[#D4AF37]/20 flex items-center justify-center gap-1.5 text-[10px] sm:text-[11px] text-[#EDE8DC]/80">
+                                <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37] flex-shrink-0" />
+                                <span>{regT.trustBadge}</span>
+                              </div>
+                            </form>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Content: Script Showcase Display */}
+                      {heroRightTab === "scripts" && (
+                        <div>
+                          {/* Script Switcher Tabs */}
+                          <div className="grid grid-cols-4 gap-1.5 p-1 bg-black/40 rounded-lg mb-4">
+                            {featuredHeroScripts.map((script, idx) => {
+                              const isSelected = activeScriptTab === idx;
+                              const name = locale === "uz" ? script.nameUz : locale === "ru" ? script.nameRu : locale === "ar" ? script.nameAr : script.nameEn;
+                              return (
+                                <button
+                                  key={script.id}
+                                  onClick={() => setActiveScriptTab(idx)}
+                                  className={`py-2 px-1 text-center text-xs font-semibold rounded-md transition-all duration-200 ${
+                                    isSelected
+                                      ? "bg-[#D4AF37] text-[#1C2B3A] shadow-md"
+                                      : "text-[#EDE8DC]/70 hover:text-white hover:bg-white/5"
+                                  }`}
+                                >
+                                  {name.split(" ")[0]}
+                                </button>
+                              );
+                            })}
                           </div>
-                        );
-                      })()}
+
+                          {/* Active Script Preview Display */}
+                          {(() => {
+                            const script = featuredHeroScripts[activeScriptTab];
+                            const title = locale === "uz" ? script.nameUz : locale === "ru" ? script.nameRu : locale === "ar" ? script.nameAr : script.nameEn;
+                            const artist = locale === "uz" ? script.artistUz : locale === "ru" ? script.artistRu : locale === "ar" ? script.artistAr : script.artistEn;
+                            const desc = locale === "uz" ? script.descUz : locale === "ru" ? script.descRu : locale === "ar" ? script.descAr : script.descEn;
+
+                            return (
+                              <div className="flex flex-col gap-4">
+                                <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#D4AF37]/30 bg-black/50 group/img">
+                                  <img
+                                    src={script.img}
+                                    alt={title}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-105"
+                                  />
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                                  
+                                  <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
+                                    <div className="text-left">
+                                      <p className="text-[#D4AF37] text-xs font-bold font-serif">{title}</p>
+                                      <p className="text-white/80 text-[11px]">{artist}</p>
+                                    </div>
+                                    <button
+                                      onClick={() => setCurrentPage("gallery")}
+                                      className="p-2 rounded-full bg-[#D4AF37] text-[#1C2B3A] hover:bg-[#E5BF47] transition-colors"
+                                      title={t.hero.scriptCard.viewDetails}
+                                    >
+                                      <ZoomIn className="w-4 h-4" />
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <p className="text-xs text-[#EDE8DC]/80 line-clamp-2 leading-relaxed text-left">
+                                  {desc}
+                                </p>
+
+                                <div className="pt-2 flex items-center justify-between border-t border-[#D4AF37]/15">
+                                  <button
+                                    onClick={() => setCurrentPage("gallery")}
+                                    className="text-xs text-[#D4AF37] font-semibold hover:underline inline-flex items-center gap-1"
+                                  >
+                                    {t.hero.scriptCard.viewDetails} →
+                                  </button>
+                                  <button
+                                    onClick={() => handleEnroll(title)}
+                                    className="px-3 py-1.5 rounded bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] text-xs font-medium hover:bg-[#D4AF37]/25 transition-colors cursor-pointer"
+                                  >
+                                    {t.hero.scriptCard.learnThis}
+                                  </button>
+                                </div>
+                              </div>
+                            );
+                          })()}
+                        </div>
+                      )}
 
                     </div>
                   </div>
@@ -2828,7 +3196,7 @@ export default function App() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-md mx-auto md:max-w-none mb-16">
               {courseItems.map((course, i) => (
                 <div
-                  key={course.level}
+                  key={course.title}
                   className={`relative flex flex-col transition-all duration-500 hover:shadow-xl hover:-translate-y-1 ${
                     course.featured
                       ? "bg-[#005F40] text-white shadow-lg"
@@ -2854,12 +3222,6 @@ export default function App() {
                       {course.icon}
                     </div>
 
-                    <p
-                      className="text-xs tracking-[0.2em] uppercase font-semibold mb-1 text-[#D4AF37]"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                    >
-                      {course.level}
-                    </p>
                     <h3
                       className={`text-xl font-normal mb-4 ${
                         course.featured ? "text-white" : "text-[#1C2B3A]"
@@ -3208,7 +3570,7 @@ export default function App() {
       {/* ────────────────────────────────────────────────────────────────
           8. CONTACT & FOOTER
       ──────────────────────────────────────────────────────────────── */}
-      {currentPage === "contact" && (
+      {(currentPage === "contact" || currentPage === "home") && (
         <section id="contact" className="bg-[#003020] text-white border-b border-[#D4AF37]/15">
           <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 md:py-24">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -3350,7 +3712,7 @@ export default function App() {
                         </option>
                         {courseItems.map((c) => (
                           <option key={c.title} value={c.title} className="bg-[#002A1C] text-white">
-                            {c.title} ({c.price}) — {c.level}
+                            {c.title} ({c.price})
                           </option>
                         ))}
                       </select>

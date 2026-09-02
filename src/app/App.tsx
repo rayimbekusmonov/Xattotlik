@@ -54,7 +54,7 @@ import {
 } from "lucide-react";
 
 import logoImg from "../assets/logo.JPG";
-import aboutVideo from "../assets/video.mp4";
+import aboutVideo from "../assets/background.mp4";
 import partnerImg from "../assets/partner.png";
 import teacher1Img from "../assets/teacher1.png";
 import teacher2Img from "../assets/teacher2.png";

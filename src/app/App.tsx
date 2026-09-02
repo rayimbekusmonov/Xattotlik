@@ -1595,7 +1595,7 @@ const sendTelegramNotification = async ({
   locale: string;
 }) => {
   const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN || "8846414522:AAFzhtaa5SlgW7VzK-2-lrotMeAW6pR2KKY";
-  const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID || "8079703247";
+  const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID || "-1003485439482";
 
   if (!botToken || !chatId) {
     console.warn("Telegram credentials not found.");
@@ -1627,6 +1627,10 @@ const sendTelegramNotification = async ({
         parse_mode: "HTML",
       }),
     });
+    if (!response.ok) {
+      const errorDetail = await response.json().catch(() => ({}));
+      console.error("Telegram API error:", response.status, errorDetail);
+    }
     return response.ok;
   } catch (error) {
     console.error("Failed to send Telegram message:", error);

@@ -51,8 +51,11 @@ import {
   CupSoda,
   Package,
   Filter,
+  Megaphone,
+  Bell,
 } from "lucide-react";
 
+import { announcementsData } from "../data/announcements";
 import logoImg from "../assets/logo.JPG";
 import aboutVideo from "../assets/background.mp4";
 import partnerImg from "../assets/partner.png";
@@ -201,8 +204,21 @@ const translations = {
       courses: "Kurslar",
       team: "Jamoamiz",
       author: "Loyiha muallifi",
+      announcements: "E'lonlar",
       contact: "Aloqa",
       enrol: "Hozir ro'yxatdan o'ting",
+    },
+    announcements: {
+      label: "So'nggi yangiliklar",
+      title: "Markaz e'lonlari",
+      subtitle: "Xalqaro xattotlik maktabining dolzarb e'lonlari, bepul qabul va muhim tadbirlari",
+      allAnnouncements: "Barcha e'lonlar",
+      urgentBadge: "Muhim e'lon",
+      readMore: "Batafsil ma'lumot",
+      enrollNow: "Kursga yozilish",
+      viewGallery: "Ko'rgazmaga o'tish",
+      viewCourses: "Dasturlar bilan tanishish",
+      topBannerBadge: "Qabul ochiq 2026",
     },
     hero: {
       badge: "Islom Sivilizatsiyasi Markazi — Toshkent",
@@ -464,8 +480,21 @@ const translations = {
       courses: "Courses",
       team: "Our Team",
       author: "Project Author",
+      announcements: "Announcements",
       contact: "Contact",
       enrol: "Enrol Now",
+    },
+    announcements: {
+      label: "Latest Updates",
+      title: "Center Announcements",
+      subtitle: "Current admissions, open workshops, and exhibitions at the International Calligraphy School",
+      allAnnouncements: "All Announcements",
+      urgentBadge: "Important Notice",
+      readMore: "Learn More",
+      enrollNow: "Enroll Now",
+      viewGallery: "View Exhibition",
+      viewCourses: "Explore Programs",
+      topBannerBadge: "Admissions Open 2026",
     },
     hero: {
       badge: "Center of Islamic Civilization — Tashkent",
@@ -727,8 +756,21 @@ const translations = {
       courses: "Курсы",
       team: "Наша команда",
       author: "Автор проекта",
+      announcements: "Объявления",
       contact: "Контакты",
       enrol: "Записаться",
+    },
+    announcements: {
+      label: "Свежие обновления",
+      title: "Объявления Центра",
+      subtitle: "Актуальные новости, прием на бесплатные курсы и мероприятия Международной школы каллиграфии",
+      allAnnouncements: "Все объявления",
+      urgentBadge: "Важное объявление",
+      readMore: "Подробнее",
+      enrollNow: "Записаться на курс",
+      viewGallery: "Перейти к выставке",
+      viewCourses: "Ознакомиться с программами",
+      topBannerBadge: "Прием открыт 2026",
     },
     hero: {
       badge: "Центр исламской цивилизации — Ташкент",
@@ -990,8 +1032,21 @@ const translations = {
       courses: "الدورات",
       team: "فريقنا",
       author: "مؤلف المشروع",
+      announcements: "الإعلانات",
       contact: "اتصل بنا",
       enrol: "سجل الآن",
+    },
+    announcements: {
+      label: "آخر الأخبار",
+      title: "إعلانات المركز",
+      subtitle: "آخر الأخبار والفعاليات ومواعيد القبول المجاني في المدرسة الدولية للخط العربي",
+      allAnnouncements: "جميع الإعلانات",
+      urgentBadge: "إعلان هام",
+      readMore: "المزيد من التفاصيل",
+      enrollNow: "التسجيل في الدورة",
+      viewGallery: "زيارة المعرض",
+      viewCourses: "استعراض البرامج",
+      topBannerBadge: "التسجيل مفتوح ٢٠٢٦",
     },
     hero: {
       badge: "مركز الحضارة الإسلامية — طشقند",
@@ -1595,7 +1650,7 @@ const sendTelegramNotification = async ({
   locale: string;
 }) => {
   const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN || "8846414522:AAFzhtaa5SlgW7VzK-2-lrotMeAW6pR2KKY";
-  const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID || "-1003485439482";
+  const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID || "-1003926859409";
 
   if (!botToken || !chatId) {
     console.warn("Telegram credentials not found.");
@@ -1744,12 +1799,14 @@ export default function App() {
 
   const [lightboxItem, setLightboxItem] = useState<typeof galleryItems[0] | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [showTopAnnouncement, setShowTopAnnouncement] = useState(true);
 
   // Scroll reveal refs
   const aboutReveal = useScrollReveal();
   const galleryReveal = useScrollReveal();
   const coursesReveal = useScrollReveal();
   const teamReveal = useScrollReveal();
+  const announcementsReveal = useScrollReveal();
   const testimonialsReveal = useScrollReveal();
 
   // Close language menu on outside click
@@ -1955,51 +2012,122 @@ export default function App() {
       dir={locale === "ar" ? "rtl" : "ltr"}
     >
       {/* ────────────────────────────────────────────────────────────────
-          1. NAVIGATION
+          1. HEADER & NAVIGATION
       ──────────────────────────────────────────────────────────────── */}
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-[#FAF9F6]/97 backdrop-blur-md shadow-sm border-b border-[#D4AF37]/20"
-            : "bg-[#FAF9F6]/80 backdrop-blur-sm"
-        }`}
-        role="navigation"
-        aria-label="Main navigation"
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
-          {/* Brand */}
-          <button
-            onClick={() => setCurrentPage("home")}
-            className="flex items-center gap-3 flex-shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] rounded text-left"
-            aria-label="Go to homepage"
-          >
-            <img
-              src={logoImg}
-              alt="Official Logo"
-              className="w-10 h-10 sm:w-14 sm:h-14 object-contain rounded-full border-2 border-[#D4AF37] bg-white p-0.5 shadow-sm flex-shrink-0"
-            />
-            <div className={`${locale === "ar" ? "text-right" : "text-left"}`}>
-              <p
-                className="text-[#D4AF37] text-[10px] tracking-[0.2em] uppercase font-medium leading-none hidden sm:block"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
-              >
-                {t.brand.sub}
-              </p>
-              <p
-                className="text-[#005F40] text-sm sm:text-base font-semibold leading-tight"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                {t.brand.title}
-              </p>
+      <header className="fixed top-0 left-0 right-0 z-50">
+        {/* Top Urgency Announcement Bar */}
+        {showTopAnnouncement && (
+          <div className="bg-[#002619] border-b border-[#D4AF37]/30 text-white text-xs py-2 px-4 relative z-[60] shadow-md">
+            <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
+              <div className="flex items-center gap-2.5 overflow-hidden">
+                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#D4AF37] text-[#1C2B3A] text-[10px] font-bold uppercase tracking-wider flex-shrink-0">
+                  <Sparkles className="w-3 h-3" />
+                  {t.announcements.topBannerBadge}
+                </span>
+                <p className="text-white/90 text-xs truncate">
+                  {locale === "uz"
+                    ? announcementsData[0].titleUz
+                    : locale === "ru"
+                    ? announcementsData[0].titleRu
+                    : locale === "ar"
+                    ? announcementsData[0].titleAr
+                    : announcementsData[0].titleEn}
+                </p>
+              </div>
+              <div className="flex items-center gap-3 flex-shrink-0">
+                <button
+                  onClick={() => {
+                    if (currentPage === "home") {
+                      document.getElementById("announcements")?.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      setCurrentPage("home");
+                      setTimeout(() => {
+                        document.getElementById("announcements")?.scrollIntoView({ behavior: "smooth" });
+                      }, 150);
+                    }
+                  }}
+                  className="text-[#D4AF37] hover:text-white font-semibold underline text-xs cursor-pointer flex items-center gap-1"
+                >
+                  <span>{t.announcements.readMore}</span>
+                  <ArrowRight className={`w-3 h-3 ${locale === "ar" ? "rotate-180" : ""}`} />
+                </button>
+                <button
+                  onClick={() => setShowTopAnnouncement(false)}
+                  className="text-white/60 hover:text-white p-0.5 cursor-pointer ml-1"
+                  aria-label="Close notification"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
-          </button>
+          </div>
+        )}
 
-          {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-8" role="menubar">
-            {["Home", "Author", "About", "Gallery", "Courses", "Team", "Contact"].map((link) => {
-              const id = link.toLowerCase() as any;
-              const isActive = currentPage === id;
-              const translatedLabel = t.nav[id as keyof typeof t.nav];
+        <nav
+          className={`transition-all duration-500 ${
+            scrolled
+              ? "bg-[#FAF9F6]/97 backdrop-blur-md shadow-sm border-b border-[#D4AF37]/20"
+              : "bg-[#FAF9F6]/80 backdrop-blur-sm"
+          }`}
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+            {/* Brand */}
+            <button
+              onClick={() => setCurrentPage("home")}
+              className="flex items-center gap-3 flex-shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] rounded text-left"
+              aria-label="Go to homepage"
+            >
+              <img
+                src={logoImg}
+                alt="Official Logo"
+                className="w-10 h-10 sm:w-14 sm:h-14 object-contain rounded-full border-2 border-[#D4AF37] bg-white p-0.5 shadow-sm flex-shrink-0"
+              />
+              <div className={`${locale === "ar" ? "text-right" : "text-left"}`}>
+                <p
+                  className="text-[#D4AF37] text-[10px] tracking-[0.2em] uppercase font-medium leading-none hidden sm:block"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  {t.brand.sub}
+                </p>
+                <p
+                  className="text-[#005F40] text-sm sm:text-base font-semibold leading-tight"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  {t.brand.title}
+                </p>
+              </div>
+            </button>
+
+            {/* Desktop nav */}
+            <div className="hidden lg:flex items-center gap-8" role="menubar">
+              {["Home", "Author", "About", "Gallery", "Courses", "Team", "Announcements", "Contact"].map((link) => {
+                const id = link.toLowerCase() as any;
+                const isActive = currentPage === id;
+                const translatedLabel = t.nav[id as keyof typeof t.nav];
+
+                if (link === "Announcements") {
+                  return (
+                    <button
+                      key={link}
+                      onClick={() => {
+                        if (currentPage === "home") {
+                          document.getElementById("announcements")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                        } else {
+                          setCurrentPage("home");
+                          setTimeout(() => {
+                            document.getElementById("announcements")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                          }, 150);
+                        }
+                      }}
+                      role="menuitem"
+                      className="text-sm font-medium tracking-wide transition-colors duration-200 relative inline-flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] rounded px-1 cursor-pointer text-[#005F40] hover:text-[#D4AF37]"
+                    >
+                      <span>{translatedLabel}</span>
+                    </button>
+                  );
+                }
 
               if (link === "Courses") {
                 return (
@@ -2202,10 +2330,33 @@ export default function App() {
           }`}
         >
           <div className="bg-[#FAF9F6]/99 backdrop-blur-md border-t border-[#D4AF37]/20 px-6 py-6 flex flex-col gap-1">
-            {["Home", "Author", "About", "Gallery", "Courses", "Team", "Contact"].map((link) => {
+            {["Home", "Author", "About", "Gallery", "Courses", "Team", "Announcements", "Contact"].map((link) => {
               const id = link.toLowerCase() as any;
               const isActive = currentPage === id;
               const translatedLabel = t.nav[id as keyof typeof t.nav];
+
+              if (link === "Announcements") {
+                return (
+                  <button
+                    key={link}
+                    onClick={() => {
+                      if (currentPage === "home") {
+                        document.getElementById("announcements")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                      } else {
+                        setCurrentPage("home");
+                        setTimeout(() => {
+                          document.getElementById("announcements")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }, 150);
+                      }
+                      setMenuOpen(false);
+                    }}
+                    className="text-base font-medium py-3 border-b border-[#D4AF37]/10 text-left transition-colors duration-200 text-[#005F40] hover:text-[#D4AF37]"
+                    style={{ textAlign: locale === "ar" ? "right" : "left" }}
+                  >
+                    {translatedLabel}
+                  </button>
+                );
+              }
 
               if (link === "Courses") {
                 return (
@@ -2287,6 +2438,7 @@ export default function App() {
           </div>
         </div>
       </nav>
+      </header>
 
       <main className="pt-20">
         {currentPage === "home" && (
@@ -2842,6 +2994,131 @@ export default function App() {
 
               </div>
 
+            </section>
+
+            {/* ────────────────────────────────────────────────────────────────
+                ANNOUNCEMENTS SECTION
+            ──────────────────────────────────────────────────────────────── */}
+            <section id="announcements" className="py-20 md:py-28 bg-[#FAF9F6] border-b border-[#D4AF37]/20 scroll-mt-24">
+              <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                {/* Header */}
+                <div
+                  ref={announcementsReveal.ref}
+                  className={`text-center mb-16 transition-all duration-700 ${
+                    announcementsReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                >
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#005F40]/10 text-[#005F40] text-xs font-semibold uppercase tracking-widest mb-3 border border-[#005F40]/20">
+                    <Megaphone className="w-3.5 h-3.5 text-[#D4AF37]" />
+                    <span>{t.announcements.label}</span>
+                  </div>
+                  <h2
+                    className="text-3xl sm:text-4xl lg:text-5xl text-[#1C2B3A] font-normal mb-3"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    {t.announcements.title}
+                  </h2>
+                  <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto mb-6">
+                    {t.announcements.subtitle}
+                  </p>
+                  <GoldDivider />
+                </div>
+
+                {/* Announcements Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {announcementsData.map((ann, idx) => {
+                    const tag = locale === "uz" ? ann.tagUz : locale === "ru" ? ann.tagRu : locale === "ar" ? ann.tagAr : ann.tagEn;
+                    const date = locale === "uz" ? ann.dateUz : locale === "ru" ? ann.dateRu : locale === "ar" ? ann.dateAr : ann.dateEn;
+                    const title = locale === "uz" ? ann.titleUz : locale === "ru" ? ann.titleRu : locale === "ar" ? ann.titleAr : ann.titleEn;
+                    const desc = locale === "uz" ? ann.descUz : locale === "ru" ? ann.descRu : locale === "ar" ? ann.descAr : ann.descEn;
+
+                    const handleAction = () => {
+                      if (ann.actionType === "enroll") {
+                        handleEnroll();
+                      } else if (ann.actionType === "courses") {
+                        setCurrentPage("courses");
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      } else if (ann.actionType === "gallery") {
+                        setCurrentPage("gallery");
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      } else if (ann.actionUrl) {
+                        window.open(ann.actionUrl, "_blank");
+                      }
+                    };
+
+                    return (
+                      <div
+                        key={ann.id}
+                        className={`relative rounded-xl overflow-hidden flex flex-col justify-between transition-all duration-500 hover:-translate-y-1.5 shadow-md hover:shadow-xl ${
+                          ann.isUrgent
+                            ? "bg-[#002619] text-white border-2 border-[#D4AF37]/60"
+                            : "bg-white text-[#1C2B3A] border border-[#D4AF37]/30"
+                        } ${
+                          announcementsReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                        }`}
+                        style={{ transitionDelay: `${idx * 150}ms` }}
+                      >
+                        {ann.isUrgent && (
+                          <div className="absolute top-0 right-0 bg-gradient-to-l from-[#D4AF37] to-[#C49D2A] text-[#1C2B3A] text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-bl-lg flex items-center gap-1 shadow-sm">
+                            <Sparkles className="w-3 h-3" /> {t.announcements.urgentBadge}
+                          </div>
+                        )}
+
+                        <div className="p-7">
+                          <div className="flex items-center gap-2.5 mb-4">
+                            <span
+                              className={`text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-md ${
+                                ann.isUrgent
+                                  ? "bg-[#D4AF37]/20 text-[#D4AF37] border border-[#D4AF37]/40"
+                                  : "bg-[#005F40]/10 text-[#005F40]"
+                              }`}
+                            >
+                              {tag}
+                            </span>
+                            <span className={`text-xs flex items-center gap-1 ${ann.isUrgent ? "text-white/60" : "text-gray-400"}`}>
+                              <Calendar className="w-3.5 h-3.5" />
+                              {date}
+                            </span>
+                          </div>
+
+                          <h3
+                            className={`text-xl font-bold mb-3 leading-snug ${ann.isUrgent ? "text-white" : "text-[#1C2B3A]"}`}
+                            style={{ fontFamily: "'Playfair Display', serif" }}
+                          >
+                            {title}
+                          </h3>
+
+                          <p className={`text-sm leading-relaxed ${ann.isUrgent ? "text-white/80" : "text-gray-600"}`}>
+                            {desc}
+                          </p>
+                        </div>
+
+                        <div className={`p-6 pt-0 border-t ${ann.isUrgent ? "border-[#D4AF37]/20" : "border-gray-100"}`}>
+                          <button
+                            onClick={handleAction}
+                            className={`w-full py-2.5 px-4 rounded-lg font-semibold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer ${
+                              ann.isUrgent
+                                ? "bg-gradient-to-r from-[#D4AF37] to-[#C49D2A] text-[#1C2B3A] hover:brightness-110 shadow-md"
+                                : "bg-[#005F40] text-white hover:bg-[#004a32]"
+                            }`}
+                          >
+                            <span>
+                              {ann.actionType === "enroll"
+                                ? t.announcements.enrollNow
+                                : ann.actionType === "gallery"
+                                ? t.announcements.viewGallery
+                                : ann.actionType === "courses"
+                                ? t.announcements.viewCourses
+                                : t.announcements.readMore}
+                            </span>
+                            <ArrowRight className={`w-3.5 h-3.5 ${locale === "ar" ? "rotate-180" : ""}`} />
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </section>
           </>
         )}
